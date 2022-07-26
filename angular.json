@@ -29,7 +29,7 @@
             ],
             "styles": [
               "src/styles.sass",
-              "node_modules/@fort-awesome/fontawesome-free/css/font-awesome.css"
+              "node_modules/@fortawesome/fontawesome-free/css/font-awesome.css"
             ],
             "scripts": []
           },

@@ -28,8 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass",
-              "./node_modules/@fortawesome/fontawesome-free/css/font-awesome.css"
+              "src/styles.sass"
             ],
             "scripts": []
           },

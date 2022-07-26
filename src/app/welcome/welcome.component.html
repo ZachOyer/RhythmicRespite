@@ -1,45 +1,50 @@
-<div class="navbar">
-  <div class="col" style="text-align: right">
+<div style='background-color: white;'>
+  <div class="navbar">
+    <div class="col" style="text-align: right">
 
-  </div>
-  <div class="col-auto text-center header mx-3">
-    <h1><fa-icon [icon]="faLeft"></fa-icon><span class="mx-3">Welcome to Rhythmic Respite!</span><fa-icon [icon]="faRight"></fa-icon></h1>
-  </div>
-  <div class="col">
+    </div>
+    <div class="col-auto text-center header mx-3">
+      <h1><fa-icon [icon]="faLeft"></fa-icon><span class="mx-3">Welcome to Rhythmic Respite!</span><fa-icon [icon]="faRight"></fa-icon></h1>
+    </div>
+    <div class="col">
 
-  </div>
-</div>
-
-<div class="container text-center mt-3">
-  <h2 class="text-info">This is place for me to post my poems, and for other people to read them!</h2>
-  <div class="form-group">
-    <label class="form-label mt-4">Looking for a specific Poem?</label>
-    <div class="form-group">
-      <div class="input-group mb-3">
-        <span class="input-group-text"><fa-icon [icon]="faSearch"></fa-icon></span>
-        <input [(ngModel)]="searchTerm" type="text" class="form-control" placeholder="Search by title..." aria-label="Recipient's username" aria-describedby="button-addon2">
-      </div>
     </div>
   </div>
-  <div style="border: 2px solid black; border-radius: 20px;">
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th scope="col">Title</th>
-          <th scope="col">Length</th>
-          <th scope="col">Complete?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr (click)="goToPoem(poem.title)" *ngFor="let poem of filterPoems()" [ngClass]="{'table-warning': poem.length === 'Short', 'table-success': poem.length === 'Medium', 'table-info': poem.length === 'Long'}">
-          <th scope="row">{{poem.title}}</th>
-          <td>{{poem.length}}</td>
-          <td>{{poem.complete}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 
+  <div class="container text-center mt-3" style="background-color: white">
+    <h2 class="text-info">This is a place for me to post my poems, and for other people to read them!</h2>
+
+    <div class="form-group">
+      <label class="form-label mt-4">Looking for a specific Poem?</label>
+      <div class="form-group">
+        <div class="input-group mb-3">
+          <span class="input-group-text"><fa-icon [icon]="faSearch"></fa-icon></span>
+          <input [(ngModel)]="searchTerm" type="text" class="form-control" placeholder="Search by title..." aria-label="Recipient's username" aria-describedby="button-addon2">
+          <button *ngIf="searchTerm !== ''" (click)="clearSearch()" class="btn btn-danger" type="button" id="button-addon2"><fa-icon [icon]="faClear"></fa-icon> Clear</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="border: 2px solid black; border-radius: 20px;">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Length</th>
+            <th scope="col">Complete?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr (click)="goToPoem(poem.title)" *ngFor="let poem of filterPoems()" [ngClass]="{'table-warning': poem.length === 'Short', 'table-success': poem.length === 'Medium', 'table-info': poem.length === 'Long'}">
+            <th scope="row">{{poem.title}}</th>
+            <td>{{poem.length}}</td>
+            <td>{{poem.complete}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
 </div>
 
 

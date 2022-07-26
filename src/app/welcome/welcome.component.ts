@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faAlignLeft, faAlignRight, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faAlignLeft, faAlignRight, faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-welcome',
@@ -14,8 +14,10 @@ export class WelcomeComponent implements OnInit {
   faSearch = faMagnifyingGlass;
   faRight = faAlignLeft;
   faLeft = faAlignRight;
+  faClear = faXmark;
 
   searchTerm = '';
+  showIncomplete = false;
   poems = [
     {
       title: "Intro",
@@ -58,7 +60,7 @@ export class WelcomeComponent implements OnInit {
       complete: 'Yes'
     },
     {
-      title: "Your my Dad",
+      title: "You're my Dad",
       length: "Long",
       complete: 'Yes'
     },
@@ -70,7 +72,7 @@ export class WelcomeComponent implements OnInit {
     {
       title: "Glass Rose",
       length: "Long",
-      complete: 'No'
+      complete: 'Yes'
     },
   ]
 
@@ -93,7 +95,15 @@ export class WelcomeComponent implements OnInit {
   goToPoem(title: string) {
     if (title === 'Intro') {
       this.router.navigateByUrl('intro');
+    } else if (title === 'Glass Rose') {
+      this.router.navigateByUrl('glass-rose');
+    } else if (title === 'Love Life Literature') {
+      this.router.navigateByUrl('love-life-lit')
     }
+  }
+
+  clearSearch() {
+    this.searchTerm = '';
   }
 
 }

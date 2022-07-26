@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faCity, faCloudMoon, faMoon, faMountain, faSun } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-intro',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./intro.component.sass']
 })
 export class IntroComponent implements OnInit {
+  faMoon = faCloudMoon;
+  faSun = faSun;
+  faMountain = faMountain;
+  faCity = faCity;
 
   constructor() { }
 

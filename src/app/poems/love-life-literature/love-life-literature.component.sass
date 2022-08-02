@@ -1,11 +1,61 @@
 .poem-text
-  font-size: 20px
-  // font-family: 'Edu NSW ACT Foundation', cursive
-  // font-family: 'Cormorant SC', serif
+  font-size: 25px
+  font-family: 'Benne', serif
   font-weight: 500
-  text-shadow: 0 0 10px #c92727
+  text-shadow: 0 0 10px #e7cccc
 
 .title
   text-decoration: underline
   margin-top: 30px
-  text-shadow: 0 0 10px #c92727
+  margin-bottom: 30px
+  font-weight: 700
+  font-size: 30px
+  font-family: 'Kaisei Opti'
+
+.container
+  border-right: 10px grey
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px
+  background: repeat url('../../../assets/leather.jfif')
+  border-right: 10px solid #503427
+  border-left: 10px solid #503427
+
+.col-10
+  background: repeat url('../../../assets/paper.jfif')
+  border-right: 8px ridge #cccccc
+  border-left: 8px ridge #cccccc
+  box-shadow: rgba(0, 0, 0, 0.534) 16px 0px 20px 0px, rgba(0, 0, 0, 0.5) -16px 0px 20px 1px
+
+.bookmark-icon
+  color: #dd3f3f
+  font-size: 100px
+  position: absolute
+  top: 0px
+  right: 10px
+  transform: translate(-45px, -35px)
+  transition: top 0.2s ease-in-out
+  filter: drop-shadow(10px 5px 8px #00000075)
+
+.bookmark-text
+  width: 70px
+  color: white
+  position: absolute
+  top: 5px
+  right: 57px
+  transition: top 0.2s ease-in-out
+
+.bookmark
+  cursor: pointer
+
+.bookmark:hover .bookmark-text
+  top: 15px
+
+.bookmark:hover .bookmark-icon
+  top: 10px
+
+.important
+  font-size: 25px
+  margin-bottom: 5px
+  text-shadow: 0 0 10px #eca7a7
+
+
+

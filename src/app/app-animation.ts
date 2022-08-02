@@ -60,6 +60,57 @@ export const appAnimations =
         ], { optional: true }),
       ])
     ]),
+    transition('Long => SecondPoem', [
+      query(':enter, :leave',
+        style({ position: 'fixed',  width: '100%' }),
+        { optional: true }),
+        group([
+          query(':enter', [
+            style({ opacity: 0, transform: 'translateX(100%)'}),
+            animate('1.5s ease-in-out',
+            style({ opacity: 1, transform: 'translateX(0%)'}))
+          ], { optional: true }),
+          query(':leave', [
+            style({ opacity: 1, transform: 'translateX(0%)'}),
+            animate('1.5s ease-in-out',
+            style({ opacity: 0, transform: 'translateX(-100%)'}),)
+          ], { optional: true }),
+        ])
+    ]),
+    transition('SecondPoem => Long', [
+      query(':enter, :leave',
+        style({ position: 'fixed',  width: '100%' }),
+        { optional: true }),
+        group([
+          query(':enter', [
+            style({ opacity: 0, transform: 'translateX(-100%)'}),
+            animate('1.5s ease-in-out',
+            style({ opacity: 1, transform: 'translateX(0%)'}))
+          ], { optional: true }),
+          query(':leave', [
+            style({ opacity: 1, transform: 'translateX(0%)'}),
+            animate('1.5s ease-in-out',
+            style({ opacity: 0, transform: 'translateX(100%)'}),)
+          ], { optional: true }),
+        ])
+    ]),
+    transition('SecondPoem => Welcome', [
+      query(':enter, :leave',
+        style({ position: 'fixed',  width: '100%' }),
+        { optional: true }),
+        group([
+          query(':enter', [
+            style({ transform: 'translateY(-100%)' }),
+            animate('1.5s ease-in-out',
+            style({ transform: 'translateY(0%)' }))
+          ], { optional: true }),
+          query(':leave', [
+            style({ opacity: 1 }),
+            animate('1.5s ease-in-out',
+            style({ opacity: 0 }))
+          ], { optional: true }),
+        ])
+    ]),
 
   ]);
 

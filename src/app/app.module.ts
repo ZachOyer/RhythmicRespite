@@ -10,7 +10,6 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { IntroComponent } from './poems/intro/intro.component';
 import { LoveLifeLiteratureComponent } from './poems/love-life-literature/love-life-literature.component';
 import { GlassRoseComponent } from './poems/glass-rose/glass-rose.component';
-import { TinderPoemsComponent } from './poems/tinder-poems/tinder-poems.component';
 import { ChristmasRapComponent } from './poems/christmas-rap/christmas-rap.component';
 import { EdgarAllenPoemComponent } from './poems/edgar-allen-poem/edgar-allen-poem.component';
 import { BabyGurlComponent } from './poems/baby-gurl/baby-gurl.component';
@@ -18,6 +17,9 @@ import { ClimbingComponent } from './poems/climbing/climbing.component';
 import { TheProphecyComponent } from './poems/the-prophecy/the-prophecy.component';
 import { UrMyDadComponent } from './poems/ur-my-dad/ur-my-dad.component';
 import { SpeakEnglishComponent } from './poems/speak-english/speak-english.component';
+import { FirstPoemComponent } from './poems/tinder-poems/first-poem/first-poem.component';
+import { SecondPoemComponent } from './poems/tinder-poems/second-poem/second-poem.component';
+import { HappyRideComponent } from './poems/happy-ride/happy-ride.component';
 
 @NgModule({
   declarations: [
@@ -26,14 +28,16 @@ import { SpeakEnglishComponent } from './poems/speak-english/speak-english.compo
     IntroComponent,
     LoveLifeLiteratureComponent,
     GlassRoseComponent,
-    TinderPoemsComponent,
     ChristmasRapComponent,
     EdgarAllenPoemComponent,
     BabyGurlComponent,
     ClimbingComponent,
     TheProphecyComponent,
     UrMyDadComponent,
-    SpeakEnglishComponent
+    SpeakEnglishComponent,
+    FirstPoemComponent,
+    SecondPoemComponent,
+    HappyRideComponent
   ],
   imports: [
     BrowserModule,

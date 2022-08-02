@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faBookmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-love-life-literature',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./love-life-literature.component.sass']
 })
 export class LoveLifeLiteratureComponent implements OnInit {
+  bookmark = faBookmark;
 
   constructor() { }
 

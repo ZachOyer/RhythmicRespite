@@ -1,15 +1,31 @@
+@media screen and (max-width: 770px)
+  .poem-text
+    font-size: 18px
+
+@media screen and (min-width: 770px)
+  .poem-text
+    font-size: 25px
+
+@media screen and (max-width: 770px)
+  .title
+    font-size: 23px
+    margin-top: 40px
+    margin-bottom: 40px
+
+@media screen and (min-width: 770px)
+  .title
+    font-size: 30px
+    margin-top: 30px
+    margin-bottom: 30px
+
 .poem-text
-  font-size: 25px
   font-family: 'Benne', serif
   font-weight: 500
   text-shadow: 0 0 10px #e7cccc
 
 .title
   text-decoration: underline
-  margin-top: 30px
-  margin-bottom: 30px
   font-weight: 700
-  font-size: 30px
   font-family: 'Kaisei Opti'
 
 .container
@@ -25,13 +41,23 @@
   border-left: 8px ridge #cccccc
   box-shadow: rgba(0, 0, 0, 0.534) 16px 0px 20px 0px, rgba(0, 0, 0, 0.5) -16px 0px 20px 1px
 
+@media screen and (min-width: 770px)
+  .bookmark-icon
+    transform: translate(-45px, -35px) scaleY(1.5)
+
+@media screen and (max-width: 770px)
+  .bookmark-icon
+    transform: translate(40px, -35px) scaleY(1.5)
+
+  .bookmark-text
+    transform: translate(85px, 0px)
+
 .bookmark-icon
   color: #dd3f3f
   font-size: 100px
   position: absolute
   top: 0px
   right: 10px
-  transform: translate(-45px, -35px)
   transition: top 0.2s ease-in-out
   filter: drop-shadow(10px 5px 8px #00000075)
 
@@ -39,7 +65,7 @@
   width: 70px
   color: white
   position: absolute
-  top: 5px
+  top: 10px
   right: 57px
   transition: top 0.2s ease-in-out
 
@@ -53,9 +79,8 @@
   top: 10px
 
 .important
-  font-size: 25px
   margin-bottom: 5px
-  text-shadow: 0 0 10px #eca7a7
+  text-shadow: 0 0 10px #df8888
 
 
 

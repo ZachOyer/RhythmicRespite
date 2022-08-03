@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faAlignLeft, faAlignRight, faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { StyleService } from '../style.service';
 
 @Component({
   selector: 'app-welcome',
@@ -9,7 +10,8 @@ import { faAlignLeft, faAlignRight, faMagnifyingGlass, faXmark } from '@fortawes
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              public styleService: StyleService) { }
 
   faSearch = faMagnifyingGlass;
   faRight = faAlignLeft;

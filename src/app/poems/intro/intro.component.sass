@@ -4,27 +4,51 @@
   font-weight: 500
 
 .mountain
-  position: absolute
-  bottom: -30px
-  right: 10px
-  font-size: 150px
+  font-size: 100px
   opacity: 0.5
+
+@media screen and (min-width: 700px)
+  .mountain
+    position: absolute
+    bottom: -30px
+    right: 10px
+    opacity: 1
+    font-size: 150px
+    opacity: 0.5
 
 .moon
-  position: absolute
-  right: -20px
   font-size: 100px
   opacity: 0.5
+
+@media screen and (min-width: 700px)
+  .moon
+    position: absolute
+    right: -20px
+    opacity: 1
+    font-size: 100px
+    opacity: 0.5
 
 .city
-  position: absolute
-  left: 10px
-  bottom: -20px
-  font-size: 150px
-  opacity: 0.5
-
-.sun
-  position: absolute
-  left: -20px
   font-size: 100px
   opacity: 0.5
+
+@media screen and (min-width: 700px)
+  .city
+    position: absolute
+    bottom: -20px
+    left: 10px
+    opacity: 1
+    font-size: 150px
+    opacity: 0.5
+
+.sun
+  font-size: 100px
+  opacity: 0.5
+
+@media screen and (min-width: 700px)
+  .sun
+    position: absolute
+    left: -20px
+    opacity: 1
+    font-size: 100px
+    opacity: 0.5

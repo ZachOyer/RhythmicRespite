@@ -1,10 +1,11 @@
-<div class="container text-center">
+<!-- *********************    THIS IS FOR MOBILE    ********************** -->
+<div class="container text-center" *ngIf="!styleService.getIsMobile()">
   <div class="row">
     <div class="col" style="position: relative">
       <fa-icon class="moon" [icon]="faMoon"></fa-icon>
       <fa-icon class="mountain" [icon]="faMountain"></fa-icon>
     </div>
-    <div class="col-6">
+    <div class="col-md-6 col-10-sm">
       <h2 style="text-decoration: underline; margin-top: 30px">Intro</h2>
       <div class="poem-text mb-4">
         <div>I wrote this poem for <strong>people like you</strong></div>
@@ -28,11 +29,59 @@
         <div>And now you know the things <strong>I've</strong> been through</div>
         <div>Enough about me, lets hear about <strong>you</strong></div>
       </div>
+      <button class="btn btn-secondary" routerLinkActive="active" routerLink="/welcome">Back to main page</button>
     </div>
     <div class="col" style="position: relative">
       <fa-icon class="sun" [icon]="faSun"></fa-icon>
       <fa-icon class="city" [icon]="faCity"></fa-icon>
     </div>
   </div>
-  <button class="btn btn-secondary" routerLinkActive="active" routerLink="/welcome">Back to main page</button>
+</div>
+
+<!-- *********************    THIS IS FOR MOBILE    ********************** -->
+<div class="container text-center" *ngIf="styleService.getIsMobile()">
+  <div class="row">
+    <div class="col">
+      <fa-icon class="moon" [icon]="faMoon"></fa-icon>
+    </div>
+    <div class="col">
+    <h2 style="text-decoration: underline; margin-top: 30px">Intro</h2>
+    </div>
+    <div class="col">
+      <fa-icon class="sun" [icon]="faSun"></fa-icon>
+    </div>
+  </div>
+  <div class="row">
+    <div class="poem-text mb-4">
+      <div>I wrote this poem for <strong>people like you</strong></div>
+      <div>Intrigued to hear the <strong>rhymes that I do</strong></div>
+      <div><strong>Never sure</strong> which one to read you first</div>
+      <div>So I fused my <strong>thoughts</strong> into this verse</div>
+      <div>I've <strong>hundreds</strong> of interests, but excel at <strong>not one</strong></div>
+      <div>A <strong>jack of all trades</strong>, and a <strong>master of none</strong></div>
+      <div>A <strong>dabble</strong> in this and I <strong>dally</strong> in that</div>
+      <div>I <strong>avoid</strong> hard tasks like an acrobat</div>
+      <div>I <strong>hate</strong> most things that require my work</div>
+      <div>But my <strong>hunger</strong> for <strong>perfection</strong> is quite a jerk</div>
+      <div>My cat makes me feel of <strong>glee</strong> and <strong>glad</strong></div>
+      <div>My murder mitten'd <strong>Midna</strong> in <strong>mightnight clad</strong></div>
+      <div>If you saw what I eat you'd think I was <strong>fat</strong></div>
+      <div>But I <strong>stave</strong> of size with a <strong>wall</strong> and a <strong>mat</strong></div>
+      <div>It <strong>used to</strong> be, that fast I could run</div>
+      <div>But I <strong>ditched that shit</strong> for something more fun</div>
+      <div>Instead of <strong>sloshing</strong> around my insides</div>
+      <div>I climb up heights which <strong>thrills</strong> and <strong>excites</strong></div>
+      <div>And now you know the things <strong>I've</strong> been through</div>
+      <div>Enough about me, lets hear about <strong>you</strong></div>
+    </div>
+  </div>
+  <div class="row" style="position: relative;">
+    <div class="col">
+      <fa-icon class="mountain" [icon]="faMountain"></fa-icon>
+    </div>
+    <div class="col">
+      <fa-icon class="city" [icon]="faCity"></fa-icon>
+    </div>
+    <button class="btn btn-secondary mb-5" routerLinkActive="active" routerLink="/welcome">Back to main page</button>
+  </div>
 </div>

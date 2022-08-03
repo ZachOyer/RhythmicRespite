@@ -20,6 +20,7 @@ import { SpeakEnglishComponent } from './poems/speak-english/speak-english.compo
 import { FirstPoemComponent } from './poems/tinder-poems/first-poem/first-poem.component';
 import { SecondPoemComponent } from './poems/tinder-poems/second-poem/second-poem.component';
 import { HappyRideComponent } from './poems/happy-ride/happy-ride.component';
+import { StyleService } from './style.service';
 
 @NgModule({
   declarations: [
@@ -49,4 +50,8 @@ import { HappyRideComponent } from './poems/happy-ride/happy-ride.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private stylingService: StyleService) {
+    this.stylingService.checkForMobileDevice();
+  }
+}

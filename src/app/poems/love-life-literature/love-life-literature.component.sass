@@ -32,25 +32,29 @@
   border-right: 10px grey
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px
   background: repeat url('../../../assets/leather.jfif')
-  border-right: 10px solid #503427
-  border-left: 10px solid #503427
+  border-right: 5px solid #503427
+  border-left: 5px solid #503427
 
 .col-10
   background: repeat url('../../../assets/paper.jfif')
-  border-right: 8px ridge #cccccc
-  border-left: 8px ridge #cccccc
+  border-right: 6px ridge #cccccc
+  border-left: 6px ridge #cccccc
   box-shadow: rgba(0, 0, 0, 0.534) 16px 0px 20px 0px, rgba(0, 0, 0, 0.5) -16px 0px 20px 1px
 
 @media screen and (min-width: 770px)
   .bookmark-icon
     transform: translate(-45px, -35px) scaleY(1.5)
 
+  .bookmark-text
+    width: 70px
+
 @media screen and (max-width: 770px)
   .bookmark-icon
-    transform: translate(40px, -35px) scaleY(1.5)
+    transform: translate(50px, -35px) scaleY(1.8) scaleX(0.6)
 
   .bookmark-text
     transform: translate(85px, 0px)
+    width: 50px
 
 .bookmark-icon
   color: #dd3f3f
@@ -62,15 +66,15 @@
   filter: drop-shadow(10px 5px 8px #00000075)
 
 .bookmark-text
-  width: 70px
   color: white
   position: absolute
-  top: 10px
+  top: 5px
   right: 57px
   transition: top 0.2s ease-in-out
 
 .bookmark
   cursor: pointer
+  z-index: 2000
 
 .bookmark:hover .bookmark-text
   top: 15px

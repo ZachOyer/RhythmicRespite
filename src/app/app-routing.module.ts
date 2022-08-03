@@ -4,6 +4,7 @@ import { GlassRoseComponent } from './poems/glass-rose/glass-rose.component';
 import { HappyRideComponent } from './poems/happy-ride/happy-ride.component';
 import { IntroComponent } from './poems/intro/intro.component';
 import { LoveLifeLiteratureComponent } from './poems/love-life-literature/love-life-literature.component';
+import { SpeakEnglishComponent } from './poems/speak-english/speak-english.component';
 import { TheProphecyComponent } from './poems/the-prophecy/the-prophecy.component';
 import { FirstPoemComponent } from './poems/tinder-poems/first-poem/first-poem.component';
 import { SecondPoemComponent } from './poems/tinder-poems/second-poem/second-poem.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'tinder-poems-2', component: SecondPoemComponent, data: { animation: 'SecondPoem'}},
   { path: 'the-prophecy', component: TheProphecyComponent, data: { animation: 'Long' }},
   { path: 'happy-ride', component: HappyRideComponent, data: { animation: 'Long' }},
+  { path: 'speak-english', component: SpeakEnglishComponent, data: { animation: 'Short' }},
   { path: '', redirectTo: 'welcome', pathMatch: 'full'},
   { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
 ];

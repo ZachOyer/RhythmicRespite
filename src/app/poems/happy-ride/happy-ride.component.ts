@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faCarSide, faHouseChimneyCrack } from '@fortawesome/free-solid-svg-icons';
+import { faCarSide, faHouseChimneyCrack, faSignsPost } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-happy-ride',
@@ -7,7 +7,7 @@ import { faCarSide, faHouseChimneyCrack } from '@fortawesome/free-solid-svg-icon
   styleUrls: ['./happy-ride.component.sass']
 })
 export class HappyRideComponent implements OnInit {
-  faCracked = faHouseChimneyCrack;
+  faSign = faSignsPost;
   faBack = faCarSide;
 
 

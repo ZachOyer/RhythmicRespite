@@ -1,13 +1,11 @@
 <div style='background-color: white;'>
   <div class="navbar">
-    <div class="col" style="text-align: right">
-
-    </div>
-    <div class="col-auto text-center header mx-3">
-      <h1><fa-icon [icon]="faLeft"></fa-icon><span class="mx-3">Welcome to Rhythmic Respite!</span><fa-icon [icon]="faRight"></fa-icon></h1>
-    </div>
-    <div class="col">
-
+    <div class="col text-center header mx-3">
+      <h1>
+        <fa-icon [icon]="faLeft"></fa-icon>
+        <span class="mx-3">Welcome to Rhythmic Respite!</span>
+        <fa-icon [icon]="faRight"></fa-icon>
+      </h1>
     </div>
   </div>
 
@@ -36,7 +34,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr (click)="goToPoem(poem.title)" *ngFor="let poem of filterPoems()" [ngClass]="{'table-warning': poem.length === 'Short', 'table-success': poem.length === 'Medium', 'table-info': poem.length === 'Long', 'unimplemented': poem.implemented === 'No'}">
+          <tr (click)="goToPoem(poem.id)" *ngFor="let poem of filterPoems()" [ngClass]="{'table-warning': poem.length === 'Short', 'table-success': poem.length === 'Medium', 'table-info': poem.length === 'Long', 'unimplemented': poem.implemented === 'No'}">
             <th scope="row">{{poem.title}}</th>
             <td>{{poem.length}}</td>
             <td>{{poem.complete}}</td>

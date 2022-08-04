@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EdgarAllenPoemComponent } from './poems/edgar-allen-poem/edgar-allen-poem.component';
 import { GlassRoseComponent } from './poems/glass-rose/glass-rose.component';
 import { HappyRideComponent } from './poems/happy-ride/happy-ride.component';
 import { IntroComponent } from './poems/intro/intro.component';
@@ -8,6 +9,7 @@ import { SpeakEnglishComponent } from './poems/speak-english/speak-english.compo
 import { TheProphecyComponent } from './poems/the-prophecy/the-prophecy.component';
 import { FirstPoemComponent } from './poems/tinder-poems/first-poem/first-poem.component';
 import { SecondPoemComponent } from './poems/tinder-poems/second-poem/second-poem.component';
+import { UrMyDadComponent } from './poems/ur-my-dad/ur-my-dad.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'the-prophecy', component: TheProphecyComponent, data: { animation: 'Long' }},
   { path: 'happy-ride', component: HappyRideComponent, data: { animation: 'Long' }},
   { path: 'speak-english', component: SpeakEnglishComponent, data: { animation: 'Short' }},
+  { path: 'ur-my-dad', component: UrMyDadComponent, data: { animation: 'Long' }},
+  { path: 'edgar-allen-poem', component: EdgarAllenPoemComponent, data: { animation: 'Long' }},
   { path: '', redirectTo: 'welcome', pathMatch: 'full'},
   { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
 ];

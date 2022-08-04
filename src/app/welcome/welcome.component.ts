@@ -54,7 +54,7 @@ export class WelcomeComponent implements OnInit {
       title: "Edgar Allen Poem",
       length: "Long",
       complete: 'Yes',
-      implemented: 'No'
+      implemented: 'Yes'
     },
     {
       id: 5,
@@ -82,7 +82,7 @@ export class WelcomeComponent implements OnInit {
       title: "You're my Dad",
       length: "Long",
       complete: 'Yes',
-      implemented: 'No'
+      implemented: 'Yes'
     },
     {
       id: 9,
@@ -137,7 +137,11 @@ export class WelcomeComponent implements OnInit {
     } else if (id === 11) {
       this.router.navigateByUrl('happy-ride');
     } else if (id === 9) {
-      this.router.navigateByUrl('speak-english')
+      this.router.navigateByUrl('speak-english');
+    } else if (id === 8) {
+      this.router.navigateByUrl('ur-my-dad');
+    } else if (id === 4) {
+      this.router.navigateByUrl('edgar-allen-poem');
     }
   }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faFaceGrinHearts, faFaceKissWinkHeart, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-baby-gurl',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./baby-gurl.component.sass']
 })
 export class BabyGurlComponent implements OnInit {
+  faHeart = faHeart;
+  faFace1 = faFaceGrinHearts;
+  faFace2 = faFaceKissWinkHeart;
 
   constructor() { }
 

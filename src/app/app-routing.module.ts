@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BabyGurlComponent } from './poems/baby-gurl/baby-gurl.component';
 import { ChristmasRapComponent } from './poems/christmas-rap/christmas-rap.component';
+import { ClimbingComponent } from './poems/climbing/climbing.component';
 import { EdgarAllenPoemComponent } from './poems/edgar-allen-poem/edgar-allen-poem.component';
 import { GlassRoseComponent } from './poems/glass-rose/glass-rose.component';
 import { HappyRideComponent } from './poems/happy-ride/happy-ride.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'edgar-allen-poem', component: EdgarAllenPoemComponent, data: { animation: 'Long' }},
   { path: 'christmas-rap', component: ChristmasRapComponent, data: { animation: 'Long' }},
   { path: 'baby-gurl', component: BabyGurlComponent, data: { animation: 'Short' }},
+  { path: 'climbing', component: ClimbingComponent, data: { animation: 'Long' }},
   { path: '', redirectTo: 'welcome', pathMatch: 'full'},
   { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
 ];

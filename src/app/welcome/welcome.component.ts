@@ -26,7 +26,6 @@ export class WelcomeComponent implements OnInit {
       title: "Intro",
       length: "Medium",
       complete: 'Yes',
-      implemented: 'Yes',
       secretPoem: false
     },
     {
@@ -34,7 +33,6 @@ export class WelcomeComponent implements OnInit {
       title: "Tinder Poems",
       length: "Short",
       complete: 'Yes',
-      implemented: 'Yes',
       secretPoem: false
     },
     {
@@ -42,7 +40,6 @@ export class WelcomeComponent implements OnInit {
       title: "Christmas Rap",
       length: "Medium",
       complete: 'Yes',
-      implemented: 'Yes',
       secretPoem: false
     },
     {
@@ -50,7 +47,6 @@ export class WelcomeComponent implements OnInit {
       title: "Love Life Literature",
       length: "Long",
       complete: 'Yes',
-      implemented: 'Yes',
       secretPoem: false
     },
     {
@@ -58,7 +54,6 @@ export class WelcomeComponent implements OnInit {
       title: "Edgar Allen Poem",
       length: "Long",
       complete: 'Yes',
-      implemented: 'Yes',
       secretPoem: false
     },
     {
@@ -66,7 +61,6 @@ export class WelcomeComponent implements OnInit {
       title: "Baby Gurl",
       length: "Short",
       complete: 'Yes',
-      implemented: 'Yes',
       secretPoem: true
     },
     {
@@ -74,7 +68,6 @@ export class WelcomeComponent implements OnInit {
       title: "Climbing",
       length: "Medium",
       complete: 'No',
-      implemented: 'No',
       secretPoem: false
     },
     {
@@ -82,7 +75,6 @@ export class WelcomeComponent implements OnInit {
       title: "The Prophecy",
       length: "Long",
       complete: 'Yes',
-      implemented: 'Yes',
       secretPoem: false
     },
     {
@@ -90,7 +82,6 @@ export class WelcomeComponent implements OnInit {
       title: "You're my Dad",
       length: "Long",
       complete: 'Yes',
-      implemented: 'Yes',
       secretPoem: false
     },
     {
@@ -98,7 +89,6 @@ export class WelcomeComponent implements OnInit {
       title: "You Speak English?",
       length: "Short",
       complete: 'Yes',
-      implemented: 'Yes',
       secretPoem: false
     },
     {
@@ -106,7 +96,6 @@ export class WelcomeComponent implements OnInit {
       title: "Glass Rose",
       length: "Long",
       complete: 'Yes',
-      implemented: 'Yes',
       secretPoem: false
     },
     {
@@ -114,7 +103,6 @@ export class WelcomeComponent implements OnInit {
       title: "You Must Be This Happy To Ride This Ride",
       length: "Long",
       complete: 'Yes',
-      implemented: 'Yes',
       secretPoem: false
     },
   ]
@@ -154,6 +142,8 @@ export class WelcomeComponent implements OnInit {
       this.router.navigateByUrl('edgar-allen-poem');
     } else if (id === 5) {
       this.router.navigateByUrl('baby-gurl');
+    } else if (id === 6) {
+      this.router.navigateByUrl('climbing');
     } else if (id === 7) {
       this.router.navigateByUrl('the-prophecy');
     } else if (id === 8) {

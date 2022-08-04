@@ -40,7 +40,7 @@ export class WelcomeComponent implements OnInit {
       title: "Christmas Rap",
       length: "Medium",
       complete: 'Yes',
-      implemented: 'No'
+      implemented: 'Yes'
     },
     {
       id: 3,
@@ -142,6 +142,8 @@ export class WelcomeComponent implements OnInit {
       this.router.navigateByUrl('ur-my-dad');
     } else if (id === 4) {
       this.router.navigateByUrl('edgar-allen-poem');
+    } else if (id === 2) {
+      this.router.navigateByUrl('christmas-rap');
     }
   }
 

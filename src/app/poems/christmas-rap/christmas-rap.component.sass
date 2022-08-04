@@ -1,0 +1,63 @@
+
+.poem-text
+  font-family: 'Merienda', cursive
+  font-size: 15px
+  background-color: #000000a1
+  color: white
+  margin: 20px auto
+  border-radius: 30px
+  padding: 15px 0px
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px
+  border: 2px solid green
+
+body, main::before
+  background: url('/assets/background.jpg') 0 / cover fixed
+
+main
+  position: relative
+  padding: 10px 5px
+  background: hsla(0, 0%, 100%, .3)
+  line-height: 1.5
+  border-radius: 10px
+  box-shadow: 5px 3px 30px black
+  overflow: hidden
+  border: 2px solid black
+
+main::before
+  content: ''
+  margin: -35px
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  filter: blur(3px)
+  z-index: -1
+
+.title
+  width: 90%
+  position: absolute
+  background-color: #0000008e
+  font-family: 'Merienda', cursive
+  left: 50%
+  transform: translateX(-50%)
+  color: white
+  font-size: 30px
+  top: 200px
+  border-radius: 20px
+  border: 1px solid red
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px, rgb(29, 168, 29) 0px 0px 10px 5px inset
+
+@media screen and (min-width: 770px)
+  main
+    width: 90%
+    margin: 20px auto
+
+  .poem-text
+    width: 60%
+    font-size: 20px
+
+  .title
+    font-size: 40px
+
+

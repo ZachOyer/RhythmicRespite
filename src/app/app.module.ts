@@ -21,7 +21,6 @@ import { FirstPoemComponent } from './poems/tinder-poems/first-poem/first-poem.c
 import { SecondPoemComponent } from './poems/tinder-poems/second-poem/second-poem.component';
 import { HappyRideComponent } from './poems/happy-ride/happy-ride.component';
 import { StyleService } from './style.service';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -43,26 +42,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      { path: 'welcome', component: WelcomeComponent, data: { animation: 'Welcome' }},
-      { path: 'intro', component: IntroComponent, data: { animation: 'Short' }},
-      { path: 'love-life-lit', component: LoveLifeLiteratureComponent, data: { animation: 'Long'}},
-      { path: 'glass-rose', component: GlassRoseComponent, data: { animation: 'Long' }},
-      { path: 'tinder-poems', component: FirstPoemComponent, data: { animation: 'Long' }},
-      { path: 'tinder-poems-2', component: SecondPoemComponent, data: { animation: 'SecondPoem'}},
-      { path: 'the-prophecy', component: TheProphecyComponent, data: { animation: 'Long' }},
-      { path: 'happy-ride', component: HappyRideComponent, data: { animation: 'Long' }},
-      { path: 'speak-english', component: SpeakEnglishComponent, data: { animation: 'Short' }},
-      { path: 'ur-my-dad', component: UrMyDadComponent, data: { animation: 'Long' }},
-      { path: 'edgar-allen-poem', component: EdgarAllenPoemComponent, data: { animation: 'Long' }},
-      { path: 'christmas-rap', component: ChristmasRapComponent, data: { animation: 'Long' }},
-      { path: 'baby-gurl', component: BabyGurlComponent, data: { animation: 'Short' }},
-      { path: 'climbing', component: ClimbingComponent, data: { animation: 'Long' }},
-      { path: '', redirectTo: 'welcome', pathMatch: 'full'},
-      { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
-    ]),
     BrowserAnimationsModule,
-    // AppRoutingModule,
+    AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
   ],

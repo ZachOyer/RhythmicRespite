@@ -6,7 +6,7 @@
       <h1>
         <fa-icon [icon]="faLeft"></fa-icon>
         <span class="mx-3">Welcome to Rhythmic Respite!</span>
-        <fa-icon (click)="showAll = !showAll" [icon]="faRight"></fa-icon>
+        <fa-icon [icon]="faRight"></fa-icon>
       </h1>
     </div>
   </div>
@@ -22,7 +22,7 @@
       </h1>
     </div>
     <div class="col-3" style="font-size: 40px;">
-      <fa-icon (click)="showAll = !showAll" [icon]="faRight"></fa-icon>
+      <fa-icon [icon]="faRight"></fa-icon>
     </div>
   </div>
 
@@ -50,7 +50,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr (click)="goToPoem(poem.id)" *ngFor="let poem of filterPoems()" [ngClass]="{'table-warning': poem.length === 'Short', 'table-success': poem.length === 'Medium', 'table-info': poem.length === 'Long', 'unimplemented': poem.implemented === 'No'}">
+          <tr (click)="goToPoem(poem.id)" *ngFor="let poem of filterPoems()" style="cursor: pointer" [ngClass]="{'table-warning': poem.length === 'Short', 'table-success': poem.length === 'Medium', 'table-info': poem.length === 'Long', 'unimplemented': poem.implemented === 'No'}">
             <th scope="row">{{poem.title}}</th>
             <td>{{poem.length}}</td>
             <td>{{poem.complete}}</td>

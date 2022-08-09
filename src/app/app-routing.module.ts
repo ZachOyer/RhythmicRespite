@@ -10,6 +10,7 @@ import { IntroComponent } from './poems/intro/intro.component';
 import { LoveLifeLiteratureComponent } from './poems/love-life-literature/love-life-literature.component';
 import { SpeakEnglishComponent } from './poems/speak-english/speak-english.component';
 import { TheProphecyComponent } from './poems/the-prophecy/the-prophecy.component';
+import { TheWorldComponent } from './poems/the-world/the-world.component';
 import { FirstPoemComponent } from './poems/tinder-poems/first-poem/first-poem.component';
 import { SecondPoemComponent } from './poems/tinder-poems/second-poem/second-poem.component';
 import { UrMyDadComponent } from './poems/ur-my-dad/ur-my-dad.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'christmas-rap', component: ChristmasRapComponent, data: { animation: 'Long' }},
   { path: 'baby-gurl', component: BabyGurlComponent, data: { animation: 'Short' }},
   { path: 'climbing', component: ClimbingComponent, data: { animation: 'Long' }},
+  { path: 'the-world', component: TheWorldComponent, data: { animation: 'Long' }},
   { path: '', redirectTo: 'welcome', pathMatch: 'full'},
   { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
 ];

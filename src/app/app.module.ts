@@ -21,6 +21,7 @@ import { FirstPoemComponent } from './poems/tinder-poems/first-poem/first-poem.c
 import { SecondPoemComponent } from './poems/tinder-poems/second-poem/second-poem.component';
 import { HappyRideComponent } from './poems/happy-ride/happy-ride.component';
 import { StyleService } from './style.service';
+import { TheWorldComponent } from './poems/the-world/the-world.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { StyleService } from './style.service';
     SpeakEnglishComponent,
     FirstPoemComponent,
     SecondPoemComponent,
-    HappyRideComponent
+    HappyRideComponent,
+    TheWorldComponent
   ],
   imports: [
     BrowserModule,

@@ -19,91 +19,72 @@ export class WelcomeComponent implements OnInit {
   faClear = faXmark;
 
   searchTerm = '';
-  showAll = false;
   poems = [
     {
       id: 0,
       title: "Intro",
       length: "Medium",
-      complete: 'Yes',
-      secretPoem: false
+      complete: 'Yes'
     },
     {
       id: 1,
       title: "Tinder Poems",
       length: "Short",
-      complete: 'Yes',
-      secretPoem: false
+      complete: 'Yes'
     },
     {
       id: 2,
       title: "Christmas Rap",
       length: "Medium",
-      complete: 'Yes',
-      secretPoem: false
+      complete: 'Yes'
     },
     {
       id: 3,
       title: "Love Life Literature",
       length: "Long",
-      complete: 'Yes',
-      secretPoem: false
+      complete: 'Yes'
     },
     {
       id: 4,
       title: "Edgar Allen Poem",
       length: "Long",
-      complete: 'Yes',
-      secretPoem: false
-    },
-    {
-      id: 5,
-      title: "Baby Gurl",
-      length: "Short",
-      complete: 'Yes',
-      secretPoem: true
+      complete: 'Yes'
     },
     {
       id: 6,
       title: "Climbing",
       length: "Medium",
-      complete: 'No',
-      secretPoem: false
+      complete: 'No'
     },
     {
       id: 7,
       title: "The Prophecy",
       length: "Long",
-      complete: 'Yes',
-      secretPoem: false
+      complete: 'Yes'
     },
     {
       id: 8,
       title: "You're my Dad",
       length: "Long",
-      complete: 'Yes',
-      secretPoem: false
+      complete: 'Yes'
     },
     {
       id: 9,
       title: "You Speak English?",
       length: "Short",
-      complete: 'Yes',
-      secretPoem: false
+      complete: 'Yes'
     },
     {
       id: 10,
       title: "Glass Rose",
       length: "Long",
-      complete: 'Yes',
-      secretPoem: false
+      complete: 'Yes'
     },
     {
       id: 11,
       title: "You Must Be This Happy To Ride This Ride",
       length: "Long",
-      complete: 'Yes',
-      secretPoem: false
+      complete: 'Yes'
     },
   ]
 
@@ -113,16 +94,26 @@ export class WelcomeComponent implements OnInit {
   }
 
   filterPoems(): any[] {
-    if (this.searchTerm === '' && !this.showAll) {
-      return this.poems.filter((poem: any) => {
-        return poem.secretPoem === false;
-      })
-    } else if (this.searchTerm === '' && this.showAll) {
+    if (this.searchTerm === '') {
       return this.poems;
+    } else if (this.searchTerm.toLowerCase() === 'baby gurl') {
+      return [{
+        id: 5,
+        title: "Baby Gurl",
+        length: "Short",
+        complete: 'Yes'
+      }]
+    } else if (this.searchTerm.toLowerCase() === 'the world') {
+      return [{
+        id: 12,
+        title: "The World",
+        length: "Long",
+        complete: 'No'
+      }]
     } else {
       let tempTerm = this.searchTerm.toLowerCase();
       return this.poems.filter((poem: any) => {
-        if (poem.title.toLowerCase().indexOf(tempTerm) !== -1 && (poem.secretPoem === false || this.showAll === true)) {
+        if (poem.title.toLowerCase().indexOf(tempTerm) !== -1) {
           return poem
         }
       })
@@ -154,6 +145,8 @@ export class WelcomeComponent implements OnInit {
       this.router.navigateByUrl('glass-rose');
     } else if (id === 11) {
       this.router.navigateByUrl('happy-ride');
+    } else if (id === 12) {
+      this.router.navigateByUrl('the-world');
     }
   }
 

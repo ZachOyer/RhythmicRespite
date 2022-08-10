@@ -24,67 +24,73 @@ export class WelcomeComponent implements OnInit {
       id: 0,
       title: "Intro",
       length: "Medium",
-      complete: 'Yes'
+      count: "170"
     },
     {
       id: 1,
       title: "Tinder Poems",
       length: "Short",
-      complete: 'Yes'
+      count: "94 + 104"
     },
     {
       id: 2,
       title: "Christmas Rap",
       length: "Medium",
-      complete: 'Yes'
+      count: "194"
     },
     {
       id: 3,
       title: "Love Life Literature",
       length: "Long",
-      complete: 'Yes'
+      count: "326"
     },
     {
       id: 4,
       title: "Edgar Allen Poem",
       length: "Long",
-      complete: 'Yes'
+      count: "255"
     },
     {
       id: 6,
       title: "Climbing",
       length: "Medium",
-      complete: 'No'
+      count: "211"
     },
     {
       id: 7,
       title: "The Prophecy",
       length: "Long",
-      complete: 'Yes'
+      count: "250"
     },
     {
       id: 8,
       title: "You're my Dad",
       length: "Long",
-      complete: 'Yes'
+      count: "268"
     },
     {
       id: 9,
       title: "You Speak English?",
       length: "Short",
-      complete: 'Yes'
+      count: "76"
     },
     {
       id: 10,
       title: "Glass Rose",
-      length: "Long",
-      complete: 'Yes'
+      length: "Medium",
+      count: "184"
     },
     {
       id: 11,
       title: "You Must Be This Happy To Ride This Ride",
       length: "Long",
-      complete: 'Yes'
+      count: "347"
+    },
+    {
+      id: 12,
+      title: "The World",
+      length: "Long",
+      count: "481"
     },
   ]
 
@@ -102,13 +108,6 @@ export class WelcomeComponent implements OnInit {
         title: "Baby Gurl",
         length: "Short",
         complete: 'Yes'
-      }]
-    } else if (this.searchTerm.toLowerCase() === 'the world') {
-      return [{
-        id: 12,
-        title: "The World",
-        length: "Long",
-        complete: 'No'
       }]
     } else {
       let tempTerm = this.searchTerm.toLowerCase();

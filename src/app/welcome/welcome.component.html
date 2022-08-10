@@ -1,4 +1,4 @@
-<div style='background-color: white;'>
+<div style='background-color: white; height: 100vh;'>
 
   <!-- Header for DESKTOP -->
   <div class="navbar" *ngIf="!styleService.getIsMobile()">
@@ -46,14 +46,14 @@
           <tr>
             <th scope="col">Title</th>
             <th scope="col">Length</th>
-            <th scope="col">Complete</th>
+            <th scope="col">Word Count</th>
           </tr>
         </thead>
         <tbody>
           <tr (click)="goToPoem(poem.id)" *ngFor="let poem of filterPoems()" style="cursor: pointer" [ngClass]="{'table-warning': poem.length === 'Short', 'table-success': poem.length === 'Medium', 'table-info': poem.length === 'Long', 'unimplemented': poem.implemented === 'No'}">
-            <th scope="row">{{poem.title}}</th>
-            <td>{{poem.length}}</td>
-            <td>{{poem.complete}}</td>
+            <th scope="row">{{poem?.title}}</th>
+            <td>{{poem?.length}}</td>
+            <td>{{poem?.count}}</td>
           </tr>
         </tbody>
       </table>

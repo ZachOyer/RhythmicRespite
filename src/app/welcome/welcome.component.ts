@@ -19,6 +19,7 @@ export class WelcomeComponent implements OnInit {
   faClear = faXmark;
 
   searchTerm = '';
+  filteredPoems: any;
   poems = [
     {
       id: 0,
@@ -96,23 +97,22 @@ export class WelcomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    this.filterPoems();
   }
 
-  filterPoems(): any[] {
+  filterPoems() {
     if (this.searchTerm === '') {
-      return this.poems;
+      this.filteredPoems = this.poems;
     } else if (this.searchTerm.toLowerCase() === 'baby gurl') {
-      return [{
+      this.filteredPoems = [{
         id: 5,
         title: "Baby Gurl",
         length: "Short",
         complete: 'Yes'
       }]
     } else {
-      let tempTerm = this.searchTerm.toLowerCase();
-      return this.poems.filter((poem: any) => {
-        if (poem.title.toLowerCase().indexOf(tempTerm) !== -1) {
+      this.filteredPoems = this.poems.filter((poem: any) => {
+        if (poem.title.toLowerCase().indexOf(this.searchTerm.toLowerCase()) !== -1) {
           return poem
         }
       })
@@ -151,6 +151,7 @@ export class WelcomeComponent implements OnInit {
 
   clearSearch() {
     this.searchTerm = '';
+    this.filterPoems();
   }
 
 }

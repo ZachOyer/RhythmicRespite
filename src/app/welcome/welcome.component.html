@@ -34,7 +34,7 @@
       <div class="form-group">
         <div class="input-group mb-3">
           <span class="input-group-text"><fa-icon [icon]="faSearch"></fa-icon></span>
-          <input [(ngModel)]="searchTerm" type="text" class="form-control" placeholder="Search by title..." aria-label="Recipient's username" aria-describedby="button-addon2">
+          <input [(ngModel)]="searchTerm" type="text" class="form-control" (keyup)="filterPoems()" placeholder="Search by title..." aria-label="Recipient's username" aria-describedby="button-addon2">
           <button *ngIf="searchTerm !== ''" (click)="clearSearch()" class="btn btn-danger" type="button" id="button-addon2"><fa-icon [icon]="faClear"></fa-icon> Clear</button>
         </div>
       </div>
@@ -50,7 +50,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr (click)="goToPoem(poem.id)" *ngFor="let poem of filterPoems()" style="cursor: pointer" [ngClass]="{'table-warning': poem.length === 'Short', 'table-success': poem.length === 'Medium', 'table-info': poem.length === 'Long', 'unimplemented': poem.implemented === 'No'}">
+          <tr (click)="goToPoem(poem.id)" *ngFor="let poem of filteredPoems" style="cursor: pointer" [ngClass]="{'table-warning': poem.length === 'Short', 'table-success': poem.length === 'Medium', 'table-info': poem.length === 'Long', 'unimplemented': poem.implemented === 'No'}">
             <th scope="row">{{poem?.title}}</th>
             <td>{{poem?.length}}</td>
             <td>{{poem?.count}}</td>

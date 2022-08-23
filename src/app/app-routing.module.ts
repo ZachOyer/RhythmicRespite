@@ -14,6 +14,7 @@ import { TheWorldComponent } from './poems/the-world/the-world.component';
 import { FirstPoemComponent } from './poems/tinder-poems/first-poem/first-poem.component';
 import { SecondPoemComponent } from './poems/tinder-poems/second-poem/second-poem.component';
 import { UrMyDadComponent } from './poems/ur-my-dad/ur-my-dad.component';
+import { FindItQuickComponent } from './poems/find-it-quick/find-it-quick.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'baby-gurl', component: BabyGurlComponent, data: { animation: 'Short' }},
   { path: 'climbing', component: ClimbingComponent, data: { animation: 'Long' }},
   { path: 'the-world', component: TheWorldComponent, data: { animation: 'Long' }},
+  { path: 'find-it-quick', component: FindItQuickComponent, data: { animation: 'Long' }},
   { path: '', redirectTo: 'welcome', pathMatch: 'full'},
   { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
 ];

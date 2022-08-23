@@ -32,8 +32,8 @@
     <div class="form-group">
       <label class="form-label mt-4">Looking for a specific Poem?</label>
       <div class="form-group">
-        <div class="input-group mb-3">
-          <span class="input-group-text"><fa-icon [icon]="faSearch"></fa-icon></span>
+        <div class="input-group mb-3 search-bar">
+          <span class="input-group-text test1"><fa-icon class="test2" [icon]="faSearch"></fa-icon></span>
           <input [(ngModel)]="searchTerm" type="text" class="form-control" (keyup)="filterPoems()" placeholder="Search by title..." aria-label="Recipient's username" aria-describedby="button-addon2">
           <button *ngIf="searchTerm !== ''" (click)="clearSearch()" class="btn btn-danger" type="button" id="button-addon2"><fa-icon [icon]="faClear"></fa-icon> Clear</button>
         </div>

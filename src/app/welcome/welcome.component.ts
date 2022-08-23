@@ -93,6 +93,12 @@ export class WelcomeComponent implements OnInit {
       length: "Long",
       count: "481"
     },
+    {
+      id: 13,
+      title: "Find It Quick",
+      length: "Medium",
+      count: "144"
+    },
   ]
 
 
@@ -146,6 +152,8 @@ export class WelcomeComponent implements OnInit {
       this.router.navigateByUrl('happy-ride');
     } else if (id === 12) {
       this.router.navigateByUrl('the-world');
+    } else if (id === 13) {
+      this.router.navigateByUrl('find-it-quick');
     }
   }
 

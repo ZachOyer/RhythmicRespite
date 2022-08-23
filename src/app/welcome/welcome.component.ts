@@ -122,6 +122,9 @@ export class WelcomeComponent implements OnInit {
           return poem
         }
       })
+      if (this.filterPoems.length < 1) {
+
+      }
     }
   }
 

@@ -16,24 +16,26 @@ import { SecondPoemComponent } from './poems/tinder-poems/second-poem/second-poe
 import { UrMyDadComponent } from './poems/ur-my-dad/ur-my-dad.component';
 import { FindItQuickComponent } from './poems/find-it-quick/find-it-quick.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { MirroredGlassComponent } from './poems/mirrored-glass/mirrored-glass.component';
 
 const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent, data: { animation: 'Welcome' }},
   { path: 'intro', component: IntroComponent, data: { animation: 'Short' }},
-  { path: 'love-life-lit', component: LoveLifeLiteratureComponent, data: { animation: 'Long'}},
-  { path: 'glass-rose', component: GlassRoseComponent, data: { animation: 'Long' }},
-  { path: 'tinder-poems', component: FirstPoemComponent, data: { animation: 'Long' }},
+  { path: 'love-life-lit', component: LoveLifeLiteratureComponent, data: { animation: 'Short'}},
+  { path: 'glass-rose', component: GlassRoseComponent, data: { animation: 'Short' }},
+  { path: 'tinder-poems', component: FirstPoemComponent, data: { animation: 'Short' }},
   { path: 'tinder-poems-2', component: SecondPoemComponent, data: { animation: 'SecondPoem'}},
-  { path: 'the-prophecy', component: TheProphecyComponent, data: { animation: 'Long' }},
-  { path: 'happy-ride', component: HappyRideComponent, data: { animation: 'Long' }},
+  { path: 'the-prophecy', component: TheProphecyComponent, data: { animation: 'Short' }},
+  { path: 'happy-ride', component: HappyRideComponent, data: { animation: 'Short' }},
   { path: 'speak-english', component: SpeakEnglishComponent, data: { animation: 'Short' }},
-  { path: 'ur-my-dad', component: UrMyDadComponent, data: { animation: 'Long' }},
-  { path: 'edgar-allen-poem', component: EdgarAllenPoemComponent, data: { animation: 'Long' }},
-  { path: 'christmas-rap', component: ChristmasRapComponent, data: { animation: 'Long' }},
+  { path: 'ur-my-dad', component: UrMyDadComponent, data: { animation: 'Short' }},
+  { path: 'edgar-allen-poem', component: EdgarAllenPoemComponent, data: { animation: 'Short' }},
+  { path: 'christmas-rap', component: ChristmasRapComponent, data: { animation: 'Short' }},
   { path: 'baby-gurl', component: BabyGurlComponent, data: { animation: 'Short' }},
-  { path: 'climbing', component: ClimbingComponent, data: { animation: 'Long' }},
-  { path: 'the-world', component: TheWorldComponent, data: { animation: 'Long' }},
-  { path: 'find-it-quick', component: FindItQuickComponent, data: { animation: 'Long' }},
+  { path: 'climbing', component: ClimbingComponent, data: { animation: 'Short' }},
+  { path: 'the-world', component: TheWorldComponent, data: { animation: 'Short' }},
+  { path: 'find-it-quick', component: FindItQuickComponent, data: { animation: 'Short' }},
+  { path: 'mirrored-glass', component: MirroredGlassComponent, data: { animation: 'Short' }},
   { path: '', redirectTo: 'welcome', pathMatch: 'full'},
   { path: '**', redirectTo: 'welcome', pathMatch: 'full'}
 ];

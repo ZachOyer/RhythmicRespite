@@ -1,0 +1,27 @@
+.button
+  border-radius: 50%
+  height: 100px
+  width: 100px
+  padding: 10px
+  text-align: center
+  padding-top: 35px
+  transition: all 0.3s ease-in-out
+
+.button-outline
+  height: 100px
+  width: 100px
+  border-radius: 50%
+  border: 3px solid black
+  transition: all 0.3s ease-in-out
+
+.wrapper
+  width: max-content
+  border-radius: 50%
+
+.wrapper:hover .button-outline
+  transform: scale(1.13)
+  border-color: #1b558b
+
+.wrapper:hover .button
+  background-color: #1b558b
+  color: white

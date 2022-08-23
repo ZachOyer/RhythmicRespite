@@ -10,9 +10,6 @@
   box-shadow: rgb(38, 57, 77) 0px 20px 30px 10px
   border: 2px solid green
 
-body, main::before
-  background: url('../../../assets/background.jpg') 0 / cover fixed
-
 main
   position: relative
   padding: 10px 5px
@@ -24,6 +21,7 @@ main
   border: 2px solid black
 
 main::before
+  background: url('../../../assets/background.jpg') 0 / cover fixed
   content: ''
   margin: -35px
   position: absolute

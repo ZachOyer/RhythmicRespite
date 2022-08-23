@@ -98,7 +98,7 @@ export class WelcomeComponent implements OnInit {
       title: "Find It Quick",
       length: "Medium",
       count: "144"
-    },
+    }
   ]
 
 
@@ -115,6 +115,13 @@ export class WelcomeComponent implements OnInit {
         title: "Baby Gurl",
         length: "Short",
         complete: 'Yes'
+      }]
+    } else if (this.searchTerm.toLowerCase() === 'mirrored glass') {
+      this.filteredPoems = [{
+        id: 14,
+        title: "Mirrored Glass",
+        length: "Unknown",
+        count: "0"
       }]
     } else {
       this.filteredPoems = this.poems.filter((poem: any) => {
@@ -157,6 +164,8 @@ export class WelcomeComponent implements OnInit {
       this.router.navigateByUrl('the-world');
     } else if (id === 13) {
       this.router.navigateByUrl('find-it-quick');
+    } else if (id === 14) {
+      this.router.navigateByUrl('mirrored-glass');
     }
   }
 

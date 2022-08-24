@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faShuttleSpace } from '@fortawesome/free-solid-svg-icons';
+import { faSatellite, faShuttleSpace, faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-the-world',
@@ -8,6 +8,7 @@ import { faShuttleSpace } from '@fortawesome/free-solid-svg-icons';
 })
 export class TheWorldComponent implements OnInit {
   faRocket = faShuttleSpace;
+  faSatellite = faSatellite;
 
   constructor() { }
 

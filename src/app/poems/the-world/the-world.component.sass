@@ -12,7 +12,6 @@
   .poem-text
     font-size: 20px
 
-
 .important
   font-weight: 600
   text-shadow: 0 0 10px #c5c5c5, 0 0 10px #000000
@@ -67,8 +66,7 @@ h2
   filter: drop-shadow(0px 0px 10px white)
 
 .astronaut
-  color: white
-  position: absolute
+  height: 70px
   animation-name: float
   animation-duration: 3s
   animation-iteration-count: infinite
@@ -84,42 +82,73 @@ h2
   height: 180px
   width: 180px
 
-.satellite
+.satellite, .rocket
   font-size: 30px
   top: 70px
   left: 45px
-  color: white
   position: absolute
-  -webkit-animation: myOrbit 10s linear infinite
-  -moz-animation: myOrbit 10s linear infinite
-  -o-animation: myOrbit 10s linear infinite
-  animation: myOrbit 10s linear infinite
+  color: white
 
+.satellite
+  -webkit-animation: satelliteOrbit 10s linear infinite
+  -moz-animation: satelliteOrbit 10s linear infinite
+  -o-animation: satelliteOrbit 10s linear infinite
+  animation: satelliteOrbit 10s linear infinite
+
+.rocket
+  -webkit-animation: rocketOrbit 8s linear infinite
+  -moz-animation: rocketOrbit 8s linear infinite
+  -o-animation: rocketOrbit 8s linear infinite
+  animation: rocketOrbit 8s linear infinite
 
 /*
  * Set up the keyframes to actually describe the begining and end states of
  * the animation.  The browser will interpolate all the frames between these
  * points.  Again, remember your vendor-specific prefixes for now!
  */
-@-webkit-keyframes myOrbit
+@-webkit-keyframes rocketOrbit
+    from
+      -webkit-transform: rotate(360deg) translateX(140px) rotate(-45deg)
+    to
+      -webkit-transform: rotate(0deg) translateX(140px) rotate(-45deg)
+
+@-moz-keyframes rocketOrbit
+    from
+      -moz-transform: rotate(360deg) translateX(140px) rotate(-45deg)
+    to
+      -moz-transform: rotate(0deg) translateX(140px) rotate(-45deg)
+
+@-o-keyframes rocketOrbit
+    from
+      -o-transform: rotate(360deg) translateX(140px) rotate(-45deg)
+    to
+      -o-transform: rotate(0deg) translateX(140px) rotate(-45deg)
+
+@keyframes rocketOrbit
+    from
+      transform: rotate(360deg) translateX(140px) rotate(-45deg)
+    to
+      transform: rotate(0deg) translateX(140px) rotate(-45deg)
+
+@-webkit-keyframes satelliteOrbit
     from
       -webkit-transform: rotate(0deg) translateX(110px) rotate(0deg)
     to
       -webkit-transform: rotate(360deg) translateX(110px) rotate(-360deg)
 
-@-moz-keyframes myOrbit
+@-moz-keyframes satelliteOrbit
     from
       -moz-transform: rotate(0deg) translateX(110px) rotate(0deg)
     to
       -moz-transform: rotate(360deg) translateX(110px) rotate(-360deg)
 
-@-o-keyframes myOrbit
+@-o-keyframes satelliteOrbit
     from
       -o-transform: rotate(0deg) translateX(110px) rotate(0deg)
     to
       -o-transform: rotate(360deg) translateX(110px) rotate(-360deg)
 
-@keyframes myOrbit
+@keyframes satelliteOrbit
     from
       transform: rotate(0deg) translateX(110px) rotate(0deg)
     to
@@ -129,21 +158,21 @@ h2
 @-webkit-keyframes float
   0%,
   100%
-    -webkit-transform: translateY(0px) scale(0.5)
-    -ms-transform: translateY(0px) scale(0.5)
-    transform: translateY(0px) scale(0.5)
+    -webkit-transform: translateY(0px)
+    -ms-transform: translateY(0px)
+    transform: translateY(0px)
   50%
-    -webkit-transform: translateY(10px) scale(0.5)
-    -ms-transform: translateY(10px) scale(0.5)
-    transform: translateY(10px) scale(0.5)
+    -webkit-transform: translateY(15px)
+    -ms-transform: translateY(15px)
+    transform: translateY(15px)
 
 @keyframes float
   0%,
   100%
-    -webkit-transform: translate(-10px, 20px) scale(0.2)
-    -ms-transform: translate(-10px, 20px) scale(0.2)
-    transform: translate(-10px, 20px) scale(0.2)
+    -webkit-transform: translateY(0px)
+    -ms-transform: translateY(0px)
+    transform: translateY(0px)
   50%
-    -webkit-transform: translate(-10px, 30px) scale(0.2)
-    -ms-transform: translate(-10px, 30px) scale(0.2)
-    transform: translate(-10px, 30px) scale(0.2)
+    -webkit-transform: translateY(15px)
+    -ms-transform: translateY(15px)
+    transform: translateY(15px)

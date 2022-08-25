@@ -125,6 +125,13 @@ export class WelcomeComponent implements OnInit {
         length: "Unknown",
         count: "0"
       }]
+    } else if (this.searchTerm.toLowerCase() === 'reasons') {
+      this.filteredPoems = [{
+        id: 15,
+        title: "Reasons",
+        length: "Unknown",
+        count: "0"
+      }]
     } else {
       this.filteredPoems = this.poems.filter((poem: any) => {
         if (poem.title.toLowerCase().indexOf(this.searchTerm.toLowerCase()) !== -1) {
@@ -168,6 +175,8 @@ export class WelcomeComponent implements OnInit {
       this.router.navigateByUrl('find-it-quick');
     } else if (id === 14) {
       this.router.navigateByUrl('mirrored-glass');
+    } else if (id === 15) {
+      this.router.navigateByUrl('reasons');
     }
   }
 

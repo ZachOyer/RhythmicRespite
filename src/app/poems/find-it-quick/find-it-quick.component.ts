@@ -1,6 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
-import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { faCaretDown, faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-find-it-quick',
@@ -34,12 +34,14 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 })
 export class FindItQuickComponent implements OnInit {
   faContinue = faCaretDown;
+  faHelp = faCircleQuestion;
 
   showStanza2 = false;
   showStanza3 = false;
   showStanza4 = false;
   showStanza5 = false;
   showStanza6 = false;
+  public isCollapsed = true;
 
   constructor() { }
 

@@ -24,6 +24,7 @@ import { StyleService } from './style.service';
 import { TheWorldComponent } from './poems/the-world/the-world.component';
 import { FindItQuickComponent } from './poems/find-it-quick/find-it-quick.component';
 import { MirroredGlassComponent } from './poems/mirrored-glass/mirrored-glass.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { MirroredGlassComponent } from './poems/mirrored-glass/mirrored-glass.co
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

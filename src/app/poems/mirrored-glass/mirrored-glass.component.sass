@@ -12,23 +12,17 @@ $color-alpha: #b78846
 // -------- Fancy border box --------
 // https://codepen.io/MyXoToD/pen/VaazQq
 
-h1
-  font-weight: 700
-  margin-bottom: 0.5em
-  font-size: 30px
-  font-family: 'Aboreto', cursive
-  text-shadow: 0px 0px 5px #b78846, 0px 0px 5px #fff
-
 .poem-text
   font-family: 'Cormorant Garamond', serif
   font-size: 23px
-  font-style: italic
-  text-shadow: 0px 0px 5px #b78846, 0px 0px 5px #fff
+  // font-style: italic
 
 .poem-text::first-line
   font-size: 30px
+  text-shadow: 0px 0px 5px #b78846, 0px 0px 5px #fff
 
 .box
+  transition: all 0.5s ease-in
   position: relative
   margin: 60px auto
   background-color: rgba(#000, 0.5)
@@ -183,16 +177,21 @@ $line: 4px
   &:hover &__vertical
     transform: scaleY(0)
 
+
+// -------- My continue styling --------
+
 // =test
 //     transition: all 0.5s ease-in-out
-//     width: 100px
+//     width: 150px
 //     height: 60px
-//     border-radius: 20px
 
 // .testing
+//   font-family: 'Aboreto', cursive
+//   color: $color-alpha
+//   cursor: pointer
 //   text-align: center
 //   position: relative
-//   border: 2px solid white
+//   border: 2px solid $color-alpha
 //   +test
 
 // .testing::before, .testing::after
@@ -201,12 +200,17 @@ $line: 4px
 //     top: -2px
 //     left: -2px
 //     content: ''
-//     border: 2px solid white
+//     border: 2px solid $color-alpha
 
-// .testing:hover::before
+// .testing::before
+//   filter: drop-shadow(20px 0px 0px $color-alpha)
 //   transform: translateX(-10px)
-//   filter: drop-shadow(20px 0px 0px)
 
-// .testing:hover::after
+// .testing::after
 //   transform: translateY(-10px)
-//   filter: drop-shadow(0px 20px 0px)
+//   filter: drop-shadow(0px 20px 0px $color-alpha)
+
+// .testing:hover::before, .testing:hover::after
+//   filter: drop-shadow(0px 0px 0px $color-alpha)
+//   transform: translateX(0px)
+

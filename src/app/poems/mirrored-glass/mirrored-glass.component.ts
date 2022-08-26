@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-mirrored-glass',
@@ -24,13 +24,13 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class MirroredGlassComponent implements OnInit {
-  testing = false;
+  fadeIn = false;
 
   constructor() { }
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.testing = true;
+      this.fadeIn = true;
     }, 1400)
   }
 

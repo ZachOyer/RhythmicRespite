@@ -1,16 +1,43 @@
 <div class="background py-5">
   <div>
-    <div *ngIf="testing" @flyInTop class="weave">Mirrored Glass</div>
-    <div *ngIf="testing" @flyInBottom class="box">
+    <div *ngIf="fadeIn" @flyInTop class="weave">Mirrored Glass</div>
+    <div *ngIf="fadeIn" @flyInBottom class="box">
       <div class="box-inner">
-        <h1>Lorem Ipsum</h1>
         <div class="poem-text">
-          <div>Bastatio mea unum tantum ostium habet, et clavem habes</div>
-          <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum laudantium odit, eligendi architecto eveniet labore error minus, temporibus doloremque, amet itaque. Voluptatum rerum dolorem nesciunt totam. Saepe reprehenderit dignissimos error!</div>
+          <div>The mirrored glass is the view we need to live our lives with. The mirror allows us to see ourselves, never forgetting to think about us and our role in the world. The the transluscency of the glass allows us to see others as well. Our thoughts should consider both ourselves and those around us.</div>
+        </div>
+        <br>
+        <div class="poem-text">
+          <div>And at first glance of the glass, I see my mirror</div>
+          <div>Only to mistake it for the universal gateway at my disposal</div>
+          <div>The rainbow reflection that parades any colors one could possible desire</div>
+          <div>An enticing entrance to the factual or fictional life of another</div>
+          <div>Viewed through the same lens that I watch my own</div>
+          <div>Muddling the lines between theirs and mine</div>
+          <div>Misguiding me to entertain the idea</div>
+          <div>That I don't need ours when I have theirs</div>
+        </div>
+        <br>
+        <div class="poem-text">
+          <div>Yet I have the chance to pick my place</div>
+          <div>Stepping back and forth in an existential dance</div>
+          <div>Aligning my reflection with where I want it to be</div>
+          <div>Amidst the picture of people and places</div>
+          <div>Piecing together the pearlescent puzzle in the glass</div>
+          <div>And when I find the perfect distance</div>
+          <div>I become my reflection, and my reflection becomes me</div>
+          <div>Surrounded by sympathetic souls with open hearts</div>
+          <div>In a place of abundant belonging - where I'm meant to be</div>
+          <div>Free to traverse beyond the edges of before</div>
+          <div>While my reflection - returned to his ephemeral cage</div>
+          <div>Doomed to vanish at a couple of my steps...</div>
+          <div>But he's not overwhelmed with vehement rage</div>
+          <div>Instead, I see him smile</div>
+          <div>I see <span style="font-style: italic">Me</span> smile</div>
         </div>
       </div>
     </div>
-    <div class="button-container mx-auto" style="width:max-content" *ngIf="testing" @flyInBottom>
+    <div class="button-container mx-auto" style="width:max-content" *ngIf="fadeIn" @flyInBottom>
       <button class="button" routerLinkActive="active" routerLink="/welcome">
         Back to Main Menu
         <div class="button__horizontal"></div>
@@ -18,7 +45,7 @@
       </button>
     </div>
     <!-- <div class="testing mt-3 mx-auto p-3">
-      Testing
+      Continue
     </div> -->
   </div>
 </div>

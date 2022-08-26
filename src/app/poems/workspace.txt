@@ -1,0 +1,11 @@
+Shatter glass clip paths ---------
+clip-path: polygon(40% 0, 25% 100%, 78% 68%) // Top left
+clip-path: polygon(16% 0, 100% 13%, 57% 71%) // Top Right
+clip-path: polygon(89% 100%, 100% 13%, 44% 93%) // Bottom right
+
+
+Speculum vitreum - A glass mirror
+
+Vitrum a speculo - glass from the mirror
+
+Vitrum speculis - glass that mirrors

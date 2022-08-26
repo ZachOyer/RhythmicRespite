@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faMeteor, faRocket, faSatellite, faShuttleSpace, faUserAstronaut } from '@fortawesome/free-solid-svg-icons';
+import { faFire, faFireFlameSimple, faMeteor, faRocket, faSatellite, faShuttleSpace } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-the-world',
@@ -8,8 +8,10 @@ import { faMeteor, faRocket, faSatellite, faShuttleSpace, faUserAstronaut } from
 })
 export class TheWorldComponent implements OnInit {
   faRocket = faShuttleSpace;
+  faShuttleFlame = faFireFlameSimple;
   faSatellite = faSatellite;
   faFlyingRocket = faRocket;
+  faFire = faFire;
   faMeteor = faMeteor;
 
   constructor() { }

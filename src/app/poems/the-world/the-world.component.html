@@ -5,9 +5,9 @@
         <div style="position: relative">
           <div class="satellite-container">
             <fa-icon class="satellite" [icon]="faSatellite"></fa-icon>
-            <fa-icon class="rocket" [icon]="faFlyingRocket"></fa-icon>
+            <span class="rocket"><fa-icon class="fire-flicker" style="color: red; position: absolute; transform: rotate(-135deg) translateY(-25px) scale(0.5, 1);" [icon]="faFire"></fa-icon><fa-icon class="fire-flicker" style="color: rgb(255, 115, 0); position: absolute; transform: rotate(-135deg) translateY(-21px) scale(0.5, 1); opacity: 0.8;" [icon]="faFire"></fa-icon><fa-icon [icon]="faFlyingRocket"></fa-icon></span>
           </div>
-          <h2>The World</h2>
+          <h2 class="account">The World</h2>
         </div>
         <div class="poem-text mb-3">
           <div>Upon a summer day, I met a bonny lass</div>
@@ -75,6 +75,8 @@
         <img class="astronaut" src="assets/astronaut.svg">
         <div class="mx-auto back" style="position: relative; cursor: pointer; width: max-content" routerLinkActive="active" routerLink="/welcome">
           <span class="back-text">Back to the main page</span>
+          <fa-icon class="back-flame1" [icon]="faShuttleFlame"></fa-icon>
+          <fa-icon class="back-flame2" [icon]="faShuttleFlame"></fa-icon>
           <fa-icon class="back-icon" [icon]="faRocket"></fa-icon>
         </div>
       </div>

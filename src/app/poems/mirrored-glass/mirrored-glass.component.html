@@ -1,36 +1,51 @@
 <div class="background py-5">
   <div>
-    <div *ngIf="fadeIn" @flyInTop class="weave">Mirrored Glass</div>
+    <div *ngIf="fadeIn" @flyInTop class="weave" [ngClass]="{'star': unraveled}">Mirrored Glass</div>
     <div *ngIf="fadeIn" @flyInBottom class="box">
       <div class="box-inner">
+        <div class="mb-5">
+          <h1>Mirror mirror on the wall<br>A vitric mural that light does draw</h1>
+        </div>
         <div class="poem-text">
-          <div>The mirrored glass is the view we need to live our lives with. The mirror allows us to see ourselves, never forgetting to think about us and our role in the world. The the transluscency of the glass allows us to see others as well. Our thoughts should consider both ourselves and those around us.</div>
+          <div></div>
+          <div>As I stand there, reading in between the lines mirror</div>
+          <div>Searching the fine print that no one else read</div>
+          <div>Looking for the loophole to circumvent ourselves</div>
+          <div>When everyone else was content with the summary</div>
+          <div></div>
+          <div>The mirror allows us to see ourselves,</div>
+          <div>never forgetting to think about us and our role in the world.</div>
+          <div>The transluscency of the glass allows us to see others as well.</div>
+          <div>Our thoughts should consider both ourselves and those around us.</div>
         </div>
         <br>
         <div class="poem-text">
           <div>And at first glance of the glass, I see my mirror</div>
-          <div>Only to mistake it for the universal gateway at my disposal</div>
+          <div>Only to mistake it for the universal gateway at my finger tips</div>
           <div>The rainbow reflection that parades any colors one could possible desire</div>
           <div>An enticing entrance to the factual or fictional life of another</div>
           <div>Viewed through the same lens that I watch my own</div>
           <div>Muddling the lines between theirs and mine</div>
+          <div>Forced to pick one or the other</div>
+          <div>An ostentatious glimpse through the eye of their storm</div>
+          <div>Or melancholic meditation with my stentorious black mirror</div>
           <div>Misguiding me to entertain the idea</div>
-          <div>That I don't need ours when I have theirs</div>
+          <div>That I don't need mine when I have theirs</div>
         </div>
         <br>
         <div class="poem-text">
           <div>Yet I have the chance to pick my place</div>
           <div>Stepping back and forth in an existential dance</div>
           <div>Aligning my reflection with where I want it to be</div>
-          <div>Amidst the picture of people and places</div>
-          <div>Piecing together the pearlescent puzzle in the glass</div>
-          <div>And when I find the perfect distance</div>
+          <div>Amidst the picture of positive people and pleasing places</div>
+          <div>Piecing together the perfect pearlescent puzzle in the glass</div>
+          <div>And when I find the ideal distance</div>
           <div>I become my reflection, and my reflection becomes me</div>
           <div>Surrounded by sympathetic souls with open hearts</div>
           <div>In a place of abundant belonging - where I'm meant to be</div>
-          <div>Free to traverse beyond the edges of before</div>
+          <div>I'm free to traverse beyond the edges of before</div>
           <div>While my reflection - returned to his ephemeral cage</div>
-          <div>Doomed to vanish at a couple of my steps...</div>
+          <div>Doomed to vanish with a couple of my steps</div>
           <div>But he's not overwhelmed with vehement rage</div>
           <div>Instead, I see him smile</div>
           <div>I see <span style="font-style: italic">Me</span> smile</div>
@@ -44,7 +59,7 @@
         <div class="button__vertical"></div>
       </button>
     </div>
-    <!-- <div class="testing mt-3 mx-auto p-3">
+    <!-- <div class="testing mt-5 mx-auto p-3">
       Continue
     </div> -->
   </div>

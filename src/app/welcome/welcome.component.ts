@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faAlignLeft, faAlignRight, faMagnifyingGlass, faMugSaucer, faPencil, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faAlignLeft, faAlignRight, faDeleteLeft, faMagnifyingGlass, faMugSaucer, faPencil, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { StyleService } from '../style.service';
 
 @Component({
@@ -16,9 +16,7 @@ export class WelcomeComponent implements OnInit {
   faSearch = faMagnifyingGlass;
   faRight = faAlignLeft;
   faLeft = faAlignRight;
-  faClear = faXmark;
-  faMug = faMugSaucer;
-  faPencil = faPencil;
+  faClear = faDeleteLeft;
 
   searchTerm = '';
   filteredPoems: any;

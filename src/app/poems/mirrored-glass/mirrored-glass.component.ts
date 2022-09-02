@@ -1,5 +1,5 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-mirrored-glass',
@@ -15,7 +15,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
     ]),
     trigger('flyInBottom', [
       transition('void => *', [
-        style({ transform: 'translateY(40%)', opacity: 0}),
+        style({ transform: 'translateY(30%)', opacity: 0}),
         animate('1s ease-out'),
         style({ transform: 'translateY(0%)', opacity: 1})
       ])
@@ -25,12 +25,16 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class MirroredGlassComponent implements OnInit {
   fadeIn = false;
+  unraveled = false;
 
   constructor() { }
 
   ngOnInit(): void {
     setTimeout(() => {
       this.fadeIn = true;
+      setTimeout(() => {
+        this.unraveled = true
+      }, 100)
     }, 1400)
   }
 

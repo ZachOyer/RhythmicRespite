@@ -15,11 +15,24 @@ $color-alpha: #b78846
 .poem-text
   font-family: 'Cormorant Garamond', serif
   font-size: 23px
-  // font-style: italic
+  line-height: 2em
 
 .poem-text::first-line
   font-size: 30px
   text-shadow: 0px 0px 5px #b78846, 0px 0px 5px #fff
+
+h1
+  font: 500 23px 'Aboreto', cursive
+  font-style: italic
+  text-align: center
+  color: $color-alpha
+  padding: 10px
+  box-shadow: rgba(100, 100, 100, 0.17) 0px -23px 25px 0px inset, rgba(100, 100, 100, 0.15) 0px -36px 30px 0px inset, rgba(100, 100, 100, 0.1) 0px -79px 40px 0px inset, rgba(100, 100, 100, 0.06) 0px 2px 1px, rgba(100, 100, 100, 0.09) 0px 4px 2px, rgba(100, 100, 100, 0.09) 0px 8px 4px, rgba(100, 100, 100, 0.09) 0px 16px 8px, rgba(100, 100, 100, 0.09) 0px 32px 16px
+  border-radius: 20px
+  margin-bottom: 20px
+
+h1::before
+  content: ''
 
 .box
   transition: all 0.5s ease-in
@@ -66,6 +79,10 @@ $color-alpha: #b78846
   &:after
     right: -2px
 
+@media screen and (max-width: 770px)
+  .box-inner
+    padding: 20px
+
 // -------- Woven title styling --------
 // https://codepen.io/uniphil/pen/nLJZyZ
 
@@ -99,7 +116,7 @@ $line: 4px
   &:after
     transform: rotate(60deg)
 
-.weave:hover
+.star
   border-radius: 0px
   &:before
     border-radius: 0px
@@ -107,6 +124,15 @@ $line: 4px
   &:after
     border-radius: 0px
     transform: rotate(120deg)
+
+.star:hover
+  border-radius: $size/3 - $line
+  &:before
+    border-radius: $size/3 - $line
+    transform: rotate(30deg)
+  &:after
+    border-radius: $size/3 - $line
+    transform: rotate(60deg)
 
 // -------- Fancy button styling --------
 // https://codepen.io/electerious/details/qPjbGm/

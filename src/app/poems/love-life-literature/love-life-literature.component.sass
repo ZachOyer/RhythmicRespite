@@ -41,25 +41,10 @@
   border-left: 6px ridge #cccccc
   box-shadow: rgba(0, 0, 0, 0.534) 16px 0px 20px 0px, rgba(0, 0, 0, 0.5) -16px 0px 20px 1px
 
-@media screen and (min-width: 770px)
-  .bookmark-icon
-    transform: translate(-45px, -35px) scaleY(1.5)
-
-  .bookmark-text
-    width: 70px
-
-@media screen and (max-width: 770px)
-  .bookmark-icon
-    transform: translate(50px, -35px) scaleY(1.8) scaleX(0.6)
-
-  .bookmark-text
-    transform: translate(85px, 0px)
-    width: 50px
-
 .bookmark-icon
   color: #dd3f3f
   font-size: 100px
-  position: absolute
+  position: fixed
   top: 0px
   right: 10px
   transition: top 0.2s ease-in-out
@@ -67,7 +52,7 @@
 
 .bookmark-text
   color: white
-  position: absolute
+  position: fixed
   top: 5px
   right: 57px
   transition: top 0.2s ease-in-out
@@ -81,6 +66,34 @@
 
 .bookmark:hover .bookmark-icon
   top: 10px
+
+@media screen and (max-width: 770px)
+  .bookmark-icon
+    transform: translate(20px, -35px) scaleY(1.8) scaleX(0.6)
+
+  .bookmark-text
+    transform: translate(55px, 0px)
+    width: 50px
+
+@media screen and (min-width: 770px)
+  .bookmark-icon
+    transform: translate(-45px, -35px) scaleY(1.5)
+    right: 10%
+
+  .bookmark-text
+    width: 70px
+    right: 10%
+    transform: translateX(-47px)
+
+@media screen and (min-width: 1200px)
+  .bookmark-icon
+    transform: translate(-45px, -35px) scaleY(1.5)
+    right: 20%
+
+  .bookmark-text
+    width: 70px
+    right: 20%
+    transform: translateX(-47px)
 
 .important
   margin-bottom: 5px

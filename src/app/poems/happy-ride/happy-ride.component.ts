@@ -10,10 +10,18 @@ export class HappyRideComponent implements OnInit {
   faSign = faSignsPost;
   faBack = faCarSide;
 
+  audio: HTMLAudioElement = new Audio('assets/happy-ride.m4a');
+
 
   constructor() { }
 
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+  }
+
   ngOnInit(): void {
+    this.audio.play()
   }
 
 }

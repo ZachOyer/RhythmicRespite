@@ -28,7 +28,7 @@ export class HappyRideComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.audio.play();
-      this.audio.volume = 0;
+      this.audio.volume = 0.05;
       adjustVolume(this.audio, 0.2);
     }, 1000)
   }

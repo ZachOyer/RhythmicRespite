@@ -114,7 +114,7 @@ export class WelcomeComponent implements OnInit {
         id: 5,
         title: "Baby Gurl",
         length: "Short",
-        complete: 'Yes'
+        count: '60'
       }]
     } else if (this.searchTerm.toLowerCase() === 'mirrored glass') {
       this.filteredPoems = [{

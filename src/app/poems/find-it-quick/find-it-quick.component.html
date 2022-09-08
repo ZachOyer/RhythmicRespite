@@ -2,7 +2,8 @@
   <div class="container text-center">
     <div class="row">
       <div class=" offset-md-2 col-md-8 col-sm-12 mb-3">
-        <div class="help" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"><fa-icon [icon]="faHelp"></fa-icon></div>
+        <div class="help" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed" placement="end" [openDelay]="500" ngbTooltip="Fun Fact"><fa-icon [icon]="faHelp"></fa-icon></div>
+        <div class="leave" routerLink="/welcome" placement="start" [openDelay]="500" ngbTooltip="Back to home page"><fa-icon [icon]="faLeave"></fa-icon></div>
         <div class="testing"><h2>Find It Quick</h2></div>
         <div class="mb-3" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
           <div class="card" style="background: transparent; font-family: 'Josefin Slab', serif;">

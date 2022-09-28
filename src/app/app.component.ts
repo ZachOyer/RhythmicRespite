@@ -8,6 +8,7 @@ import { appAnimations } from './app-animation';
   animations: [ appAnimations ],
 })
 export class AppComponent {
+  title = 'RhythmicRespite'
   getState(outlet: any) {
     // Changing the activatedRouteData.state triggers the animation
     return outlet.activatedRouteData.state;

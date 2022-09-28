@@ -94,7 +94,7 @@ $line: 4px
   width: $size
   height: $size
   border: $line solid $color-alpha
-  border-radius: $size/3 - $line
+  border-radius: calc($size/3 - $line)
   transition: all 1s ease-in-out
 
 .weave
@@ -126,12 +126,12 @@ $line: 4px
     transform: rotate(120deg)
 
 .star:hover
-  border-radius: $size/3 - $line
+  border-radius: calc($size/3 - $line)
   &:before
-    border-radius: $size/3 - $line
+    border-radius: calc($size/3 - $line)
     transform: rotate(30deg)
   &:after
-    border-radius: $size/3 - $line
+    border-radius: calc($size/3 - $line)
     transform: rotate(60deg)
 
 // -------- Fancy button styling --------

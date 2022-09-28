@@ -27,6 +27,8 @@
   box-shadow: rgba(0, 0, 0, 0.35) 0px 50px 36px -28px inset, rgba(0, 0, 0, 0.35) 50px 0px 36px -28px inset, rgba(0, 0, 0, 0.35) -50px 0px 36px -28px inset,
   background: #0b5f0bc7 repeat url('../../../assets/vines.jpg')
   background-blend-mode: multiply
+  position: relative
+  overflow: hidden
 
 @media screen and (min-width: 770px)
   .back
@@ -42,3 +44,39 @@
   .back
     width: max-content
     box-shadow: 0px 5px 10px 5px #00000079
+
+.petal
+  position: absolute
+  width: 1px
+  height: 1px
+
+  @for $i from 1 through 500
+    $light: random(130) + 50
+    $light-radius: random(10) + 10px
+    $speed: random(10) + 10s
+    &:nth-child(#{$i})
+      top: random(100) + 0%
+      left: random(100) + 0%
+      color: rgb($light, $light + 150, $light)
+      animation: $speed sway ease-in-out infinite
+
+.petals
+  position: absolute
+  width: 100%
+  height: 100%
+  animation: fall 100000ms linear infinite
+
+  &:nth-child(2)
+    bottom: 100%
+
+@keyframes fall
+  0%
+    transform: translateY(0)
+  100%
+    transform: translateY(100%)
+
+@keyframes sway
+  0%, 100%
+    transform: translateX(-15px) rotate(90deg)
+  50%
+    transform: translateX(15px) rotate(-30deg)

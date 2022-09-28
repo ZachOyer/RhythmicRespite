@@ -1,5 +1,8 @@
-<div class="background">
-  <div class="container text-center">
+<div class="background" style="z-index: 0">
+  <div class="petals" *ngFor="let petals of petalsLoop" style="z-index: 100">
+    <div class="petal" *ngFor="let petal of petalLoop"><fa-icon class="leaf" [icon]="faPetal"></fa-icon></div>
+  </div>
+  <div class="container text-center" style="position: relative; z-index: 2000">
     <div class="row">
       <div class="col" style="position: relative">
       </div>
@@ -39,7 +42,7 @@
           <div>I'll look back to my clear glass rose</div>
         </div>
       </div>
-      <div class="col" style="position: relative">
+      <div class="col" style="position: relative;">
         <button class="btn btn-danger mb-5 back" routerLinkActive="active" routerLink="/welcome">Back to main page</button>
       </div>
     </div>

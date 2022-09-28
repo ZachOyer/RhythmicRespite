@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { faEllipsis, faSnowflake } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-christmas-rap',
@@ -7,7 +7,11 @@ import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./christmas-rap.component.sass']
 })
 export class ChristmasRapComponent implements OnInit {
-  faEllipsis = faEllipsis
+  faEllipsis = faEllipsis;
+  faFlake = faSnowflake;
+
+  snowLoop = [0,1]
+  flakeLoop = new Array<number>(150)
 
   constructor() { }
 

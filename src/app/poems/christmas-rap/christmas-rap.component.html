@@ -1,5 +1,8 @@
 <div class="container text-center">
     <main style="position: relative">
+      <div class="snow" *ngFor="let snow of snowLoop" style="z-index: -1">
+        <div class="flake" *ngFor="let flake of flakeLoop"><fa-icon [icon]="faFlake"></fa-icon></div>
+      </div>
       <div class="wreath"><img src="assets/Christmas_wreath_small.png"></div>
       <div class="title">Christmas Rap</div>
       <div class="poem-text">

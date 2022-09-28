@@ -1,5 +1,8 @@
 .background
-  background: repeat url('../../../assets/space.jpg')
+  // background: repeat url('../../../assets/space.jpg')
+  position: relative
+  background: linear-gradient(90deg, #060c1d 0%,#121822 100%)
+  overflow: hidden
 
 .poem-text
   font-family: 'Berkshire Swash', cursive
@@ -108,6 +111,93 @@ h2
   position: absolute
   color: white
 
+
+
+.star
+  position: absolute
+  width: 1px
+  height: 1px
+
+  @for $i from 1 through 500
+    $light: random(255)
+    $light-radius: random(10) + 10px
+    &:nth-child(#{$i})
+      top: random(100) + 0%
+      left: random(100) + 0%
+      background: rgb($light, $light, $light)
+      box-shadow: 0px 0px $light-radius 1px rgb($light, $light, $light)
+
+.stars
+  position: absolute
+  width: 100%
+  height: 100%
+  animation: slide 100000ms linear infinite
+
+  &:nth-child(2)
+    left: 100%
+
+.star2
+  position: absolute
+  width: 1px
+  height: 1px
+
+  @for $i from 1 through 800
+    $light2: random(255)
+    $light-radius2: random(10) + 5px
+    &:nth-child(#{$i})
+      top: random(100) + 0%
+      left: random(100) + 0%
+      transform: translateY(random(30) + 0px)
+      background: rgb($light2, $light2, $light2)
+      box-shadow: 0px 0px $light-radius2 1px rgb($light2, $light2, $light2)
+
+.stars2
+  position: absolute
+  width: 100%
+  height: 100%
+  animation: slide 170000ms linear infinite
+
+  &:nth-child(2)
+    left: 100%
+
+.shooting
+  position: absolute
+  width: 50px
+  height: 1px
+  background: linear-gradient(90deg, rgba(#fff, 1), rgba(#fff, 0))
+  background: linear-gradient(90deg, rgba(#0093E9, 1) 0%, rgba(#80D0C7, 0) 100%)
+  opacity: 0
+  animation: shooting 10000ms linear infinite
+
+  @for $i from 1 through 15
+    &:nth-child(#{$i})
+      top: random(100) + 0%
+      left: random(100) + 0%
+      animation-delay: random(9999) * 1ms
+
+@keyframes shooting
+  0%
+    opacity: 0
+    transform: rotateZ(-30deg) translateX(0) scaleX(0)
+  25%
+    opacity: 1
+    transform: rotateZ(-30deg) transalteX(-200%) scaleX(1)
+  50%
+    opacity: 0
+    transform: rotateZ(-30deg) translateX(-400%) scaleX(2)
+  100%
+    opacity: 0
+    transform: rotateZ(-30deg) translateX(-400%) scaleX(2)
+
+@keyframes slide
+  0%
+    transform: translateX(0)
+  100%
+    transform: translateX(-100%)
+
+
+
+
 .satellite
   -webkit-animation: satelliteOrbit 10s linear infinite
   -moz-animation: satelliteOrbit 10s linear infinite
@@ -205,14 +295,14 @@ h2
 @-webkit-keyframes flicker
   0%,
   100%
-    opacity: 0.6
+    opacity: 0.3
   50%
     opacity: 0.8
 
 @keyframes flicker
   0%,
   100%
-    opacity: 0.6
+    opacity: 0.3
   50%
     opacity: 0.8
 

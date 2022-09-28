@@ -14,6 +14,10 @@ export class TheWorldComponent implements OnInit {
   faFire = faFire;
   faMeteor = faMeteor;
 
+  starsLoop = [0, 1]
+  shootingLoop = new Array<number>(15);
+  starLoop = new Array<number>(800);
+
   constructor() { }
 
   ngOnInit(): void {

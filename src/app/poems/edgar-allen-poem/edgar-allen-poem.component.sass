@@ -1,4 +1,5 @@
 .background
+  animation: spook 5s linear infinite
   background: linear-gradient(90deg,#200101, #000,#200101)
   color: white
 
@@ -25,3 +26,9 @@ h2
 
   h2
     font-size: 40px
+
+@keyframes spook
+  0%, 100%
+    filter: grayscale(100%)
+  50%
+    filter: grayscale(0%)

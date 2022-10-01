@@ -1,11 +1,22 @@
 <div class="background">
+  <div style="position: fixed">
+    hello
+  </div>
   <div class="container text-center">
     <div class="row">
       <div class="col" style="position: relative">
       </div>
       <div class="col-md-8 col-sm-12 poem" style="position: relative;">
-        <h2>The Prophecy</h2>
-        <div class="person"><fa-icon [icon]="faUser"></fa-icon></div>
+        <h2 class="mb-5">
+          <div class="ball-container">
+            <div class="orb">
+              <div style="position:absolute; top:50%; transform:translateY(-50%); width: 100%">The Prophecy</div>
+            </div>
+            <div class="stand"></div>
+            <div><fa-icon class="sparkles" *ngFor="let sparkle of sparkles" [icon]="faStar"></fa-icon></div>
+            <!-- <div class="sparkles2"><fa-icon [icon]="faAltStar"></fa-icon></div> -->
+          </div>
+        </h2>
         <div class="poem-text mb-4">
           <div>Today I sit here rhyming of the future</div>
           <div>Weaving tomorrows like a doctor and suture</div>

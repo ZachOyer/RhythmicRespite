@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { NgbOffcanvas, OffcanvasDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { faCertificate, faSplotch } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -11,9 +10,12 @@ import { NgbOffcanvas, OffcanvasDismissReasons } from '@ng-bootstrap/ng-bootstra
   styleUrls: ['./reasons.component.sass']
 })
 export class ReasonsComponent implements OnInit {
+  faStar = faSplotch;
+  faAltStar = faCertificate;
 
-  constructor(private offcan: NgbOffcanvas,
-              private router: Router) { }
+  sparkles = new Array<number>(10)
+
+  constructor() { }
 
   ngOnInit(): void {
   }

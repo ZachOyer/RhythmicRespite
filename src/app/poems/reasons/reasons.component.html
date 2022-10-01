@@ -1,3 +1,8 @@
 <div class="background">
-  <div class="moon"></div>
+  <div class="ball-container">
+    <div class="orb"></div>
+    <div class="stand"></div>
+    <div class="sparkles1" *ngFor="let sparkle of sparkles"><fa-icon [icon]="faStar"></fa-icon></div>
+    <!-- <div class="sparkles2"><fa-icon [icon]="faAltStar"></fa-icon></div> -->
+  </div>
 </div>

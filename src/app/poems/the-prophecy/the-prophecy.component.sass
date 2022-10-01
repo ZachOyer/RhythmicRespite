@@ -1,14 +1,16 @@
 .background
-  background: linear-gradient(#35093d, #c531d3, #35093d)
+  background: linear-gradient(45deg, #290e06, #58185e)
 
 .poem-text
-  font-size: 20px
+  color: white
+  font-size: 22px
   font-family: 'Edu VIC WA NT Beginner', cursive
   font-weight: 500
-  text-shadow: 0 0 10px #ffffff, 0 0 10px #ffffff
+  text-shadow: 0 0 10px #000000
 
 h2
-  font-family: 'Edu NSW ACT Foundation', sans-serif
+  // font-family: 'Edu NSW ACT Foundation', sans-serif
+  font-family: 'Aref Ruqaa Ink', serif
   font-weight: 700
   text-decoration: underline
   margin-top: 50px
@@ -19,25 +21,74 @@ h2
   margin-bottom: 20px
 
 .poem
-  background-color: #929292
-  box-shadow: 0px 0px 20px 20px #000000, 0px 0px 20px 20px #000000 inset, 0px 0px 30px 40px #00000080 inset, 0px 0px 30px 40px #00000080
-  border-radius: 100px
   padding-bottom: 30px
 
-.person
+$crystal-color: #c7c7c7
+$stand-color: #6c1283
+
+.ball-container
+  height: 300px
+  width: 300px
+  margin: 0px auto
+  filter: drop-shadow(5px 5px 20px #00000080)
+  animation: hover 4s ease-in-out infinite
+
+.orb
+  height: 100%
+  width: 100%
+  border-radius: 50%
+  background-color: darken($crystal-color, 10%)
+  box-shadow: inset 0px -30px 50px 30px darken($crystal-color, 40%), inset 0px 0px 8px 4px darken($crystal-color, 80%)
+  &::before
+    content: ''
+    position: absolute
+    height: 10%
+    width: 10%
+    right: 25%
+    top: 25%
+    background-color: $crystal-color
+    border-radius: 50%
+    box-shadow: 0px 0px 10px 8px $crystal-color
+
+.stand
+  background-color: $stand-color
   position: absolute
-  font-size: 500px
-  bottom: 0%
-  left: 50%
-  transform: translateX(-50%)
-  z-index: -1
-  filter: blur(10px)
+  bottom: -5%
+  height: 13%
+  width: 100%
+  border-radius: 50% 50% 10px 10px
+  box-shadow: inset -5px -5px 15px 5px darken($stand-color, 10%)
 
-@media screen and (min-width: 1200px)
-  .person
-    font-size: 600px
+.sparkles
+  position: absolute
+  font-size: 12px
+  opacity: 0
 
-@media screen and (max-width: 991px)
-  .person
-    font-size: 300px
-    bottom: 5%
+  @for $i from 0 through 10
+    &:nth-child(#{$i})
+      $delay: $i + 0s
+      top: random(100) + 0%
+      left: random(100) + 0%
+      color: #4fd8cd
+      animation: float-up 8s linear $delay infinite
+      filter: drop-shadow(0px 0px 5px #43caad) drop-shadow(0px 0px 5px #ffffff)
+
+
+@keyframes float-up
+  0%
+    transform: translateY(0px)
+    opacity: 0
+  20%
+    opacity: 0.8
+  80%
+    opacity: 0.8
+  100%
+    transform: translateY(-50px)
+    opacity: 0
+
+@keyframes hover
+  0%, 100%
+    transform: translateY(0px)
+  50%
+    transform: translateY(-10px)
+

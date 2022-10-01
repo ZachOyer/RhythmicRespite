@@ -3,52 +3,365 @@
   font-family: 'Edu NSW ACT Foundation', cursive
   font-weight: 500
 
-.mountain
-  font-size: 100px
-  opacity: 0.5
+.background
+  position: relative
+  background: linear-gradient(90deg, #151e3a, #b4b4b4, #e0b463)
 
-@media screen and (min-width: 700px)
-  .mountain
+// ---------------- Tree ----------------
+.tree
+  position: absolute
+  height: 100px
+  width: 100px
+  bottom: 0%
+  left: 10px
+  filter: drop-shadow(-2px 3px 3px black)
+
+.trunk
+  position: absolute
+  height: 100px
+  width: 100px
+  bottom: -1px
+  background-color: #462719
+  clip-path: polygon(31% 0%, 28% 14%, 29% 33%, 32% 43%, 34% 56%, 34% 65%, 31% 74%, 28% 84%, 28% 94%, 29% 99%, 56% 100%, 57% 88%, 57% 75%, 57% 65%, 55% 57%, 53% 49%, 58% 49%, 66% 54%, 74% 56%, 86% 55%, 92% 51%, 91% 46%, 84% 46%, 79% 47%, 73% 45%, 66% 42%, 61% 40%, 54% 37%, 50% 35%, 47% 30%, 43% 24%, 41% 18%, 41% 11%, 42% 3%, 43% 0%)
+
+.low-leaves
+  position: absolute
+  height: 30px
+  width: 30px
+  border-radius: 50%
+  background-color: #28581a
+  bottom: 40px
+  left: 70px
+  transform: rotate(90deg)
+  &::before
+    content: ''
+    background-color: #1c4d0f
     position: absolute
-    bottom: -30px
-    right: 10px
-    opacity: 1
-    font-size: 150px
-    opacity: 0.5
+    width: 85%
+    height: 100%
+    border-radius: 50%
+    left: 15px
+    bottom: 0px
+  &::after
+    content: ''
+    background-color: #37682a
+    position: absolute
+    width: 100%
+    height: 85%
+    border-radius: 50%
+    left: 7px
+    bottom: 12px
 
+.leaves
+  position: absolute
+  height: 70px
+  width: 70px
+  border-radius: 50%
+  background-color: #194e08
+  top: -45px
+  left: -23px
+  &::before
+    content: ''
+    background-color: #326623
+    position: absolute
+    width: 85%
+    height: 100%
+    border-radius: 50%
+    left: 50px
+    bottom: 0px
+  &::after
+    content: ''
+    background-color: #28581a
+    position: absolute
+    width: 100%
+    height: 85%
+    border-radius: 50%
+    left: 25px
+    bottom: 30px
+
+.falling-leaves
+  position: absolute
+  font-size: 10px
+  opacity: 0
+
+  @for $i from 0 through 10
+    &:nth-child(#{$i})
+      $delay: calc($i * 2) + 0s
+      bottom: random(60) + 80%
+      left: random(80) - 10%
+      color: #4e924e
+      animation: falling 9s linear $delay infinite
+      filter: drop-shadow(0px 0px 3px #000000a8)
+
+
+@keyframes falling
+  0%
+    transform: translate(0px, 0px)
+    opacity: 0
+  10%
+    opacity: 1
+  70%
+    opacity: 1
+  80%
+    transform: translate(-20px, 100px) rotate(720deg)
+    opacity: 0
+
+// ---------------- Moon ----------------
 .moon
-  font-size: 100px
-  opacity: 0.5
+  position: absolute
+  height: 80px
+  width: 80px
+  background: linear-gradient(90deg, #5e6372, #727681)
+  margin-top: 10px
+  top: 10%
+  right: 0%
+  border-radius: 50%
+  box-shadow: inset -20px -2px 10px -5px rgba(214, 214, 214, 0.863), -3px 0px 5px 3px #00000057
 
-@media screen and (min-width: 700px)
-  .moon
+.cloud1, .cloud2
+  $cloud-color: #c4c4c4
+  position: absolute
+  height: 40px
+  width: 100px
+  background-color: $cloud-color
+  opacity: 0.8
+  border-radius: 20px
+  filter: drop-shadow(4px 4px 5px black)
+  &::before
+    content: ''
     position: absolute
-    right: -20px
-    opacity: 1
-    font-size: 100px
-    opacity: 0.5
-
-.city
-  font-size: 100px
-  opacity: 0.5
-
-@media screen and (min-width: 700px)
-  .city
+    height: 40px
+    width: 40px
+    bottom: 20px
+    background-color: $cloud-color
+    border-radius: 50%
+  &::after
+    content: ''
     position: absolute
-    bottom: -20px
+    height: 50px
+    width: 50px
+    bottom: 20px
     left: 10px
-    opacity: 1
-    font-size: 150px
-    opacity: 0.5
+    background-color: $cloud-color
+    border-radius: 50%
 
+.cloud1
+  opacity: 0
+  top: 17%
+  right: 8%
+  animation: float-right 7s linear infinite
+
+.cloud2
+  opacity: 0
+  top: 14%
+  right: 15%
+  animation: float-right 7s linear 3.0s infinite
+
+@keyframes float-right
+  0%
+    transform: translateX(0px)
+    opacity: 0
+  10%, 40%
+    opacity: 0.3
+  50%
+    transform: translateX(60px)
+    opacity: 0
+
+// ---------------- City ----------------
+.city
+  position: absolute
+  height: 150px
+  width: 150px
+  bottom: 0%
+  right: -10px
+  filter: drop-shadow(-2px 3px 3px black)
+
+.building1, .building2, .building3
+  position: absolute
+  width: 30%
+  bottom: 0%
+  background-color: #363636
+  border-radius: 5px 5px 0px 0px
+
+.building1
+  left: 1%
+  height: 100%
+
+.building2
+  height: 60%
+  left: 35%
+
+.building3
+  height: 76%
+  right: 0%
+
+// $window-color: rgb(255, 246, 187)
+.windows1
+  position: absolute
+  height: 15%
+  width: 30%
+  left: 15%
+  border-radius: 3px
+  @for $i from 1 through 10
+    &:nth-child(#{$i})
+      $vert-position: calc(19 * $i) - 15%
+      bottom: $vert-position
+      $lights-on: random(3)
+      @if $lights-on == 3
+        background-color: #525252
+      @else
+        $window-color: rgb(255, 255 - random(15), 255 - random(90))
+        background-color: $window-color
+        box-shadow: 0px 0px 3px 1px $window-color
+      &::before
+        content: ''
+        position: absolute
+        height: 100%
+        width: 100%
+        left: 140%
+        border-radius: 3px
+        @if $lights-on == 2
+          background-color: #525252
+        @else
+          $window-color: rgb(255, 255 - random(15), 255 - random(90))
+          background-color: $window-color
+          box-shadow: 0px 0px 3px 1px $window-color
+
+.windows2
+  position: absolute
+  height: 20%
+  width: 30%
+  left: 15%
+  border-radius: 3px
+  @for $i from 1 through 10
+    &:nth-child(#{$i})
+      $vert-position: calc(23 * $i) - 19%
+      bottom: $vert-position
+      $lights-on: random(3)
+      @if $lights-on == 3
+        background-color: #525252
+      @else
+        $window-color: rgb(255, 255 - random(30), 255 - random(120))
+        background-color: $window-color
+        box-shadow: 0px 0px 3px 1px $window-color
+      &::before
+        content: ''
+        position: absolute
+        height: 100%
+        width: 100%
+        left: 140%
+        border-radius: 3px
+        @if $lights-on == 2
+          background-color: #525252
+        @else
+          $window-color: rgb(255, 255 - random(30), 255 - random(120))
+          background-color: $window-color
+          box-shadow: 0px 0px 3px 1px $window-color
+
+.windows3
+  position: absolute
+  height: 13%
+  width: 30%
+  left: 15%
+  border-radius: 3px
+  @for $i from 1 through 10
+    &:nth-child(#{$i})
+      $window-color: rgb(255, 255 - random(15), 255 - random(90))
+      $vert-position: calc(16 * $i) - 13%
+      bottom: $vert-position
+      $lights-on: random(3)
+      @if $lights-on == 3
+        background-color: #525252
+      @else
+        background-color: $window-color
+        box-shadow: 0px 0px 3px 1px $window-color
+      &::before
+        content: ''
+        position: absolute
+        height: 100%
+        width: 100%
+        left: 140%
+        border-radius: 3px
+        @if $lights-on == 2
+          background-color: #525252
+        @else
+          background-color: $window-color
+          box-shadow: 0px 0px 3px 1px $window-color
+
+.car1, .car2
+  font-size: 20px
+  position: absolute
+  bottom: -5%
+  opacity: 0
+
+.car1
+  color: #c2c2c2
+  left: 0%
+  animation: drive-right 10s linear infinite
+
+.car2
+  color: #888888
+  right: 0%
+  animation: drive-left 8s linear 5s infinite
+
+@keyframes drive-right
+  0%
+    transform: translateX(0px)
+    opacity: 0
+  10%, 40%
+    opacity: 1
+  50%
+    transform: translateX(120px)
+    opacity: 0
+
+@keyframes drive-left
+  0%
+    transform: translateX(0px) scale(-1, 1)
+    opacity: 0
+  10%, 40%
+    opacity: 1
+  50%
+    transform: translateX(-120px) scale(-1, 1)
+    opacity: 0
+
+
+// ---------------- Sun ----------------
+$sun-color: #fffb02
 .sun
-  font-size: 100px
-  opacity: 0.5
-
-@media screen and (min-width: 700px)
-  .sun
+  position: sticky
+  height: 60px
+  width: 60px
+  margin-bottom: 20px
+  margin-top: 30px
+  background-color: #fffb02
+  top: 10%
+  border-radius: 50%
+  border: 2px solid #ffc508
+  animation: rotate 15s linear infinite
+  &::after, &::before
+    content: ''
     position: absolute
-    left: -20px
-    opacity: 1
-    font-size: 100px
-    opacity: 0.5
+    height: 100%
+    width: 100%
+    border: 2px solid #ffc508
+    left: 0
+  &::after
+    transform: scale(1.2)
+  &::before
+    transform: scale(1.2) rotate(45deg)
+
+@keyframes rotate
+  0%
+    transform: rotate(0deg)
+  50%
+    box-shadow: 0px 0px 25px 10px #fffb02
+  100%
+    transform: rotate(-360deg)
+
+// ---------------- Ground ----------------
+#ground
+  position: absolute
+  width: 100%
+  height: 40px
+  background: linear-gradient(90deg, #5a5a5a 40%, #1a4d1c 70%)
+  box-shadow:  0px 0px 10px 0px black

@@ -58,7 +58,10 @@
       top: random(100) + 0%
       left: random(100) + 0%
       color: rgb($light, $light + 150, $light)
-      animation: $speed sway ease-in-out infinite
+      @if $i % 2 == 0
+        animation: $speed sway ease-in-out infinite
+      @else
+        animation: $speed sway2 ease-in-out infinite
 
 .petals
   position: absolute
@@ -80,3 +83,9 @@
     transform: translateX(-15px) rotate(90deg)
   50%
     transform: translateX(15px) rotate(-30deg)
+
+@keyframes sway2
+  0%, 100%
+    transform: translateX(15px) rotate(-30deg)
+  50%
+    transform: translateX(-15px) rotate(90deg)

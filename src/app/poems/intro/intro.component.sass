@@ -7,6 +7,40 @@
   position: relative
   background: linear-gradient(90deg, #151e3a, #b4b4b4, #e0b463)
 
+h2
+  font-family: 'Nabla', cursive
+  text-shadow: -3px 5px 10px #00000094
+  font-size: 50px
+
+$title-delay: 0.15s
+$initial-delay: 1.5s
+.i
+  display: inline-block
+  animation: jump 5s ease-in-out $initial-delay 1
+
+.n
+  display: inline-block
+  animation: jump 5s ease-in-out $initial-delay+$title-delay 1
+
+.t
+  display: inline-block
+  animation: jump 5s ease-in-out $initial-delay+$title-delay*2 1
+
+.r
+  display: inline-block
+  animation: jump 5s ease-in-out $initial-delay+$title-delay*3 1
+
+.o
+  display: inline-block
+  animation: jump 5s ease-in-out $initial-delay+$title-delay*4 1
+
+@keyframes jump
+  0%, 20%
+    transform: translate(0px, 0px)
+  10%
+    transform: translate(0px, -10px)
+
+
 // ---------------- Tree ----------------
 .tree
   position: absolute
@@ -100,9 +134,9 @@
     opacity: 0
   10%
     opacity: 1
-  70%
+  40%
     opacity: 1
-  80%
+  50%
     transform: translate(-20px, 100px) rotate(720deg)
     opacity: 0
 
@@ -195,7 +229,6 @@
   height: 76%
   right: 0%
 
-// $window-color: rgb(255, 246, 187)
 .windows1
   position: absolute
   height: 15%
@@ -293,14 +326,24 @@
   position: absolute
   bottom: -5%
   opacity: 0
+  filter: drop-shadow(0px 0px 3px black)
+  &::after
+    position: absolute
+    content: ''
+    background: linear-gradient(90deg, #ffff6456, transparent)
+    clip-path: polygon(0 46%, 100% 13%, 100% 74%, 0 61%)
+    width: 200%
+    height: 80%
+    bottom: 10%
+    left: 100%
 
 .car1
-  color: #c2c2c2
+  color: #8f0202
   left: 0%
   animation: drive-right 10s linear infinite
 
 .car2
-  color: #888888
+  color: #3232ff
   right: 0%
   animation: drive-left 8s linear 5s infinite
 
@@ -338,6 +381,7 @@ $sun-color: #fffb02
   border-radius: 50%
   border: 2px solid #ffc508
   animation: rotate 15s linear infinite
+  box-shadow: 0px 0px 25px 10px #fffb02a1
   &::after, &::before
     content: ''
     position: absolute
@@ -353,8 +397,6 @@ $sun-color: #fffb02
 @keyframes rotate
   0%
     transform: rotate(0deg)
-  50%
-    box-shadow: 0px 0px 25px 10px #fffb02
   100%
     transform: rotate(-360deg)
 

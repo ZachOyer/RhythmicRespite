@@ -24,8 +24,10 @@ export class IntroComponent implements OnInit {
   ngAfterViewInit(): void {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
-    console.log(document.getElementById('compBackground')?.offsetHeight)
-    // console.log(document.getElementById('ground'))
+    this.setGroundHeight();
+  }
+
+  setGroundHeight() {
     let backgroundHeight: number = document.getElementById('compBackground')?.offsetHeight || 0;
     let height = '';
     if (window.innerHeight - backgroundHeight > window.innerHeight / 10) {
@@ -33,7 +35,6 @@ export class IntroComponent implements OnInit {
     } else {
       height = "height: 50px";
     }
-    console.log(height)
     document.getElementById('ground')?.setAttribute('style', height);
   }
 

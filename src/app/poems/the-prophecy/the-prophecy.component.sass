@@ -38,7 +38,7 @@ $stand-color: #6c1283
   width: 100%
   border-radius: 50%
   background-color: darken($crystal-color, 10%)
-  box-shadow: inset 0px -30px 50px 30px darken($crystal-color, 40%), inset 0px 0px 8px 4px darken($crystal-color, 80%)
+  box-shadow: inset 20px -30px 50px 30px darken($crystal-color, 40%), inset 0px 0px 8px 4px darken($crystal-color, 80%)
   &::before
     content: ''
     position: absolute
@@ -58,6 +58,20 @@ $stand-color: #6c1283
   width: 100%
   border-radius: 50% 50% 10px 10px
   box-shadow: inset -5px -5px 15px 5px darken($stand-color, 10%)
+
+.orb-shadow
+  position: absolute
+  width: 300px
+  height: 5px
+  background-color: #00000080
+  left: 50%
+  top: 108%
+  transform: translate(-50%)
+  z-index: -1
+  border-radius: 50%
+  box-shadow: 0px 0px 10px 10px #00000080
+  animation: shadow 4s ease-in-out infinite
+
 
 .sparkles
   position: absolute
@@ -92,3 +106,8 @@ $stand-color: #6c1283
   50%
     transform: translateY(-10px)
 
+@keyframes shadow
+  0%, 100%
+    box-shadow: 0px 0px 2px 5px #00000080
+  50%
+    box-shadow: 0px 0px 10px 10px #00000080

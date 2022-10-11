@@ -12,6 +12,6 @@ export class LoveLifeLiteratureComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
 
+  }
 }

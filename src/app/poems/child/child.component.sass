@@ -1,0 +1,91 @@
+.my-container
+  text-align: center
+  background-color: rgb(0, 0, 0)
+  padding-right: 15px
+  padding-left: 15px
+  position: relative
+  overflow-x: hidden
+
+.poem-text
+  color: white
+  text-shadow: 2px 2px 2px #ffffff94, 4px 4px 4px #000000a2
+  font-family: 'Courgette', cursive
+  font-size: 25px
+
+@media screen and (max-width: 770px)
+  .poem-text
+    font-size: 20px
+
+
+#title
+  height: 80vh
+  position: relative
+
+h2, .down
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  font-family: 'Kumar One Outline', cursive
+  font-size: 40px
+  color: white
+
+#space1, #space2
+  position: relative
+  height: 60vh
+
+.button-container
+  position: relative
+  height: 200px
+
+#back
+  position: absolute
+  background-color: transparent
+  border: 0px
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  height: 40px
+  width: 200px
+  font-family: 'Courgette', cursive
+  color: white
+  text-shadow: 2px 2px 2px black
+  transition: color 0.3s ease-in-out, opacity 1s ease-in-out, word-spacing 1s ease-in-out, width 1s ease-in-out
+  &:hover
+    color: #b8b8b8
+
+#back:hover #top-border, #back:hover #bottom-border, #back:hover #left-border, #back:hover #right-border
+  background-color: #b8b8b8
+
+#top-border, #bottom-border
+  position: absolute
+  width: 100%
+  height: 2px
+  background-color: white
+  left: 0%
+  transition: transform 1s ease-in-out, background-color 0.3s ease-in-out
+  box-shadow: 2px 2px 2px black
+
+#right-border, #left-border
+  position: absolute
+  width: 2px
+  height: 100%
+  background-color: white
+  top: 0%
+  transition: transform 1s ease-in-out, background-color 0.3s ease-in-out
+  box-shadow: 2px 2px 2px black
+
+#top-border
+  top: 0%
+
+#bottom-border
+  bottom: 0%
+
+#right-border
+  right: 0%
+
+#left-border
+  left: 0%
+
+#stanza1
+  text-shadow: 2px 2px 2px #ffffff94

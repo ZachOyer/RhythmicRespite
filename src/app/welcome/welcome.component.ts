@@ -99,6 +99,12 @@ export class WelcomeComponent implements OnInit {
       length: "Medium",
       count: "144"
     },
+    {
+      id: 16,
+      title: "Child",
+      length: "Long",
+      count: "418"
+    },
   ]
 
 
@@ -175,6 +181,8 @@ export class WelcomeComponent implements OnInit {
       this.router.navigateByUrl('mirrored-glass');
     } else if (id === 15) {
       this.router.navigateByUrl('reasons');
+    } else if (id === 16) {
+      this.router.navigateByUrl('child');
     }
   }
 

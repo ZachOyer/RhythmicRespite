@@ -18,6 +18,7 @@ import { FindItQuickComponent } from './poems/find-it-quick/find-it-quick.compon
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MirroredGlassComponent } from './poems/mirrored-glass/mirrored-glass.component';
 import { ReasonsComponent } from './poems/reasons/reasons.component';
+import { ChildComponent } from './poems/child/child.component';
 
 const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent, data: { animation: 'Welcome' }},
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'find-it-quick', component: FindItQuickComponent, data: { animation: 'Poem' }},
   { path: 'mirrored-glass', component: MirroredGlassComponent, data: { animation: 'Poem' }},
   { path: 'reasons', component: ReasonsComponent, data: { animation: 'Poem' }},
+  { path: 'child', component: ChildComponent, data: { animation: 'Poem' }},
   { path: '', redirectTo: 'welcome', pathMatch: 'full'},
   { path: '**', redirectTo: 'welcome', pathMatch: 'full'},
 ];

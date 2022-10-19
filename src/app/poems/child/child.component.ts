@@ -80,19 +80,11 @@ export class ChildComponent implements OnInit {
       stanza3offset += document.getElementById('line' + i)?.offsetHeight || 0;
     }
 
-    // Scrolling effect for the back button
+    // Scrolling effect for the back button.
     if (window.scrollY + window.innerHeight === document.body.offsetHeight) {
-      document.getElementById('top-border')?.setAttribute('style', 'transform: translateX(0%)')
-      document.getElementById('bottom-border')?.setAttribute('style', 'transform: translateX(0%)')
-      document.getElementById('left-border')?.setAttribute('style', 'transform: translateY(0%)')
-      document.getElementById('right-border')?.setAttribute('style', 'transform: translateY(0%)')
-      document.getElementById('back')?.setAttribute('style', 'opacity: 1; word-spacing: 0px; width: 200px')
+      document.getElementById('back')?.setAttribute('style', 'opacity: 1; transform: translate(-50%, -50%)')
     } else {
-      document.getElementById('top-border')?.setAttribute('style', 'transform: translate(50px)')
-      document.getElementById('bottom-border')?.setAttribute('style', 'transform: translate(-50px)')
-      document.getElementById('left-border')?.setAttribute('style', 'transform: translateY(-50px)')
-      document.getElementById('right-border')?.setAttribute('style', 'transform: translateY(50px)')
-      document.getElementById('back')?.setAttribute('style', 'opacity: 0; word-spacing: 20px; width: 300px')
+      document.getElementById('back')?.setAttribute('style', 'opacity: 0; transform: translate(-50%, 200%)')
     }
   }
 

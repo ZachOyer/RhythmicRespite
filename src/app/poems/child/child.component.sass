@@ -42,7 +42,7 @@ h2
     transform: translate(-50%, -53%)
     border-radius: 50%
     animation: spin 20s linear infinite
-    box-shadow: 2px 2px 10px #b7fff9c4, 2px 2px 50px #b7fff950
+    box-shadow: 2px 2px 10px #b7fff9c4, 10px 10px 50px #b7fff950
 
 @keyframes spin
   0%
@@ -59,11 +59,12 @@ h2
   position: relative
   overflow: hidden
   height: 200px
+  filter: drop-shadow(2px 2px 4px black)
 
 #back
   position: absolute
   background-color: transparent
-  border: 4px double
+  border: 7px double
   border-radius: 5px
   top: 50%
   left: 50%
@@ -72,7 +73,6 @@ h2
   width: 200px
   font-family: 'Courgette', cursive
   color: white
-  text-shadow: 2px 2px 2px black
   transition: color 0.3s ease-in-out, opacity 1s ease-in-out, word-spacing 1s ease-in-out, width 1s ease-in-out, transform 1s ease-in-out
   &:hover
     color: #b8b8b8
@@ -80,20 +80,12 @@ h2
 #back:hover #top-border, #back:hover #bottom-border, #back:hover #left-border, #back:hover #right-border
   background-color: #b8b8b8
 
-#top-border, #bottom-border
+#top-border, #bottom-border, #right-border, #left-border
   position: absolute
-  width: 1px
-  height: 40%
+  width: 2px
+  height: 50%
   background-color: white
   transition: transform 1s ease-in-out, background-color 0.3s ease-in-out
-
-#right-border, #left-border
-  position: absolute
-  width: 1px
-  height: 40%
-  background-color: white
-  transition: transform 1s ease-in-out, background-color 0.3s ease-in-out
-  // box-shadow: 2px 2px 2px black
 
 #top-border
   top: 0%

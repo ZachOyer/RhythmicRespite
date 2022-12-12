@@ -106,4 +106,8 @@ export class ChildComponent implements OnInit {
     document.getElementById(id)?.setAttribute('style', 'opacity: ' + opacity + '; transform: translateX(' + Math.abs(opacity * -30 + 30) +'px)');
   }
 
+  changeBackground() {
+    document.getElementsByClassName('my-container')[0].setAttribute('style', 'background-color: rgb(0,0,0)');
+  }
+
 }

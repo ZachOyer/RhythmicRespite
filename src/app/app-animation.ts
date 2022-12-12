@@ -49,14 +49,14 @@ export const appAnimations =
         { optional: true }),
         group([
           query(':enter', [
-            style({ opacity: 0, transform: 'translateX(100%)'}),
+            style({ 'z-index': '-1'}),
             animate('1.5s ease-in-out',
-            style({ opacity: 1, transform: 'translateX(0%)'}))
+            style({ 'z-index': '-1'}))
           ], { optional: true }),
           query(':leave', [
-            style({ opacity: 1, transform: 'translateX(0%)'}),
+            style({ transform: 'translateX(0%) translateY(0%) rotate(0deg)'}),
             animate('1.5s ease-in-out',
-            style({ opacity: 0, transform: 'translateX(-100%)'}),)
+            style({ transform: 'translateX(-100%) translateY(10%) rotate(-15deg)'}),)
           ], { optional: true }),
         ])
     ]),
@@ -66,14 +66,14 @@ export const appAnimations =
         { optional: true }),
         group([
           query(':enter', [
-            style({ opacity: 0, transform: 'translateX(-100%)'}),
+            style({ 'z-index': '-1'}),
             animate('1.5s ease-in-out',
-            style({ opacity: 1, transform: 'translateX(0%)'}))
+            style({ 'z-index': '-1'}))
           ], { optional: true }),
           query(':leave', [
-            style({ opacity: 1, transform: 'translateX(0%)'}),
+            style({ transform: 'translateX(0%) translateY(0%) rotate(0deg)'}),
             animate('1.5s ease-in-out',
-            style({ opacity: 0, transform: 'translateX(100%)'}),)
+            style({ transform: 'translateX(100%) translateY(10%) rotate(15deg)'}),)
           ], { optional: true }),
         ])
     ]),

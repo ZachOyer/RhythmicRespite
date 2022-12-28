@@ -76,14 +76,16 @@
     <div class="row mx-0">
       <div class="col-12 my-card" (click)="goToPoem(poem.id)" *ngFor="let poem of filteredPoems" @flyInOutRight>
         <div class="row mx-0">
-          <div class="title col-12 col-md-8 mt-1">{{poem.title}}</div>
-          <div class="col-6 col-md-2 desc">
-            <div class="data-tag">Length</div>
-            <div class="ps-2 data">{{poem.length}}</div>
-          </div>
-          <div class="col-6 col-md-2 desc">
-            <div class="data-tag">Word Count</div>
-            <div class="ps-2 data">{{poem.count}}</div>
+          <div class="title col-12 mt-1">{{poem.title}}</div>
+          <div class="row card-data">
+            <div class="col-6 desc">
+              <div class="data-tag">Length</div>
+              <div class="ps-2 data">{{poem.length}}</div>
+            </div>
+            <div class="col-6 desc">
+              <div class="data-tag">Word Count</div>
+              <div class="ps-2 data">{{poem.count}}</div>
+            </div>
           </div>
         </div>
       </div>

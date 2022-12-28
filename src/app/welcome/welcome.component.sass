@@ -65,10 +65,27 @@
 //     -ms-transform: translateY(-5px)
 //     transform: translateY(-5px)
 
+/* width */
+::-webkit-scrollbar
+  width: 15px
+
+/* Track */
+::-webkit-scrollbar-track
+  background: #303030
+
+/* Handle */
+::-webkit-scrollbar-thumb
+  background: #888
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+  background: #555
+
 .background
-  min-height: 100vh
+  height: 100vh
   background-color: #303030
   overflow-x: hidden
+  overflow-y: scroll
 
 h1
   margin-top: 20px
@@ -103,31 +120,23 @@ h1
   overflow: hidden
   &:hover
     box-shadow: 0px 0px 10px 0px #ffffffc7
-  // @for $i from 1 through 14
-  //   &:nth-child(#{$i})
-  //     &::before
-  //       background-color: rgb(71 - ($i * 5), 255 - ($i * 8), 153 + ($i * 2))
 
 .my-card::before
   content: '',
   position: absolute
-  right: 100%
+  left: -70%
   top: 0%
-  width: 100%
+  width: 70%
   height: 100%
-  // background-color: #fff
-  background: linear-gradient(-70deg, #ffffff, #bbba9f)
-  transition: right 0.3s ease-in-out
+  background-color: #fff
+  transition: left 0.3s ease-in-out
 
 .my-card div
   transition: all 0.3s ease-in-out
 
 .my-card .desc
   color: black
-  position: sticky
   filter: drop-shadow(1px 1px 1px black)
-  transform: translateY(-10%)
-  opacity: 0
 
 
 @media screen and ( min-width: 768px )
@@ -136,15 +145,22 @@ h1
     padding-left: 24px
     padding-right: 0px
 
-  .my-card:hover .desc
-    transform: translateY(0%)
-    opacity: 1
-
-  .my-card .desc:nth-child(2)
-    border-left: 1px solid black
-
   .my-card:hover::before
-      right: 0%
+    left: 0%
+
+  .card-data
+    background: linear-gradient(-70deg, #ffffff, #cacaca)
+    position: absolute
+    padding: 10px
+    height: 100%
+    width: 40%
+    right: -40%
+    top: 0%
+    border-left: 2px solid black
+    transition: right 0.3s ease-in-out
+
+  .my-card:hover .card-data
+    right: 0%
 
 .data
   font-size: 30px

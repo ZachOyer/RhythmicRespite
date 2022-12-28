@@ -1,7 +1,7 @@
-<div class="background">
+<!-- <div class="background"> -->
 
   <!-- Header for DESKTOP -->
-  <div class="navbar" *ngIf="!styleService.getIsMobile()">
+  <!-- <div class="navbar" *ngIf="!styleService.getIsMobile()">
     <div class="col text-center header mx-3">
       <h1>
         <fa-icon [icon]="faLeft"></fa-icon>
@@ -9,10 +9,10 @@
         <fa-icon [icon]="faRight"></fa-icon>
       </h1>
     </div>
-  </div>
+  </div> -->
 
   <!-- Header for MOBILE -->
-  <div class="navbar text-center" *ngIf="styleService.getIsMobile()">
+  <!-- <div class="navbar text-center" *ngIf="styleService.getIsMobile()">
     <div class="col-3" style="font-size: 40px;">
       <fa-icon [icon]="faLeft"></fa-icon>
     </div>
@@ -63,6 +63,31 @@
       </table>
     </div>
 
+  </div>
+</div> -->
+<div class="background">
+  <div class="container pb-5">
+    <div class="row">
+      <h1>Welcome to Rhythmic Respite</h1>
+    </div>
+    <div class="row input-box">
+      <input class="form-control my-input" placeholder="Search for a poem..." [(ngModel)]="searchTerm" (keyup)="filterPoems()">
+    </div>
+    <div class="row mx-0">
+      <div class="col-12 my-card" (click)="goToPoem(poem.id)" *ngFor="let poem of filteredPoems" @flyInOutRight>
+        <div class="row mx-0">
+          <div class="title col-12 col-md-8 mt-1">{{poem.title}}</div>
+          <div class="col-6 col-md-2 desc">
+            <div class="data-tag">Length</div>
+            <div class="ps-2 data">{{poem.length}}</div>
+          </div>
+          <div class="col-6 col-md-2 desc">
+            <div class="data-tag">Word Count</div>
+            <div class="ps-2 data">{{poem.count}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

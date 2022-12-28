@@ -1,68 +1,189 @@
-h1
-  font-family: 'Fredericka the Great', cursive
-  width: 100%
+// h1
+//   font-family: 'Fredericka the Great', cursive
+//   width: 100%
 
-.navbar
-  background-color: white
-  cursor: default
+// .navbar
+//   background-color: white
+//   cursor: default
 
-.search-label
-  background-color: white
-  border: 2px solid black
-  border-bottom: 0px
-  border-radius: 10px 10px 0px 0px
+// .search-label
+//   background-color: white
+//   border: 2px solid black
+//   border-bottom: 0px
+//   border-radius: 10px 10px 0px 0px
 
-tbody tr
-  background-color: white
-  transition: 0.2s all ease-in-out
+// tbody tr
+//   background-color: white
+//   transition: 0.2s all ease-in-out
+
+// .background
+//   background: url('../../assets/paper_background.jpg')
+//   min-height: 100vh
+
+// tbody tr:hover
+//   transform: translateY(-3px)
+//   box-shadow: 0px 2px 3px #000000b2
+//   background-color: white
+
+// .search-bar:hover .test2
+//   animation: bounce 1.2s linear ease-in
+//   -webkit-animation: bounce 1.2s linear ease-in
+
+// @-webkit-keyframes bounce
+//   0%,
+//   100%,
+//   20%,
+//   50%,
+//   80%
+//     -webkit-transform: translateY(0px)
+//     -ms-transform: translateY(0px)
+//     transform: translateY(0px)
+//   40%
+//     -webkit-transform: translateY(-10px)
+//     -ms-transform: translateY(-10px)
+//     transform: translateY(-10px)
+//   60%
+//     -webkit-transform: translateY(-5px)
+//     -ms-transform: translateY(-5px)
+//     transform: translateY(-5px)
+
+// @keyframes bounce
+//   0%,
+//   100%,
+//   20%,
+//   50%,
+//   80%
+//     -webkit-transform: translateY(0px)
+//     -ms-transform: translateY(0px)
+//     transform: translateY(0px)
+//   40%
+//     -webkit-transform: translateY(-10px)
+//     -ms-transform: translateY(-10px)
+//     transform: translateY(-10px)
+//   60%
+//     -webkit-transform: translateY(-5px)
+//     -ms-transform: translateY(-5px)
+//     transform: translateY(-5px)
 
 .background
-  background: url('../../assets/paper_background.jpg')
   min-height: 100vh
+  background-color: #303030
+  overflow-x: hidden
 
-tbody tr:hover
-  transform: translateY(-3px)
-  box-shadow: 0px 2px 3px #000000b2
-  background-color: white
+h1
+  margin-top: 20px
+  margin-bottom: 10px
+  text-align: center
+  font-size: 50px
+  color: white
+  font-family: 'Montserrat', sans-serif
+  font-weight: 400
+  filter: drop-shadow(2px 2px 1px #979797) drop-shadow(4px 4px 3px black)
 
-.search-bar:hover .test2
-  animation: bounce 1.2s linear ease-in
-  -webkit-animation: bounce 1.2s linear ease-in
+.title
+  color: white
+  font-style: italic
+  font-size: 40px
+  padding-left: 12px
+  filter: drop-shadow(2px 1px 2px black)
 
-@-webkit-keyframes bounce
-  0%,
-  100%,
-  20%,
-  50%,
-  80%
-    -webkit-transform: translateY(0px)
-    -ms-transform: translateY(0px)
-    transform: translateY(0px)
-  40%
-    -webkit-transform: translateY(-10px)
-    -ms-transform: translateY(-10px)
-    transform: translateY(-10px)
-  60%
-    -webkit-transform: translateY(-5px)
-    -ms-transform: translateY(-5px)
-    transform: translateY(-5px)
+.my-card
+  font-family: 'Montserrat', sans-serif
+  font-weight: 200
+  position: relative
+  padding: 10px
+  border: 1px solid black
+  border-radius: 20px
+  margin-top: 15px
+  margin-bottom: 15px
+  color: white
+  transition: all 0.3s ease-in-out
+  box-shadow: 0px 5px 10px 0px #000
+  cursor: pointer
+  overflow: hidden
+  &:hover
+    box-shadow: 0px 0px 10px 0px #ffffffc7
+  // @for $i from 1 through 14
+  //   &:nth-child(#{$i})
+  //     &::before
+  //       background-color: rgb(71 - ($i * 5), 255 - ($i * 8), 153 + ($i * 2))
 
-@keyframes bounce
-  0%,
-  100%,
-  20%,
-  50%,
-  80%
-    -webkit-transform: translateY(0px)
-    -ms-transform: translateY(0px)
-    transform: translateY(0px)
-  40%
-    -webkit-transform: translateY(-10px)
-    -ms-transform: translateY(-10px)
-    transform: translateY(-10px)
-  60%
-    -webkit-transform: translateY(-5px)
-    -ms-transform: translateY(-5px)
-    transform: translateY(-5px)
+.my-card::before
+  content: '',
+  position: absolute
+  right: 100%
+  top: 0%
+  width: 100%
+  height: 100%
+  // background-color: #fff
+  background: linear-gradient(-70deg, #ffffff, #bbba9f)
+  transition: right 0.3s ease-in-out
+
+.my-card div
+  transition: all 0.3s ease-in-out
+
+.my-card .desc
+  color: black
+  position: sticky
+  filter: drop-shadow(1px 1px 1px black)
+  transform: translateY(-10%)
+  opacity: 0
 
 
+@media screen and ( min-width: 768px )
+  .my-card:hover .title
+    color: black
+    padding-left: 24px
+    padding-right: 0px
+
+  .my-card:hover .desc
+    transform: translateY(0%)
+    opacity: 1
+
+  .my-card .desc:nth-child(2)
+    border-left: 1px solid black
+
+  .my-card:hover::before
+      right: 0%
+
+.data
+  font-size: 30px
+
+.data-tag
+  font-weight: 400
+
+.input-box
+  background-color: #4e4e4e
+  padding: 30px 15px 30px 15px
+  margin: 15px 0px 15px 0px
+
+.my-input
+  border-radius: 0px
+  background-color: #4e4e4e
+  border-width: 0px 0px 2px 0px
+
+  font-family: 'Montserrat', sans-serif
+  transition: all 0.3s ease-in-out
+
+.my-input:focus
+  font-size: 1.1rem
+  box-shadow: 0px 0px 0px transparent
+
+@media screen and ( max-width: 767px )
+  h1
+    font-size: 30px
+
+  .title
+    font-size: 20px
+    border-bottom: 1px solid white
+    margin-bottom: 10px
+
+  .data
+    font-size: 15px
+
+  .data-tag
+    font-size: 10px
+
+  .my-card .desc
+    opacity: 1
+    color: white

@@ -21,8 +21,4 @@ export class FirstPoemComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goToOtherPoem() {
-
-  }
-
 }

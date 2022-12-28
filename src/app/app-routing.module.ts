@@ -19,6 +19,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { MirroredGlassComponent } from './poems/mirrored-glass/mirrored-glass.component';
 import { ReasonsComponent } from './poems/reasons/reasons.component';
 import { ChildComponent } from './poems/child/child.component';
+import { ThirdPoemComponent } from './poems/tinder-poems/third-poem/third-poem.component';
 
 const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent, data: { animation: 'Welcome' }},
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'glass-rose', component: GlassRoseComponent, data: { animation: 'Poem' }},
   { path: 'tinder-poems', component: FirstPoemComponent, data: { animation: 'Poem' }},
   { path: 'tinder-poems-2', component: SecondPoemComponent, data: { animation: 'SecondPoem'}},
+  { path: 'tinder-poems-3', component: ThirdPoemComponent, data: { animation: 'ThirdPoem'}},
   { path: 'the-prophecy', component: TheProphecyComponent, data: { animation: 'Poem' }},
   { path: 'happy-ride', component: HappyRideComponent, data: { animation: 'Poem' }},
   { path: 'speak-english', component: SpeakEnglishComponent, data: { animation: 'Poem' }},

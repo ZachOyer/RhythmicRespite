@@ -1,5 +1,24 @@
+/* width */
+::-webkit-scrollbar
+  width: 15px
+
+/* Track */
+::-webkit-scrollbar-track
+  background: #303030
+
+/* Handle */
+::-webkit-scrollbar-thumb
+  background: #888
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+  background: #555
+
+.scrollable
+  height: 100vh
+  overflow-y: scroll
+
 .background
-  // background: repeat url('../../../assets/space.jpg')
   position: relative
   background: linear-gradient(90deg, #060c1d 0%,#121822 100%)
   overflow: hidden
@@ -34,10 +53,21 @@ h2
   height: 180px
   border-radius: 50%
   border: 2px solid green
-  background-color: #147cacd8
+  background-color: #166116
   box-shadow: 0 0 10px #00ff00
   color: white
   text-shadow: 0 0 10px #fffffff3
+
+.world-text
+  z-index: 2
+  position: relative
+
+.world-icon
+  z-index: 1
+  position: absolute
+  font-size: 177px
+  top: -2px
+  color: #147cacd8
 
 .poem-text div
   border-radius: 30px

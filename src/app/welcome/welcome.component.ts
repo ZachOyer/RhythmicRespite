@@ -45,7 +45,7 @@ export class WelcomeComponent implements OnInit {
       id: 1,
       title: "Tinder Poems",
       length: "Short",
-      count: "94 + 104"
+      count: "94, 104, 172"
     },
     {
       id: 2,

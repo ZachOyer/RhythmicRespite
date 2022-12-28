@@ -27,6 +27,7 @@ import { MirroredGlassComponent } from './poems/mirrored-glass/mirrored-glass.co
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReasonsComponent } from './poems/reasons/reasons.component';
 import { ChildComponent } from './poems/child/child.component';
+import { ThirdPoemComponent } from './poems/tinder-poems/third-poem/third-poem.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ChildComponent } from './poems/child/child.component';
     FindItQuickComponent,
     MirroredGlassComponent,
     ReasonsComponent,
-    ChildComponent
+    ChildComponent,
+    ThirdPoemComponent
   ],
   imports: [
     BrowserModule,

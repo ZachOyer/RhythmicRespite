@@ -71,7 +71,22 @@
       <h1>Welcome to Rhythmic Respite</h1>
     </div>
     <div class="row input-box">
-      <input class="form-control my-input" placeholder="Search for a poem..." [(ngModel)]="searchTerm" (keyup)="filterPoems()">
+      <div class="input-group">
+        <input class="form-control my-input" placeholder="Search for a poem..." [(ngModel)]="searchTerm" (keyup)="filterPoems()">
+        <button class="btn btn-clear" *ngIf="searchTerm.length > 0" (click)="clearSearch()"><fa-icon [icon]="faClear"></fa-icon></button>
+      </div>
+
+      <div class="mt-2" style="color: rgb(187, 186, 186)">Filter by:</div>
+      <div class="btn-group" role="group" aria-label="Filtering button group">
+        <input type="radio" class="btn-check radio-btn" name="btnradio" id="btnradio1" autocomplete="off" (change)="filterPoems('None')" checked>
+        <label class="btn my-button px-1" for="btnradio1"><div class="btn-text">None</div></label>
+        <input type="radio" class="btn-check radio-btn" name="btnradio" id="btnradio2" autocomplete="off" (change)="filterPoems('Short')">
+        <label class="btn my-button px-1" for="btnradio2"><div class="btn-text">Short</div></label>
+        <input type="radio" class="btn-check radio-btn" name="btnradio" id="btnradio3" autocomplete="off" (change)="filterPoems('Medium')">
+        <label class="btn my-button px-1" for="btnradio3"><div class="btn-text">Medium</div></label>
+        <input type="radio" class="btn-check radio-btn" name="btnradio" id="btnradio4" autocomplete="off" (change)="filterPoems('Long')">
+        <label class="btn my-button px-1" for="btnradio4"><div class="btn-text">Long</div></label>
+      </div>
     </div>
     <div class="row mx-0">
       <div class="col-12 my-card" (click)="goToPoem(poem.id)" *ngFor="let poem of filteredPoems" @flyInOutRight>

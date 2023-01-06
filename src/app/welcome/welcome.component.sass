@@ -124,11 +124,13 @@ h1
 .my-card::before
   content: '',
   position: absolute
-  left: -70%
-  top: 0%
+  left: -72%
+  top: -5%
   width: 70%
-  height: 100%
-  background-color: #fff
+  height: 110%
+  // background-color: #fff
+  background: linear-gradient(0deg, #8d6a1f 25%, #c79b21 28%, #c79b21 72%, #ccb486 75%)
+  filter: blur(2px)
   transition: left 0.3s ease-in-out
 
 .my-card div
@@ -149,7 +151,9 @@ h1
     left: 0%
 
   .card-data
-    background: linear-gradient(-70deg, #ffffff, #cacaca)
+    box-shadow: -15px 0px 25px 5px #000000b4 inset
+    background: linear-gradient(90deg, #cacaca, #cacaca 18%, #aaaaaa 20%, #cacaca 22%, #cacaca 28%, #aaaaaa 30%, #cacaca 32%, #cacaca 38%, #aaaaaa 40%, #cacaca 42%, #cacaca 49%, #c58c7b 50%)
+    // background: linear-gradient(-70deg, #ffffff, #cacaca)
     position: absolute
     padding: 10px
     height: 100%
@@ -169,21 +173,82 @@ h1
   font-weight: 400
 
 .input-box
+  font-family: 'Montserrat', sans-serif
   background-color: #4e4e4e
   padding: 30px 15px 30px 15px
   margin: 15px 0px 15px 0px
 
 .my-input
+  font-family: 'Montserrat', sans-serif
   border-radius: 0px
   background-color: #4e4e4e
   border-width: 0px 0px 2px 0px
-
-  font-family: 'Montserrat', sans-serif
   transition: all 0.3s ease-in-out
 
 .my-input:focus
-  font-size: 1.1rem
   box-shadow: 0px 0px 0px transparent
+
+.btn-clear
+  color: #ed2661
+  border-color: #333
+  border-width: 0px 0px 2px 0px
+  &:focus
+    border-width: 0px 0px 2px 0px
+    border-color: #ed2661
+  &:hover
+    border-width: 0px 0px 2px 0px
+    box-shadow: none
+
+.btn
+  border-radius: 0px
+
+.btn:hover
+  transform: translateY(0px)
+  box-shadow: 0px 0px 0px #00000094
+
+.btn-group
+  font-family: 'Fredericka the Great', cursive
+  font-size: 1.1em
+
+.btn-text
+  position: relative
+  z-index: 1
+
+.my-button
+  color: white
+  border: 2px solid #333
+  overflow: hidden
+  transition: all 0.3s ease-in-out
+  &::before, &::after
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100px
+    border-radius: 50%
+    transform: scale(1)
+    transition: transform 0.3s ease-in-out
+
+.my-button::before
+  top: 100%
+  left: 50%
+  background-color: #333
+
+.my-button::after
+  bottom: 100%
+  right: 50%
+  // background: linear-gradient(45deg, #a1a1a1 45%, #ffffff 60%)
+  background: repeat url('../../assets/paper.jfif')
+  background-size: 20%
+
+.my-button:hover::before
+  transform: scale(3)
+
+.radio-btn:checked + .my-button
+  color: #333
+  border: 2px solid #333
+
+.radio-btn:checked + .my-button::after
+  transform: scale(3)
 
 @media screen and ( max-width: 767px )
   h1

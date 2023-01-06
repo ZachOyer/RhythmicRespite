@@ -32,6 +32,7 @@ export class WelcomeComponent implements OnInit {
   faLeft = faAlignRight;
   faClear = faDeleteLeft;
 
+  sortBy = 'None';
   searchTerm = '';
   filteredPoems: any;
   poems = [
@@ -45,7 +46,7 @@ export class WelcomeComponent implements OnInit {
       id: 1,
       title: "Tinder Poems",
       length: "Short",
-      count: "94, 104, 172"
+      count: "Varying"
     },
     {
       id: 2,
@@ -126,9 +127,16 @@ export class WelcomeComponent implements OnInit {
     this.filterPoems();
   }
 
-  filterPoems() {
+  filterPoems(sorting?: string) {
+    if (sorting) {
+      this.sortBy = sorting;
+    }
     if (this.searchTerm === '') {
-      this.filteredPoems = this.poems;
+      if (this.sortBy !== 'None') {
+        this.filteredPoems = this.poems.filter((poem) => poem.length === this.sortBy);
+      } else {
+        this.filteredPoems = this.poems;
+      }
     } else if (this.searchTerm.toLowerCase() === 'baby gurl') {
       this.filteredPoems = [{
         id: 5,
@@ -152,8 +160,14 @@ export class WelcomeComponent implements OnInit {
       }]
     } else {
       this.filteredPoems = this.poems.filter((poem: any) => {
-        if (poem.title.toLowerCase().indexOf(this.searchTerm.toLowerCase()) !== -1) {
-          return poem
+        if (this.sortBy !== 'None') {
+          if ((poem.title.toLowerCase().indexOf(this.searchTerm.toLowerCase()) !== -1) && (poem.length === this.sortBy)) {
+            return poem
+          }
+        } else {
+          if (poem.title.toLowerCase().indexOf(this.searchTerm.toLowerCase()) !== -1) {
+            return poem
+          }
         }
       })
       if (this.filterPoems.length < 1) {

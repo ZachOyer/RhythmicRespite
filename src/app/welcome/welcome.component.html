@@ -78,28 +78,38 @@
 
       <div class="mt-2" style="color: rgb(187, 186, 186)">Filter by:</div>
       <div class="btn-group" role="group" aria-label="Filtering button group">
-        <input type="radio" class="btn-check radio-btn" name="btnradio" id="btnradio1" autocomplete="off" (change)="filterPoems('None')" checked>
-        <label class="btn my-button px-1" for="btnradio1"><div class="btn-text">None</div></label>
-        <input type="radio" class="btn-check radio-btn" name="btnradio" id="btnradio2" autocomplete="off" (change)="filterPoems('Short')">
-        <label class="btn my-button px-1" for="btnradio2"><div class="btn-text">Short</div></label>
-        <input type="radio" class="btn-check radio-btn" name="btnradio" id="btnradio3" autocomplete="off" (change)="filterPoems('Medium')">
-        <label class="btn my-button px-1" for="btnradio3"><div class="btn-text">Medium</div></label>
-        <input type="radio" class="btn-check radio-btn" name="btnradio" id="btnradio4" autocomplete="off" (change)="filterPoems('Long')">
-        <label class="btn my-button px-1" for="btnradio4"><div class="btn-text">Long</div></label>
+        <input type="radio" class="btn-check radio-btn" name="filterbtn" id="filterbtn1" autocomplete="off" (change)="filterPoems('None')" checked>
+        <label class="btn my-button px-1" for="filterbtn1"><div class="btn-text">None</div></label>
+        <input type="radio" class="btn-check radio-btn" name="filterbtn" id="filterbtn2" autocomplete="off" (change)="filterPoems('Short')">
+        <label class="btn my-button px-1" for="filterbtn2"><div class="btn-text">Short</div></label>
+        <input type="radio" class="btn-check radio-btn" name="filterbtn" id="filterbtn3" autocomplete="off" (change)="filterPoems('Medium')">
+        <label class="btn my-button px-1" for="filterbtn3"><div class="btn-text">Medium</div></label>
+        <input type="radio" class="btn-check radio-btn" name="filterbtn" id="filterbtn4" autocomplete="off" (change)="filterPoems('Long')">
+        <label class="btn my-button px-1" for="filterbtn4"><div class="btn-text">Long</div></label>
+      </div>
+
+      <div class="mt-2" style="color: rgb(187, 186, 186)">Sort by:</div>
+      <div class="btn-group">
+        <input type="radio" class="btn-check radio-btn" name="sortbtn" id="sortbtn1" autocomplete="off" (change)="sortPoems(0)" checked>
+        <label class="btn my-button px-0" for="sortbtn1"><div class="btn-text">None</div></label>
+        <input type="radio" class="btn-check radio-btn" name="sortbtn" id="sortbtn2" autocomplete="off" (change)="sortPoems(-1)">
+        <label class="btn my-button px-0" for="sortbtn2"><div class="btn-text">Newest</div></label>
+        <input type="radio" class="btn-check radio-btn" name="sortbtn" id="sortbtn3" autocomplete="off" (change)="sortPoems(1)">
+        <label class="btn my-button px-0" for="sortbtn3"><div class="btn-text">Oldest</div></label>
       </div>
     </div>
     <div class="row mx-0">
       <div class="col-12 my-card" (click)="goToPoem(poem.id)" *ngFor="let poem of filteredPoems" @flyInOutRight>
         <div class="row mx-0">
           <div class="title col-12 mt-1">{{poem.title}}</div>
-          <div class="row card-data">
-            <div class="col-6 desc">
+          <div class="row mx-0 card-data">
+            <div class="col-auto desc">
               <div class="data-tag">Length</div>
               <div class="ps-2 data">{{poem.length}}</div>
             </div>
-            <div class="col-6 desc">
-              <div class="data-tag">Word Count</div>
-              <div class="ps-2 data">{{poem.count}}</div>
+            <div class="col-auto desc">
+              <div class="data-tag">Date Written</div>
+              <div class="ps-2 data">{{formatDate(poem.date)}}</div>
             </div>
           </div>
         </div>

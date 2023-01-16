@@ -32,7 +32,9 @@ export class WelcomeComponent implements OnInit {
   faLeft = faAlignRight;
   faClear = faDeleteLeft;
 
-  sortBy = 'None';
+  filterBy = 'None';
+  sortingDirection = 0;
+
   searchTerm = '';
   filteredPoems: any;
   poems = [
@@ -40,85 +42,85 @@ export class WelcomeComponent implements OnInit {
       id: 0,
       title: "Intro",
       length: "Medium",
-      count: "170"
+      date: new Date('Apr 2022')
     },
     {
       id: 1,
       title: "Tinder Poems",
       length: "Short",
-      count: "Varying"
+      date: new Date("Jun 2021")
     },
     {
       id: 2,
       title: "Christmas Rap",
       length: "Medium",
-      count: "194"
+      date: new Date("Nov 2021")
     },
     {
       id: 3,
       title: "Love Life Literature",
       length: "Long",
-      count: "326"
+      date: new Date('"Nov 2021"')
     },
     {
       id: 4,
       title: "Edgar Allen Poem",
       length: "Long",
-      count: "255"
+      date: new Date("Oct 2021")
     },
     {
       id: 6,
       title: "Climbing",
       length: "Medium",
-      count: "211"
+      date: new Date("Feb 2022")
     },
     {
       id: 7,
       title: "The Prophecy",
       length: "Long",
-      count: "250"
+      date: new Date("Nov 2021")
     },
     {
       id: 8,
       title: "You're my Dad",
       length: "Long",
-      count: "268"
+      date: new Date("Nov 2021")
     },
     {
       id: 9,
       title: "You Speak English?",
       length: "Short",
-      count: "76"
+      date: new Date("May 2022")
     },
     {
       id: 10,
       title: "Glass Rose",
       length: "Medium",
-      count: "184"
+      date: new Date("Jun 2022")
     },
     {
       id: 11,
       title: "You Must Be This Happy To Ride This Ride",
       length: "Long",
-      count: "347"
+      date: new Date("Jul 2022")
     },
     {
       id: 12,
       title: "The World",
       length: "Long",
-      count: "481"
+      date: new Date("Aug 2022")
     },
     {
       id: 13,
       title: "Find It Quick",
       length: "Medium",
-      count: "144"
+      date: new Date("Aug 2022")
     },
     {
       id: 16,
       title: "Child",
       length: "Long",
-      count: "418"
+      date: new Date("Oct 2022")
     },
   ]
 
@@ -127,41 +129,67 @@ export class WelcomeComponent implements OnInit {
     this.filterPoems();
   }
 
-  filterPoems(sorting?: string) {
-    if (sorting) {
-      this.sortBy = sorting;
+  sortPoems(sorting: number) {
+    this.sortingDirection = sorting;
+    this.filterPoems();
+  }
+
+  filterPoems(fitlering?: string) {
+    if (fitlering) {
+      this.filterBy = fitlering;
     }
     if (this.searchTerm === '') {
-      if (this.sortBy !== 'None') {
-        this.filteredPoems = this.poems.filter((poem) => poem.length === this.sortBy);
+      if (this.filterBy !== 'None') {
+        this.filteredPoems = this.poems.filter((poem) => poem.length === this.filterBy).sort((a, b) => {
+          if (this.sortingDirection !== 0) {
+            if (a.date.getTime() > b.date.getTime()) {
+              return this.sortingDirection;
+            } else {
+              return -this.sortingDirection;
+            }
+          } else {
+            return (a.id > b.id) ? 1 : -1;
+          }
+        });
       } else {
-        this.filteredPoems = this.poems;
+        this.filteredPoems = this.poems.sort((a, b) => {
+          if (this.sortingDirection !== 0) {
+            if (a.date.getTime() > b.date.getTime()) {
+              return this.sortingDirection;
+            } else {
+              return -this.sortingDirection;
+            }
+          } else {
+            return (a.id > b.id) ? 1 : -1;
+          }
+        });
       }
     } else if (this.searchTerm.toLowerCase() === 'baby gurl') {
       this.filteredPoems = [{
         id: 5,
         title: "Baby Gurl",
         length: "Short",
-        count: '60'
+        date: 'Nov 2021'
       }]
     } else if (this.searchTerm.toLowerCase() === 'mirrored glass') {
       this.filteredPoems = [{
         id: 14,
         title: "Mirrored Glass",
         length: "Unknown",
-        count: "0"
+        date: "N/A"
       }]
     } else if (this.searchTerm.toLowerCase() === 'reasons') {
       this.filteredPoems = [{
         id: 15,
         title: "Reasons",
         length: "Unknown",
-        count: "0"
+        date: "N/A"
       }]
     } else {
-      this.filteredPoems = this.poems.filter((poem: any) => {
-        if (this.sortBy !== 'None') {
-          if ((poem.title.toLowerCase().indexOf(this.searchTerm.toLowerCase()) !== -1) && (poem.length === this.sortBy)) {
+      this.filteredPoems = this.poems
+      .filter((poem: any) => {
+        if (this.filterBy !== 'None') {
+          if ((poem.title.toLowerCase().indexOf(this.searchTerm.toLowerCase()) !== -1) && (poem.length === this.filterBy)) {
             return poem
           }
         } else {
@@ -170,9 +198,17 @@ export class WelcomeComponent implements OnInit {
           }
         }
       })
-      if (this.filterPoems.length < 1) {
-
-      }
+      .sort((a, b) => {
+        if (this.sortingDirection !== 0) {
+          if (a.date.getTime() > b.date.getTime()) {
+            return this.sortingDirection;
+          } else {
+            return -this.sortingDirection;
+          }
+        } else {
+          return (a.id > b.id) ? 1 : -1;
+        }
+      })
     }
   }
 
@@ -217,6 +253,10 @@ export class WelcomeComponent implements OnInit {
   clearSearch() {
     this.searchTerm = '';
     this.filterPoems();
+  }
+
+  formatDate(date: Date): string {
+    return date.toUTCString().split(' ')[2] + ' ' + date.toUTCString().split(' ')[3]
   }
 
 }

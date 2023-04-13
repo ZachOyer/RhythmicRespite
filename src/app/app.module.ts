@@ -28,6 +28,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReasonsComponent } from './poems/reasons/reasons.component';
 import { ChildComponent } from './poems/child/child.component';
 import { ThirdPoemComponent } from './poems/tinder-poems/third-poem/third-poem.component';
+import { MissedOpportunityComponent } from './poems/missed-opportunity/missed-opportunity.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ThirdPoemComponent } from './poems/tinder-poems/third-poem/third-poem.c
     MirroredGlassComponent,
     ReasonsComponent,
     ChildComponent,
-    ThirdPoemComponent
+    ThirdPoemComponent,
+    MissedOpportunityComponent
   ],
   imports: [
     BrowserModule,

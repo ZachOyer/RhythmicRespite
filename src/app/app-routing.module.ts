@@ -20,6 +20,7 @@ import { MirroredGlassComponent } from './poems/mirrored-glass/mirrored-glass.co
 import { ReasonsComponent } from './poems/reasons/reasons.component';
 import { ChildComponent } from './poems/child/child.component';
 import { ThirdPoemComponent } from './poems/tinder-poems/third-poem/third-poem.component';
+import { MissedOpportunityComponent } from './poems/missed-opportunity/missed-opportunity.component';
 
 const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent, data: { animation: 'Welcome' }},
@@ -42,6 +43,7 @@ const routes: Routes = [
   { path: 'mirrored-glass', component: MirroredGlassComponent, data: { animation: 'Poem' }},
   { path: 'reasons', component: ReasonsComponent, data: { animation: 'Poem' }},
   { path: 'child', component: ChildComponent, data: { animation: 'Poem' }},
+  { path: 'missed-opportunity', component: MissedOpportunityComponent, data: { animation: 'Poem' }},
   { path: '', redirectTo: 'welcome', pathMatch: 'full'},
   { path: '**', redirectTo: 'welcome', pathMatch: 'full'},
 ];

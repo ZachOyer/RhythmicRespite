@@ -54,13 +54,13 @@ export class WelcomeComponent implements OnInit {
       id: 2,
       title: "Christmas Rap",
       length: "Medium",
-      date: new Date("Nov 2021")
+      date: new Date("Dec 2021")
     },
     {
       id: 3,
       title: "Love Life Literature",
       length: "Long",
-      date: new Date('"Nov 2021"')
+      date: new Date("5 Nov 2021")
     },
     {
       id: 4,
@@ -78,13 +78,13 @@ export class WelcomeComponent implements OnInit {
       id: 7,
       title: "The Prophecy",
       length: "Long",
-      date: new Date("Nov 2021")
+      date: new Date("10 Nov 2021")
     },
     {
       id: 8,
       title: "You're my Dad",
       length: "Long",
-      date: new Date("Nov 2021")
+      date: new Date("15 Nov 2021")
     },
     {
       id: 9,
@@ -108,19 +108,25 @@ export class WelcomeComponent implements OnInit {
       id: 12,
       title: "The World",
       length: "Long",
-      date: new Date("Aug 2022")
+      date: new Date("5 Aug 2022")
     },
     {
       id: 13,
       title: "Find It Quick",
       length: "Medium",
-      date: new Date("Aug 2022")
+      date: new Date("10 Aug 2022")
     },
     {
       id: 16,
       title: "Child",
       length: "Long",
       date: new Date("Oct 2022")
+    },
+    {
+      id: 17,
+      title: "Missed Opportunity",
+      length: "Short",
+      date: new Date("April 2023")
     },
   ]
 
@@ -247,6 +253,8 @@ export class WelcomeComponent implements OnInit {
       this.router.navigateByUrl('reasons');
     } else if (id === 16) {
       this.router.navigateByUrl('child');
+    } else if (id === 17) {
+      this.router.navigateByUrl('missed-opportunity');
     }
   }
 

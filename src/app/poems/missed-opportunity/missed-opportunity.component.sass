@@ -1,6 +1,7 @@
 .background
   min-height: 100vh
   background: linear-gradient(135deg, #ff9e2e86 0%,#47f3ff7a 100%)
+  overflow-x: hidden
 
 h2
   position: relative
@@ -64,5 +65,15 @@ h2
 .italic
   font-weight: 400
   font-style: italic
+
+@media screen and ( max-width: 750px )
+  h2
+    font-size: 40px
+  .poem-text
+    font-size: 1em
+
+@media screen and ( max-width: 500px )
+  h2
+    font-size: 27px
 
 

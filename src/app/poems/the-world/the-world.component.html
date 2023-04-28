@@ -1,10 +1,10 @@
 <div class="scrollable">
   <div class="background">
-    <div class="stars" *ngFor="let stars of starsLoop">
+    <div class="stars" *ngFor="let stars of starsLoop" [ngClass]="{'animate-stars': !styleService.getIsMobile()}">
       <div class="shooting" *ngFor="let shooting of shootingLoop"></div>
       <div class="star" *ngFor="let star of starLoop"></div>
     </div>
-    <div class="stars2" *ngFor="let stars of starsLoop">
+    <div class="stars2 animate-stars2" *ngFor="let stars of starsLoop">
       <div class="star2" *ngFor="let star of starLoop"></div>
     </div>
     <div class="container text-center">

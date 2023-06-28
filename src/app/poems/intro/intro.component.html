@@ -1,4 +1,4 @@
-<!-- *********************    THIS IS FOR MOBILE    ********************** -->
+<!-- *********************    THIS IS FOR DESKTOP    ********************** -->
 <div class="background" id='compBackground' *ngIf="!styleService.getIsMobile()">
   <div class="container text-center">
     <div class="row">
@@ -116,7 +116,7 @@
           <div ><fa-icon class="falling-leaves" *ngFor="let leaf of leafArray" [icon]="faLeaf"></fa-icon></div>
         </div>
       </div>
-      <button class="btn btn-secondary mb-2" style="z-index: 100" routerLinkActive="active" routerLink="/welcome">Back to main page</button>
+      <button class="btn ground-button py-3" style="z-index: 100" routerLinkActive="active" routerLink="/welcome">Back to main page</button>
     </div>
   </div>
 </div>

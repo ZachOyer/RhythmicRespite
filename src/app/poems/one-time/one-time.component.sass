@@ -1,0 +1,89 @@
+/*** FONTS ***/
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Office:ital,wght@0,100;0,300;0,500;1,100;1,300;1,500&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&display=swap')
+
+.background, h4
+  text-align: center
+  font-family: 'Ysabeau Office', sans-serif
+
+svg
+  overflow: hidden
+
+.background
+  position: relative
+  height: 100vh
+  width: 100vw
+  overflow-y: scroll
+  overflow-x: hidden
+  background: linear-gradient(#4c9fe4, #fff, #64646477)
+
+#cover-screen
+  height: 1000vh
+  overflow: hidden
+
+#timeline-scroll-container
+  position: fixed
+  left: 0
+  top: 50%
+  transform: translateY(-50%)
+  pointer-events: none
+
+#clouds-scroll-container
+  position: fixed
+  left: 0
+  top: 0
+  pointer-events: none
+  filter: drop-shadow(2px 5px 8px #00000059)
+  opacity: 0.5
+
+#clouds-scroll-container-2
+  position: fixed
+  left: 0
+  top: 0
+  pointer-events: none
+  filter: drop-shadow(1px 2px 3px #00000059)
+  opacity: 0.5
+
+h4
+  font-size: 2em
+
+.my-button-1
+  border-radius: 0px
+  border: 1px solid black
+  position: sticky
+  top: 20px
+
+.my-button-2
+  border-radius: 0px
+  border: 1px solid black
+  position: absolute
+  top: 965vh
+  left: 50%
+  transform: translateX(-50%)
+  &:hover
+    transform: translate(-50%, -3px)
+
+.title
+  font-family: 'Bacasime Antique', serif
+  font-size: 3em
+  font-weight: 100
+  // font-style: italic
+  text-shadow: 1px 0px 2px
+
+/* width */
+::-webkit-scrollbar
+  width: 0px
+
+.timeline-title
+  font-family: 'Bacasime Antique', serif
+  font-size: 2em
+
+.timeline-text
+  font-family: 'Ysabeau Office', sans-serif
+  font-size: 1.3em
+  font-weight: 300
+
+.begin-scroll
+  font-size: 1.5em
+  font-weight: 500
+  font-style: italic

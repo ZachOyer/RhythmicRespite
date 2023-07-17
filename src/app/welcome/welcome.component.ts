@@ -132,6 +132,15 @@ export class WelcomeComponent implements OnInit {
 
 
   ngOnInit(): void {
+    if (!this.styleService.getIsMobile()) {
+      this.poems.push(
+        {
+          id: 18,
+          title: "One Time",
+          length: "Short",
+          date: new Date("July 2023")
+        })
+    }
     this.filterPoems();
   }
 
@@ -255,6 +264,8 @@ export class WelcomeComponent implements OnInit {
       this.router.navigateByUrl('child');
     } else if (id === 17) {
       this.router.navigateByUrl('missed-opportunity');
+    } else if (id === 18) {
+      this.router.navigateByUrl('one-time');
     }
   }
 

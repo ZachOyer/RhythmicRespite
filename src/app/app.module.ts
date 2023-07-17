@@ -29,6 +29,7 @@ import { ReasonsComponent } from './poems/reasons/reasons.component';
 import { ChildComponent } from './poems/child/child.component';
 import { ThirdPoemComponent } from './poems/tinder-poems/third-poem/third-poem.component';
 import { MissedOpportunityComponent } from './poems/missed-opportunity/missed-opportunity.component';
+import { OneTimeComponent } from './poems/one-time/one-time.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { MissedOpportunityComponent } from './poems/missed-opportunity/missed-op
     ReasonsComponent,
     ChildComponent,
     ThirdPoemComponent,
-    MissedOpportunityComponent
+    MissedOpportunityComponent,
+    OneTimeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faEarthAmericas, faFire, faFireFlameSimple, faMeteor, faRocket, faSatellite, faShuttleSpace } from '@fortawesome/free-solid-svg-icons';
-import { StyleService } from 'src/app/style.service';
+import { StyleService } from 'src/app/services/style.service';
 
 @Component({
   selector: 'app-the-world',

@@ -20,7 +20,7 @@ import { SpeakEnglishComponent } from './poems/speak-english/speak-english.compo
 import { FirstPoemComponent } from './poems/tinder-poems/first-poem/first-poem.component';
 import { SecondPoemComponent } from './poems/tinder-poems/second-poem/second-poem.component';
 import { HappyRideComponent } from './poems/happy-ride/happy-ride.component';
-import { StyleService } from './style.service';
+import { StyleService } from './services/style.service';
 import { TheWorldComponent } from './poems/the-world/the-world.component';
 import { FindItQuickComponent } from './poems/find-it-quick/find-it-quick.component';
 import { MirroredGlassComponent } from './poems/mirrored-glass/mirrored-glass.component';
@@ -30,6 +30,8 @@ import { ChildComponent } from './poems/child/child.component';
 import { ThirdPoemComponent } from './poems/tinder-poems/third-poem/third-poem.component';
 import { MissedOpportunityComponent } from './poems/missed-opportunity/missed-opportunity.component';
 import { OneTimeComponent } from './poems/one-time/one-time.component';
+import { TheDanceComponent } from './poems/the-dance/the-dance.component';
+import { BiggerHeartsBleedBetterComponent } from './poems/bigger-hearts-bleed-better/bigger-hearts-bleed-better.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { OneTimeComponent } from './poems/one-time/one-time.component';
     ChildComponent,
     ThirdPoemComponent,
     MissedOpportunityComponent,
-    OneTimeComponent
+    OneTimeComponent,
+    TheDanceComponent,
+    BiggerHeartsBleedBetterComponent
   ],
   imports: [
     BrowserModule,

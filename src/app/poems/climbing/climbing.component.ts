@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
+import { StyleService } from 'src/app/services/style.service';
 
 @Component({
   selector: 'app-climbing',
@@ -8,19 +10,26 @@ import { NavigationEnd, Router } from '@angular/router';
 })
 export class ClimbingComponent implements OnInit {
 
-  constructor(private el: ElementRef) { }
+  constructor(private el: ElementRef,
+              private styleService: StyleService) { }
 
   ngOnInit(): void {
+    // if (this.styleService.getNavToComponents()) {
+    //   setTimeout(() => {
+    //     this.scrollToBottom();
+    //   }, 550)
+    // }
   }
 
-  // ngAfterViewInit(): void {
-  //   //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
-  //   //Add 'implements AfterViewInit' to the class.
-  //   console.log("First")
-  //   setTimeout(() => {
-  //     console.log("Second")
-  //     window.scrollTo(0, document.body.scrollHeight);
-  //   }, 2000)
-  // }
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+  }
+
+  scrollToBottom() {
+    const ele = this.el.nativeElement as HTMLElement;
+
+    ele.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' });
+  }
 
 }

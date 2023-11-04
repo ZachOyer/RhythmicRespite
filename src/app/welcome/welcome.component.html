@@ -32,7 +32,7 @@
       </div>
     </div>
     <div class="row mx-0">
-      <div class="col-12 my-card" (click)="goToPoem(poem.id)" *ngFor="let poem of filteredPoems" @flyInOutRight>
+      <div class="col-12 my-card" (click)="goToPoem(poem.url)" *ngFor="let poem of filteredPoems" @flyInOutRight>
         <div class="row mx-0">
           <div class="title col-12 mt-1">{{poem.title}}</div>
           <div class="row mx-0 card-data">

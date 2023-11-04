@@ -2,7 +2,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faAlignLeft, faAlignRight, faDeleteLeft, faMagnifyingGlass, faMugSaucer, faPencil, faXmark } from '@fortawesome/free-solid-svg-icons';
-import { StyleService } from '../style.service';
+import { StyleService } from '../services/style.service';
 
 @Component({
   selector: 'app-welcome',
@@ -42,91 +42,120 @@ export class WelcomeComponent implements OnInit {
       id: 0,
       title: "Intro",
       length: "Medium",
-      date: new Date('Apr 2022')
+      date: new Date('Apr 2022'),
+      url: 'intro'
     },
     {
       id: 1,
       title: "Tinder Poems",
       length: "Short",
-      date: new Date("Jun 2021")
+      date: new Date("Jun 2021"),
+      url: 'tinder-poems'
     },
     {
       id: 2,
       title: "Christmas Rap",
       length: "Medium",
-      date: new Date("Dec 2021")
+      date: new Date("Dec 2021"),
+      url: 'christmas-rap'
     },
     {
       id: 3,
       title: "Love Life Literature",
       length: "Long",
-      date: new Date("5 Nov 2021")
+      date: new Date("5 Nov 2021"),
+      url: 'love-life-lit'
     },
     {
       id: 4,
       title: "Edgar Allen Poem",
       length: "Long",
-      date: new Date("Oct 2021")
+      date: new Date("Oct 2021"),
+      url: 'edgar-allen-poem'
     },
     {
       id: 6,
       title: "Climbing",
       length: "Medium",
-      date: new Date("Feb 2022")
+      date: new Date("Feb 2022"),
+      url: 'climbing'
     },
     {
       id: 7,
       title: "The Prophecy",
       length: "Long",
-      date: new Date("10 Nov 2021")
+      date: new Date("10 Nov 2021"),
+      url: 'the-prophecy'
     },
     {
       id: 8,
       title: "You're my Dad",
       length: "Long",
-      date: new Date("15 Nov 2021")
+      date: new Date("15 Nov 2021"),
+      url: 'youre-my-dad'
     },
     {
       id: 9,
       title: "You Speak English?",
       length: "Short",
-      date: new Date("May 2022")
+      date: new Date("May 2022"),
+      url: 'speak-english'
     },
     {
       id: 10,
       title: "Glass Rose",
       length: "Medium",
-      date: new Date("Jun 2022")
+      date: new Date("Jun 2022"),
+      url: 'glass-rose'
     },
     {
       id: 11,
       title: "You Must Be This Happy To Ride This Ride",
       length: "Long",
-      date: new Date("Jul 2022")
+      date: new Date("Jul 2022"),
+      url: 'happy-ride'
     },
     {
       id: 12,
       title: "The World",
       length: "Long",
-      date: new Date("5 Aug 2022")
+      date: new Date("5 Aug 2022"),
+      url: 'the-world'
     },
     {
       id: 13,
       title: "Find It Quick",
       length: "Medium",
-      date: new Date("10 Aug 2022")
+      date: new Date("10 Aug 2022"),
+      url: 'find-it-quick'
     },
     {
       id: 16,
       title: "Child",
       length: "Long",
-      date: new Date("Oct 2022")
+      date: new Date("Oct 2022"),
+      url: 'child'
     },
     {
       id: 17,
       title: "Missed Opportunity",
       length: "Short",
-      date: new Date("April 2023")
+      date: new Date("April 2023"),
+      url: 'missed-opportunity'
+    },
+    {
+      id: 19,
+      title: "The Dance",
+      length: "Long",
+      date: new Date("July 2023"),
+      url: 'the-dance'
+    },
+    {
+      id: 20,
+      title: "Bigger Hearts Bleed Better",
+      length: "Long",
+      date: new Date("Oct 2023"),
+      url: 'bigger-hearts-bleed-better'
     },
   ]
 
@@ -138,7 +167,8 @@ export class WelcomeComponent implements OnInit {
           id: 18,
           title: "One Time",
           length: "Short",
-          date: new Date("July 2023")
+          date: new Date("July 2023"),
+          url: 'one-time'
         })
     }
     this.filterPoems();
@@ -184,21 +214,24 @@ export class WelcomeComponent implements OnInit {
         id: 5,
         title: "Baby Gurl",
         length: "Short",
-        date: 'Nov 2021'
+        date: new Date("Nov 2021"),
+        url: 'baby-gurl'
       }]
     } else if (this.searchTerm.toLowerCase() === 'mirrored glass') {
       this.filteredPoems = [{
         id: 14,
         title: "Mirrored Glass",
         length: "Unknown",
-        date: "N/A"
+        date: new Date("Nov 2022"),
+        url: 'mirrored-glass'
       }]
     } else if (this.searchTerm.toLowerCase() === 'reasons') {
       this.filteredPoems = [{
         id: 15,
         title: "Reasons",
         length: "Unknown",
-        date: "N/A"
+        date: new Date("Nov 2022"),
+        url: 'reasons'
       }]
     } else {
       this.filteredPoems = this.poems
@@ -227,46 +260,8 @@ export class WelcomeComponent implements OnInit {
     }
   }
 
-  goToPoem(id: number) {
-    if (id === 0) {
-      this.router.navigateByUrl('intro');
-    } else if (id === 1) {
-      this.router.navigateByUrl('tinder-poems');
-    } else if (id === 2) {
-      this.router.navigateByUrl('christmas-rap');
-    } else if (id === 3) {
-      this.router.navigateByUrl('love-life-lit');
-    } else if (id === 4) {
-      this.router.navigateByUrl('edgar-allen-poem');
-    } else if (id === 5) {
-      this.router.navigateByUrl('baby-gurl');
-    } else if (id === 6) {
-      this.router.navigateByUrl('climbing');
-    } else if (id === 7) {
-      this.router.navigateByUrl('the-prophecy');
-    } else if (id === 8) {
-      this.router.navigateByUrl('ur-my-dad');
-    } else if (id === 9) {
-      this.router.navigateByUrl('speak-english');
-    } else if (id === 10) {
-      this.router.navigateByUrl('glass-rose');
-    } else if (id === 11) {
-      this.router.navigateByUrl('happy-ride');
-    } else if (id === 12) {
-      this.router.navigateByUrl('the-world');
-    } else if (id === 13) {
-      this.router.navigateByUrl('find-it-quick');
-    } else if (id === 14) {
-      this.router.navigateByUrl('mirrored-glass');
-    } else if (id === 15) {
-      this.router.navigateByUrl('reasons');
-    } else if (id === 16) {
-      this.router.navigateByUrl('child');
-    } else if (id === 17) {
-      this.router.navigateByUrl('missed-opportunity');
-    } else if (id === 18) {
-      this.router.navigateByUrl('one-time');
-    }
+  goToPoem(url: string) {
+    this.router.navigateByUrl(url);
   }
 
   clearSearch() {
@@ -275,6 +270,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   formatDate(date: Date): string {
+
     return date.toUTCString().split(' ')[2] + ' ' + date.toUTCString().split(' ')[3]
   }
 

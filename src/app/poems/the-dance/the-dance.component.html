@@ -1,0 +1,42 @@
+<div class="background" id="background">
+  <h3>The Dance</h3>
+  <div class="carousel-container">
+    <div id="leftArrow" (click)="displayLines(index - 1)"><fa-icon class="left-arrow-icon" [icon]="faLeft"></fa-icon></div>
+    <div id="rightArrow" (click)="displayLines(index + 1)"><fa-icon class="right-arrow-icon" [icon]="faRight"></fa-icon></div>
+    <div class="stanza" id="line0">As Lyle sat in his lonely room, he traded his thoughts with the fireplace</div>
+    <div class="stanza" id="line1">The hungry flame threw licks into the air, crackles filling the empty space</div>
+    <div class="stanza" id="line2">Then out the window he heard a song, a lullaby of melancholic delight</div>
+    <div class="stanza" id="line3">His curiosity beckoned him to the glass, but was not answered by his sight</div>
+    <div class="stanza" id="line4">An empty street akin to his room, populated only by his windows reflection</div>
+    <div class="stanza" id="line5">But the song cared not and continued on, coming from an untold direction</div>
+    <div class="stanza" id="line6">Called to adventure by the bodiless tune, his loneliness awaited his inevitable return</div>
+    <div class="stanza" id="line7">He followed it out into the street, that haunting jingle in his mind did burn</div>
+    <div class="stanza" id="line8">The sound then lead him far from home, that society became a distant thought</div>
+    <div class="stanza" id="line9">The streets turned stones that marked the path through a forest thats perilous fraught</div>
+    <div class="stanza" id="line10">Betwixt the trees he walked along, until he met with a towering door</div>
+    <div class="stanza" id="line11">The oddity of its presence dismissed by a forest blithe to ignore</div>
+    <div class="stanza" id="line12">He bid adieu to the woods and greeted a darkened echoing space</div>
+    <div class="stanza" id="line13">A place of oceanic emptiness filled only by the songs arhythmic pace</div>
+    <div class="stanza" id="line14">But then the lights became like day and exposed all that was around</div>
+    <div class="stanza" id="line15">The grand ballroom became revealed, filled to brim with sound</div>
+    <div class="stanza" id="line16">For him the stage was set and ready for his performance to start</div>
+    <div class="stanza" id="line17">Despite the lack of audience, he was eager to display his art</div>
+    <div class="stanza" id="line18">His feet went left and his feet went right, a waltz he had begun</div>
+    <div class="stanza" id="line19">Accompanied by the faint music, the ethereal song was sung</div>
+    <div class="stanza" id="line20">The ballroom empty from wall to wall, but laden by his delicate dance</div>
+    <div class="stanza" id="line21">Strings of the bass and keys of the piano serenaded his one-sided romance</div>
+    <div class="stanza" id="line22">But then the song began to fade, and the lights followed closed behind</div>
+    <div class="stanza" id="line23">He awoke inside his lonely room, trying to catch his spinning mind</div>
+    <div class="stanza" id="line24">There was no tune that he could hear, no lights or stage that he could see</div>
+    <div class="stanza" id="line25">It felt so real but wasn't so, he pondered hard, "How could this be?"</div>
+    <div class="stanza" id="line26">But nonetheless he felt at peace, and didn't care that it was feigned</div>
+    <div class="stanza" id="line27">He had adventured with his thoughts while in his room he had remained</div>
+    <div class="stanza" id="line28">He would remember that ballroom dance and jaunty haunting tune</div>
+    <div class="stanza" id="line29">He peeked outside, just in case, but only met with shining moon</div>
+    <button class="btn back-btn" [ngClass]="{'show': index >= (lines?.length || 0) - 1 || index <= 0}" routerLink="welcome">
+      Back to main menu
+      <div class="vertical"></div>
+      <div class="horizontal"></div>
+    </button>
+  </div>
+</div>

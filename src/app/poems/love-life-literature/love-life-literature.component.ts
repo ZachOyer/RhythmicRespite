@@ -19,8 +19,4 @@ export class LoveLifeLiteratureComponent implements OnInit {
       })
     }
   }
-
-  testing() {
-    console.log("Hello");
-  }
 }

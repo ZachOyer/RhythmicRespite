@@ -5,7 +5,7 @@
     <button class="btn my-button-2" routerLink="welcome">Back to main menu</button>
   </div>
   <div id="timeline-scroll-container">
-    <svg style="width: 1100vw; height: 500px;">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 1100vw; height: 500px;">
       <g>
         <!-- Base line -->
         <rect [attr.x]="((screenWidth / 2))" y="260" [attr.width]="screenWidth * 9" height="5" fill="black"/>
@@ -66,35 +66,35 @@
   <!-------------------- NEAR/LARGE CLOUDS -------------------->
   <div id="clouds-scroll-container">
     <svg style="width: 200vw; height: 500px;">
-      <g>
+      <g class="clouds">
         <rect [attr.x]="(screenWidth / 10) - 65" y="100" width="200" height="70" rx="35" ry="35" fill="white"/>
         <circle [attr.cx]="(screenWidth / 10) + 65" cy="100" r="40" fill="white"></circle>
         <circle [attr.cx]="screenWidth / 10" cy="100" r="60" fill="white"></circle>
       </g>
-      <g>
+      <g class="clouds1">
         <circle [attr.cx]="(3 * screenWidth / 4) + 45" cy="150" r="40" fill="white"></circle>
         <circle [attr.cx]="(3 * screenWidth / 4) + 65" cy="130" r="30" fill="white"></circle>
         <circle [attr.cx]="(3 * screenWidth / 4)" cy="150" r="40" fill="white"></circle>
         <circle [attr.cx]="(3 * screenWidth / 4) + 25" cy="130" r="50" fill="white"></circle>
       </g>
-      <g>
+      <g class="clouds2">
         <rect [attr.x]="screenWidth - 45" y="100" width="125" height="50" rx="25" ry="25" fill="white"/>
         <circle [attr.cx]="screenWidth + 45" cy="100" r="20" fill="white"></circle>
         <circle [attr.cx]="screenWidth" cy="100" r="30" fill="white"></circle>
       </g>
-      <g>
+      <g class="clouds3">
         <ellipse [attr.cx]="(screenWidth / 3) + 6" cy="110" rx="24" ry="20" fill="white"/>
         <circle [attr.cx]="(screenWidth / 3) + 24" cy="100" r="30" fill="white"></circle>
         <circle [attr.cx]="(screenWidth / 3)" cy="100" r="20" fill="white"></circle>
         <ellipse [attr.cx]="(screenWidth / 3) + 40" cy="105" rx="30" ry="24" fill="white"/>
       </g>
-      <g>
+      <g class="clouds4">
         <ellipse [attr.cx]="(4 * screenWidth / 3) + 12" cy="165" rx="48" ry="40" fill="white"/>
         <circle [attr.cx]="(4 * screenWidth / 3) + 48" cy="140" r="60" fill="white"></circle>
         <circle [attr.cx]="(4 * screenWidth / 3)" cy="140" r="40" fill="white"></circle>
         <ellipse [attr.cx]="(4 * screenWidth / 3) + 80" cy="160" rx="60" ry="48" fill="white"/>
       </g>
-      <g>
+      <g class="clouds5">
         <rect [attr.x]="(11 * screenWidth / 6) - 65" y="100" width="200" height="70" rx="35" ry="35" fill="white"/>
         <circle [attr.cx]="(11 * screenWidth / 6)" cy="100" r="40" fill="white"></circle>
         <circle [attr.cx]="(11 * screenWidth / 6) + 65" cy="100" r="60" fill="white"></circle>

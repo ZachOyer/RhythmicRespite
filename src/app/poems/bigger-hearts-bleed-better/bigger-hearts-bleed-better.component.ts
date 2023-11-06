@@ -1,5 +1,6 @@
 import { AnimationEvent, animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faArrowCircleLeft, faDroplet, faHeart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -18,7 +19,7 @@ import { faArrowCircleLeft, faDroplet, faHeart } from '@fortawesome/free-solid-s
         style({ transform: 'translateY(0%)', opacity: 1})
       ])
     ]),
-    trigger('fadeInOutRight', [
+    trigger('fadeInLeftOutRight', [
       transition('* => void', [
         animate('0.7s ease-in'),
         style({ transform: 'rotateX(15deg) rotateY(15deg) rotateZ(-3deg) translateY(4%)', opacity: 0, 'box-shadow': '0px 0px 0px 0px #000000dd'})
@@ -29,7 +30,17 @@ import { faArrowCircleLeft, faDroplet, faHeart } from '@fortawesome/free-solid-s
         style({ transform: 'rotateX(15deg) rotateY(15deg) rotateZ(-3deg) translateX(0%) translateY(0%)', opacity: 1, 'box-shadow': '-4px 7px 10px 5px #00000069'})
       ])
     ]),
-
+    trigger('flyLeftRight', [
+      transition('* => void', [
+        animate('0.4s ease-in-out'),
+        style({ transform: 'translate(-70%, 0%)', opacity: 0})
+      ]),
+      transition('void => *', [
+        style({ transform: 'translate(-30%, 0%)', opacity: 0}),
+        animate('0.4s 0.2s ease-in-out'),
+        style({ transform: 'translate(-50%, 0%)', opacity: 1})
+      ])
+    ]),
   ]
 })
 export class BiggerHeartsBleedBetterComponent implements OnInit {
@@ -41,17 +52,21 @@ export class BiggerHeartsBleedBetterComponent implements OnInit {
   animating = false;
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   showNextCard() {
-    if (this.animating || this.showCard === 6) {
+    if (this.animating) {
       return;
+    } else if (this.showCard === 6) {
+      this.router.navigateByUrl('welcome');
     }
 
     this.animating = true;
+    // Increment the showCard variable by a halfstep
+    // The rest is handled by the animation transition function
     this.showCard = this.showCard + 0.5;
   }
 

@@ -14,12 +14,11 @@ h3, h6
   background: radial-gradient(#3f3838, #111010)
 
 .my-card
-  font-family: 'Charm', cursive
+  // font-family: 'Charm', cursive
   font-size: 1.3em
   transform: rotateX(15deg) rotateY(15deg) rotateZ(-3deg)
   width: 250px
   padding: 20px
-  border: 1px solid #00000081
   border-radius: 10px
   background: linear-gradient(180deg, #4b1919, #b42b2b)
   border: 2px solid #1b1b1b
@@ -53,7 +52,7 @@ h3, h6
   position: absolute
   bottom: 0px
   left: 0px
-  transition: transform 0.2s ease-in-out
+  transform: translateY(20px)
 
 .droplet-right
   position: absolute
@@ -61,6 +60,7 @@ h3, h6
   scale: 0.7 1
   bottom: 30px
   right: 30px
+  animation: dropping 3s ease-in infinite
 
 .droplet-left
   position: absolute
@@ -68,6 +68,7 @@ h3, h6
   scale: 0.7 1
   bottom: 40px
   left: 10px
+  animation: dropping 2.5s ease-in infinite
 
 .continue
   margin-top: 40px
@@ -103,27 +104,14 @@ h3, h6
   align-items: center
 
 @media screen and ( max-width: 767px )
-  .drops
-    transform: translateY(20px)
-  .heart
-    filter: brightness(90%)
-  .droplet-right
-    animation: dropping 3s ease-in infinite
-  .droplet-left
-    animation: dropping 2.5s ease-in infinite
   .card-container
     align-items: start
 
-@media screen and ( min-width: 768px )
-  .heart-container:hover
-    .drops
-      transform: translateY(20px)
-    .heart
-      filter: brightness(90%)
-    .droplet-right
-      animation: dropping 3s ease-in infinite
-    .droplet-left
-      animation: dropping 2.5s ease-in infinite
+.heart-container:hover .heart
+  filter: brightness(85%)
+
+.heart-container:active .heart
+  filter: brightness(70%)
 
 @keyframes dropping
   0%

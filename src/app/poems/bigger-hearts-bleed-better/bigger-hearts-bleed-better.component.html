@@ -19,25 +19,28 @@
       <fa-icon [icon]="faDrop" class="droplet-right"></fa-icon>
       <fa-icon [icon]="faDrop" class="droplet-left"></fa-icon>
       <fa-icon [icon]="faHeart" class="heart"></fa-icon>
-      <div class="heart-text">
+      <div *ngIf="!(showCard === 6 && !this.animating)" class="heart-text" @flyLeftRight>
         Continue
+      </div>
+      <div *ngIf="showCard === 6 && !this.animating" class="heart-text" @flyLeftRight>
+        Escape
       </div>
     </span>
     <div class="card-container">
-      <div class="my-card mx-auto" *ngIf="showCard === 0" @fadeInOutRight (@fadeInOutRight.done)="showTransitionText($event)">
+      <div class="my-card mx-auto" *ngIf="showCard === 0" @fadeInLeftOutRight (@fadeInLeftOutRight.done)="showTransitionText($event)">
         The future is a mystery in all ways but being a mean mistress. Her diseasing hopes that visit me throughout the day are an infinite reminder that my absent dreams are killing me slowly; Bleeding out the essentials that I've always lived for till nothing remains but an empty husk for her to try and fix.
       </div>
       <div class="transition-text" *ngIf="showCard === 1" @fadeInTopOutBottom (@fadeInTopOutBottom.done)="showTransitionText($event)">Fuck You Future</div>
-      <div class="my-card wide mx-auto" *ngIf="showCard === 2" @fadeInOutRight (@fadeInOutRight.done)="showTransitionText($event)">
+      <div class="my-card wide mx-auto" *ngIf="showCard === 2" @fadeInLeftOutRight (@fadeInLeftOutRight.done)="showTransitionText($event)">
         I've been prepped and plowed like a farmers field; The native beauty born to my fields, which nature had nutured, has been torn from home and hole. Vile seeds sweetly sown into the crooked cracks in my armor, dissolving it completely. My complacent dirt churned until confusion fertilizes my spiraling emotions. The seeds of doubt bring company as the prime plot spans for years of untended thoughts. And the farmer plants her perfect prospects, remiss to the past, never caring that she has planted that which was there before. But the farmer reaps her work, and is cancerously content.
       </div>
       <div class="transition-text" *ngIf="showCard === 3" @fadeInTopOutBottom (@fadeInTopOutBottom.done)="showTransitionText($event)">Fuck You Future</div>
-      <div class="my-card wide mx-auto" *ngIf="showCard === 4" @fadeInOutRight (@fadeInOutRight.done)="showTransitionText($event)">
+      <div class="my-card wide mx-auto" *ngIf="showCard === 4" @fadeInLeftOutRight (@fadeInLeftOutRight.done)="showTransitionText($event)">
         Her grasp softly suffocates me, and I run from her sickening smoke. A gasping breath gives me short-lived solace, but times undertow pulls me back to where I belong. I return to here and now, my lungs burn with its infectious presence. The present is naught but a neighbor to the future, but is nonetheless greeted with a cough. The strench of wasted potential and missed opportunities suffocates me just the same.
       </div>
       <div class="transition-text" *ngIf="showCard === 5" @fadeInTopOutBottom (@fadeInTopOutBottom.done)="showTransitionText($event)">Fuck You Future and Present</div>
-      <div class="my-card wide mx-auto" *ngIf="showCard === 6" @fadeInOutRight (@fadeInOutRight.done)="showTransitionText($event)">
-        The sweet sisterly love that present and future concoct tortures me with their teamwork. Tempting fates with hard realities kill quicker than any weapon. I'm left to sit and wonder how things might have been if time had been on my side. How it feels like I've lost something that was never mine. How I'm distracting one distress with another, choosing to chase one to avoid the other. How I spent a year and a half learning one of lifes cruelest lessons;
+      <div class="my-card wide mx-auto" *ngIf="showCard === 6" @fadeInLeftOutRight (@fadeInLeftOutRight.done)="showTransitionText($event)">
+        The sweet sisterly love that present and future concoct tortures me with their teamwork. Tempting fates with harsh realities kill quicker than any weapon. I'm left to sit and wonder how things might have been if time had been on my side. How it feels like I've lost something that was never mine. How I'm distracting one distress with another, choosing to chase one to avoid the other. How I spent a year and a half learning one of life's cruelest lessons;
         <h6 class="mt-2">Bigger Hearts Bleed Better.</h6>
       </div>
     </div>

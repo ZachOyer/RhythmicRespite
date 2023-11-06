@@ -1,68 +1,53 @@
 <div class="background">
-
-  <!-- Header for DESKTOP -->
-  <div class="navbar" *ngIf="!styleService.getIsMobile()">
-    <div class="col text-center header mx-3">
-      <h1>
-        <fa-icon [icon]="faLeft"></fa-icon>
-        <span class="mx-3">Welcome to Rhythmic Respite!</span>
-        <fa-icon [icon]="faRight"></fa-icon>
-      </h1>
-    </div>
-  </div>
-
-  <!-- Header for MOBILE -->
-  <div class="navbar text-center" *ngIf="styleService.getIsMobile()">
-    <div class="col-3" style="font-size: 40px;">
-      <fa-icon [icon]="faLeft"></fa-icon>
-    </div>
-    <div class="col header">
-      <h1 class="text-center">
-        <span class="mx-auto text-center">Welcome to Rhythmic Respite!</span>
-      </h1>
-    </div>
-    <div class="col-3" style="font-size: 40px;">
-      <fa-icon [icon]="faRight"></fa-icon>
-    </div>
-  </div>
-
-  <div class="container text-center mt-3 content">
-    <h2>My personal anthology of introspection, put on display for the curious ear</h2>
-
+  <div class="container pb-5">
     <div class="row">
-
+      <h1>Welcome to Rhythmic Respite</h1>
     </div>
+    <div class="row input-box">
+      <div class="input-group">
+        <input class="form-control my-input" placeholder="Search for a poem..." [(ngModel)]="searchTerm" (keyup)="filterPoems()">
+        <button class="btn btn-clear" *ngIf="searchTerm.length > 0" (click)="clearSearch()"><fa-icon [icon]="faClear"></fa-icon></button>
+      </div>
 
-    <div class="form-group">
-      <label class="form-label mt-4 py-2 px-4 mb-0 search-label">Looking for a specific Poem?</label>
-      <div class="form-group">
-        <div class="input-group mb-3 search-bar">
-          <span class="input-group-text test1"><fa-icon class="test2" [icon]="faSearch"></fa-icon></span>
-          <input [(ngModel)]="searchTerm" type="text" class="form-control" (keyup)="filterPoems()" placeholder="Search by title..." aria-label="Recipient's username" aria-describedby="button-addon2">
-          <button *ngIf="searchTerm !== ''" (click)="clearSearch()" class="btn btn-danger" type="button" id="button-addon2"><fa-icon [icon]="faClear"></fa-icon> Clear</button>
+      <div class="mt-2" style="color: rgb(187, 186, 186)">Filter by:</div>
+      <div class="btn-group" role="group" aria-label="Filtering button group">
+        <input type="radio" class="btn-check radio-btn" name="filterbtn" id="filterbtn1" autocomplete="off" (change)="filterPoems('None')" checked>
+        <label class="btn my-button px-1" for="filterbtn1"><div class="btn-text">None</div></label>
+        <input type="radio" class="btn-check radio-btn" name="filterbtn" id="filterbtn2" autocomplete="off" (change)="filterPoems('Short')">
+        <label class="btn my-button px-1" for="filterbtn2"><div class="btn-text">Short</div></label>
+        <input type="radio" class="btn-check radio-btn" name="filterbtn" id="filterbtn3" autocomplete="off" (change)="filterPoems('Medium')">
+        <label class="btn my-button px-1" for="filterbtn3"><div class="btn-text">Medium</div></label>
+        <input type="radio" class="btn-check radio-btn" name="filterbtn" id="filterbtn4" autocomplete="off" (change)="filterPoems('Long')">
+        <label class="btn my-button px-1" for="filterbtn4"><div class="btn-text">Long</div></label>
+      </div>
+
+      <div class="mt-2" style="color: rgb(187, 186, 186)">Sort by:</div>
+      <div class="btn-group">
+        <input type="radio" class="btn-check radio-btn" name="sortbtn" id="sortbtn1" autocomplete="off" (change)="sortPoems(0)" checked>
+        <label class="btn my-button px-0" for="sortbtn1"><div class="btn-text">None</div></label>
+        <input type="radio" class="btn-check radio-btn" name="sortbtn" id="sortbtn2" autocomplete="off" (change)="sortPoems(-1)">
+        <label class="btn my-button px-0" for="sortbtn2"><div class="btn-text">Newest</div></label>
+        <input type="radio" class="btn-check radio-btn" name="sortbtn" id="sortbtn3" autocomplete="off" (change)="sortPoems(1)">
+        <label class="btn my-button px-0" for="sortbtn3"><div class="btn-text">Oldest</div></label>
+      </div>
+    </div>
+    <div class="row mx-0">
+      <div class="col-12 my-card" (click)="goToPoem(poem.url)" *ngFor="let poem of filteredPoems" @flyInOutRight>
+        <div class="row mx-0">
+          <div class="title col-12 mt-1">{{poem.title}}</div>
+          <div class="row mx-0 card-data">
+            <div class="col-auto desc">
+              <div class="data-tag">Length</div>
+              <div class="ps-2 data">{{poem.length}}</div>
+            </div>
+            <div class="col-auto desc">
+              <div class="data-tag">Date Written</div>
+              <div class="ps-2 data">{{formatDate(poem.date)}}</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div style="border: 2px solid black; border-radius: 20px; background-color: white;">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Length</th>
-            <th scope="col">Word Count</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr (click)="goToPoem(poem.id)" *ngFor="let poem of filteredPoems" style="cursor: pointer" [ngClass]="{'table-warning': poem.length === 'Short', 'table-success': poem.length === 'Medium', 'table-info': poem.length === 'Long', 'unimplemented': poem.implemented === 'No'}">
-            <th scope="row">{{poem?.title}}</th>
-            <td>{{poem?.length}}</td>
-            <td>{{poem?.count}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
   </div>
 </div>
 

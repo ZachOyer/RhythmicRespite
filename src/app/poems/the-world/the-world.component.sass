@@ -1,5 +1,24 @@
+/* width */
+::-webkit-scrollbar
+  width: 15px
+
+/* Track */
+::-webkit-scrollbar-track
+  background: #303030
+
+/* Handle */
+::-webkit-scrollbar-thumb
+  background: #888
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+  background: #555
+
+.scrollable
+  height: 100vh
+  overflow-y: scroll
+
 .background
-  // background: repeat url('../../../assets/space.jpg')
   position: relative
   background: linear-gradient(90deg, #060c1d 0%,#121822 100%)
   overflow: hidden
@@ -34,10 +53,21 @@ h2
   height: 180px
   border-radius: 50%
   border: 2px solid green
-  background-color: #147cacd8
+  background-color: #166116
   box-shadow: 0 0 10px #00ff00
   color: white
   text-shadow: 0 0 10px #fffffff3
+
+.world-text
+  z-index: 2
+  position: relative
+
+.world-icon
+  z-index: 1
+  position: absolute
+  font-size: 177px
+  top: -2px
+  color: #147cacd8
 
 .poem-text div
   border-radius: 30px
@@ -66,13 +96,26 @@ h2
   position: absolute
   z-index: 100
   font-size: 17px
-  transform: translate(20px, 78px)
+  left: 50%
+  top: 50%
+  transform: translate(-80%, -65%)
   width: 90px
 
 .back-icon
   color: white
   font-size: 150px
   filter: drop-shadow(0px 0px 10px white)
+  &::after
+    content: "Back to the main page"
+    font-family: 'Alegreya Sans SC', sans-serif
+    color: black
+    position: absolute
+    z-index: 100
+    font-size: 17px
+    left: 50%
+    top: 50%
+    transform: translate(-80%, -65%)
+    width: 90px
 
 .back-flame1, .back-flame2
   position: absolute
@@ -131,8 +174,9 @@ h2
   position: absolute
   width: 100%
   height: 100%
-  animation: slide 100000ms linear infinite
 
+.animate-stars
+  animation: slide 100000ms linear infinite
   &:nth-child(2)
     left: 100%
 
@@ -156,8 +200,7 @@ h2
   width: 100%
   height: 100%
   animation: slide 170000ms linear infinite
-
-  &:nth-child(2)
+  &:nth-child(4)
     left: 100%
 
 .shooting
@@ -199,22 +242,22 @@ h2
 
 
 .satellite
-  -webkit-animation: satelliteOrbit 10s linear infinite
-  -moz-animation: satelliteOrbit 10s linear infinite
-  -o-animation: satelliteOrbit 10s linear infinite
-  animation: satelliteOrbit 10s linear infinite
+  -webkit-animation: satelliteOrbit 18s linear infinite
+  -moz-animation: satelliteOrbit 18s linear infinite
+  -o-animation: satelliteOrbit 18s linear infinite
+  animation: satelliteOrbit 18s linear infinite
 
 .rocket
-  -webkit-animation: rocketOrbit 8s linear infinite
-  -moz-animation: rocketOrbit 8s linear infinite
-  -o-animation: rocketOrbit 8s linear infinite
-  animation: rocketOrbit 8s linear infinite
+  -webkit-animation: rocketOrbit 15s linear infinite
+  -moz-animation: rocketOrbit 15s linear infinite
+  -o-animation: rocketOrbit 15s linear infinite
+  animation: rocketOrbit 15s linear infinite
 
 .fire-flicker
-  -webkit-animation: flicker 1s linear infinite
-  -moz-animation: flicker 1s linear infinite
-  -o-animation: flicker 1s linear infinite
-  animation: flicker 1s linear infinite
+  -webkit-animation: flicker 2s linear infinite
+  -moz-animation: flicker 2s linear infinite
+  -o-animation: flicker 2s linear infinite
+  animation: flicker 2s linear infinite
 
 /*
  * Set up the keyframes to actually describe the begining and end states of
@@ -305,4 +348,3 @@ h2
     opacity: 0.3
   50%
     opacity: 0.8
-

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faArrowDown, faArrowDownLong } from '@fortawesome/free-solid-svg-icons';
-import { StyleService } from 'src/app/style.service';
+import { StyleService } from 'src/app/services/style.service';
 
 @Component({
   selector: 'app-child',
@@ -25,9 +25,6 @@ export class ChildComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-    // console.log('On destroy?')
     window.removeEventListener("scroll", this.scrollHandler);
   }
 

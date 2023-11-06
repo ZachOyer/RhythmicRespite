@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&display=swap')
+
+h3, h6
+  font-family: 'Homemade Apple', cursive
+  color: white
+
+.emphasize
+  font-size: 1.4em
+
+.background
+  position: relative
+  min-height: 100vh
+  background: radial-gradient(#3f3838, #111010)
+
+.my-card
+  // font-family: 'Charm', cursive
+  font-size: 1.3em
+  transform: rotateX(15deg) rotateY(15deg) rotateZ(-3deg)
+  width: 250px
+  padding: 20px
+  border-radius: 10px
+  background: linear-gradient(180deg, #4b1919, #b42b2b)
+  border: 2px solid #1b1b1b
+  color: white
+  box-shadow: -4px 7px 10px 5px #00000069
+  &.wide
+    width: 350px
+
+.heart-container
+  position: relative
+  height: 120px
+  width: 120px
+  cursor: pointer
+  filter: drop-shadow(5px 10px 10px #0000007e)
+
+.heart
+  color: brown
+  font-size: 120px
+  transition: all 0.2s ease-in-out
+
+.heart-text
+  position: absolute
+  bottom: 40px
+  left: 50%
+  transform: translate(-50%, 0%)
+  color: white
+  font-family: 'Charm', cursive
+  font-size: 25px
+
+.drops
+  position: absolute
+  bottom: 0px
+  left: 0px
+  transform: translateY(20px)
+
+.droplet-right
+  position: absolute
+  color: brown
+  scale: 0.7 1
+  bottom: 30px
+  right: 30px
+  animation: dropping 3s ease-in infinite
+
+.droplet-left
+  position: absolute
+  color: brown
+  scale: 0.7 1
+  bottom: 40px
+  left: 10px
+  animation: dropping 2.5s ease-in infinite
+
+.continue
+  margin-top: 40px
+  border: 1px solid #000
+  background-color: brown
+  font-family: 'Homemade Apple', cursive
+  border-radius: 3px
+  color: white
+  font-weight: 700
+  padding: .75rem 0.75rem 0.35rem 0.75rem
+
+.leave
+  cursor: pointer
+  font-size: 25px
+  opacity: 0.7
+  transition: all 0.2s ease-in-out
+  color: brown
+  padding-right: 0px
+  &:hover
+    opacity: 1
+    padding-right: 5px
+
+.transition-text
+  font-family: 'Charm', cursive
+  font-size: 30px
+  color: #cfcfcf
+  text-shadow: 2px 5px 5px #0000007a
+
+.card-container
+  min-height: 500px
+  display: flex
+  justify-content: center
+  align-items: center
+
+@media screen and ( max-width: 767px )
+  .card-container
+    align-items: start
+
+.heart-container:hover .heart
+  filter: brightness(85%)
+
+.heart-container:active .heart
+  filter: brightness(70%)
+
+@keyframes dropping
+  0%
+    transform: translateY(10px)
+  50%
+    transform: translateY(20px)
+  85%
+    opacity: 1
+  100%
+    transform: translateY(60px)
+    opacity: 0

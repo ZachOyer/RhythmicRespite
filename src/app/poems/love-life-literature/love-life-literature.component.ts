@@ -12,6 +12,11 @@ export class LoveLifeLiteratureComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
+    const test = document.getElementById('animated');
+    if (test) {
+      test.addEventListener('animationend', () => {
+        test.style.backgroundPosition = '0% center';
+      })
+    }
   }
 }

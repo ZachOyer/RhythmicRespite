@@ -35,7 +35,7 @@ export class MirroredGlassComponent implements OnInit {
       setTimeout(() => {
         this.unraveled = true
       }, 100)
-    }, 1400)
+    }, 500)
   }
 
 }

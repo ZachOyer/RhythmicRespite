@@ -27,6 +27,7 @@ $crystal-color: #c7c7c7
 $stand-color: #6c1283
 
 .ball-container
+  cursor: default
   height: 300px
   width: 300px
   margin: 0px auto
@@ -38,7 +39,10 @@ $stand-color: #6c1283
   width: 100%
   border-radius: 50%
   background-color: darken($crystal-color, 10%)
+  transition: box-shadow 0.5s ease-in-out
   box-shadow: inset 20px -30px 50px 30px darken($crystal-color, 40%), inset 0px 0px 8px 4px darken($crystal-color, 80%)
+  &:hover
+    box-shadow: inset 20px -30px 50px 30px darken($crystal-color, 40%), inset 0px 0px 8px 4px darken($crystal-color, 80%), 0px 0px 20px 2px #d4458db6
   &::before
     content: ''
     position: absolute
@@ -78,13 +82,13 @@ $stand-color: #6c1283
   font-size: 12px
   opacity: 0
 
-  @for $i from 0 through 10
+  @for $i from 0 through 20
     &:nth-child(#{$i})
       $delay: $i + 0s
       top: random(100) + 0%
       left: random(100) + 0%
       color: #4fd8cd
-      animation: float-up 8s linear $delay infinite
+      animation: float-up 16s linear $delay infinite
       filter: drop-shadow(0px 0px 5px #43caad) drop-shadow(0px 0px 5px #ffffff)
 
 
@@ -94,9 +98,9 @@ $stand-color: #6c1283
     opacity: 0
   20%
     opacity: 0.8
-  80%
+  50%
     opacity: 0.8
-  100%
+  70%
     transform: translateY(-50px)
     opacity: 0
 

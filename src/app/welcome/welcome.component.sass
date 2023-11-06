@@ -1,68 +1,216 @@
-h1
-  font-family: 'Fredericka the Great', cursive
-  width: 100%
+/* width */
+::-webkit-scrollbar
+  width: 15px
 
-.navbar
-  background-color: white
-  cursor: default
+/* Track */
+::-webkit-scrollbar-track
+  background: #303030
 
-.search-label
-  background-color: white
-  border: 2px solid black
-  border-bottom: 0px
-  border-radius: 10px 10px 0px 0px
+/* Handle */
+::-webkit-scrollbar-thumb
+  background: #888
 
-tbody tr
-  background-color: white
-  transition: 0.2s all ease-in-out
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+  background: #555
 
 .background
-  background: url('../../assets/paper_background.jpg')
-  min-height: 100vh
+  height: 100vh
+  background-color: #303030
+  overflow-x: hidden
+  overflow-y: scroll
 
-tbody tr:hover
-  transform: translateY(-3px)
-  box-shadow: 0px 2px 3px #000000b2
-  background-color: white
+h1
+  margin-top: 20px
+  margin-bottom: 10px
+  text-align: center
+  font-size: 50px
+  color: white
+  font-family: 'Montserrat', sans-serif
+  font-weight: 400
+  filter: drop-shadow(2px 2px 1px #979797) drop-shadow(4px 4px 3px black)
 
-.search-bar:hover .test2
-  animation: bounce 1.2s linear ease-in
-  -webkit-animation: bounce 1.2s linear ease-in
+.title
+  color: white
+  font-style: italic
+  font-size: 40px
+  padding-left: 12px
+  filter: drop-shadow(2px 1px 2px black)
 
-@-webkit-keyframes bounce
-  0%,
-  100%,
-  20%,
-  50%,
-  80%
-    -webkit-transform: translateY(0px)
-    -ms-transform: translateY(0px)
-    transform: translateY(0px)
-  40%
-    -webkit-transform: translateY(-10px)
-    -ms-transform: translateY(-10px)
-    transform: translateY(-10px)
-  60%
-    -webkit-transform: translateY(-5px)
-    -ms-transform: translateY(-5px)
-    transform: translateY(-5px)
+.my-card
+  font-family: 'Montserrat', sans-serif
+  font-weight: 200
+  position: relative
+  padding: 10px
+  border: 1px solid black
+  border-radius: 20px
+  margin-top: 15px
+  margin-bottom: 15px
+  color: white
+  transition: all 0.3s ease-in-out
+  box-shadow: 0px 5px 10px 0px #000
+  cursor: pointer
+  overflow: hidden
+  &:hover
+    box-shadow: 0px 0px 10px 0px #ffffffc7
 
-@keyframes bounce
-  0%,
-  100%,
-  20%,
-  50%,
-  80%
-    -webkit-transform: translateY(0px)
-    -ms-transform: translateY(0px)
-    transform: translateY(0px)
-  40%
-    -webkit-transform: translateY(-10px)
-    -ms-transform: translateY(-10px)
-    transform: translateY(-10px)
-  60%
-    -webkit-transform: translateY(-5px)
-    -ms-transform: translateY(-5px)
-    transform: translateY(-5px)
+.my-card::before
+  content: '',
+  position: absolute
+  left: -110%
+  top: -5%
+  width: 100%
+  height: 110%
+  background: linear-gradient(0deg, #8d6a1f 25%, #c79b21 28%, #c79b21 72%, #ccb486 75%)
+  filter: blur(2px)
+  transition: left 0.5s ease-in-out
+
+.my-card div
+  transition: all 0.3s ease-in-out
+
+.my-card .desc
+  min-width: 130px
+  color: black
+  filter: drop-shadow(1px 1px 1px black)
 
 
+@media screen and ( min-width: 768px )
+  .my-card:hover .title
+    color: black
+    padding-left: 24px
+    padding-right: 0px
+
+  .my-card:hover::before
+    left: 0%
+
+  .card-data
+    position: absolute
+    padding: 0px
+    height: 100%
+    width: max-content
+    right: -40%
+    top: 0%
+    border-left: 1px solid black
+    transition: right 0.3s ease-in-out
+
+  .my-card:hover .card-data
+    right: 0%
+
+  .desc
+    padding: 10px
+    &:nth-child(1)
+      background: linear-gradient(90deg, #cacaca, #cacaca 5%, #aaaaaa 8%, #cacaca 11%, #cacaca 16%, #aaaaaa 19%, #cacaca 22%, #cacaca 27%, #aaaaaa 30%, #cacaca 33%, #cacaca 67%, #aaaaaa 70%, #cacaca 73%, #cacaca 78%, #aaaaaa 81%, #cacaca 84%, #cacaca 89%, #aaaaaa 92%, #cacaca 95%, #cacaca 100%)
+      box-shadow: 0px 25px 30px -10px #c7c7c7b4 inset, 0px -25px 30px -10px #000000b4 inset
+    &:nth-child(2)
+      background-color: #c58c7b
+      box-shadow: -10px 25px 30px -25px #000000b4 inset, -10px -25px 30px -15px #000000b4 inset
+      padding-right: 20px
+
+  .data, .data-tag
+    text-shadow: 1px 1px 1px #000000
+
+.data
+  font-size: 25px
+
+.data-tag
+  font-weight: 400
+
+.input-box
+  font-family: 'Montserrat', sans-serif
+  background-color: #4e4e4e
+  padding: 30px 15px 30px 15px
+  margin: 15px 0px 15px 0px
+
+.my-input
+  font-family: 'Montserrat', sans-serif
+  border-radius: 0px
+  background-color: #4e4e4e
+  border-width: 0px 0px 2px 0px
+  transition: all 0.3s ease-in-out
+
+.my-input:focus
+  box-shadow: 0px 0px 0px transparent
+
+.my-input::placeholder
+  color: #868e96
+
+.btn-clear
+  color: #ed2661
+  border-color: #ed2661
+  border-width: 0px 0px 2px 0px
+  &:focus
+    box-shadow: 0px -1px 1px 2px #ed2661
+
+.btn
+  border-radius: 0px
+
+.btn:hover
+  transform: translateY(0px)
+  box-shadow: 0px 0px 0px #00000094
+
+.btn-group
+  font-family: 'Fredericka the Great', cursive
+  font-size: 1.1em
+
+.btn-text
+  position: relative
+  z-index: 1
+
+.my-button
+  color: white
+  border: 2px solid #333
+  overflow: hidden
+  transition: all 0.3s ease-in-out
+  &:focus
+    box-shadow: 0px 0px 1px 2px #383838
+  &:hover
+    color: white
+    border: 2px solid #333
+  &::before, &::after
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100px
+    border-radius: 50%
+    transform: scale(1)
+    transition: transform 0.3s ease-in-out
+
+.my-button::before
+  top: 100%
+  left: 50%
+  background-color: #333
+
+.my-button::after
+  bottom: 100%
+  right: 50%
+  background: repeat url('../../assets/paper.jfif')
+  background-size: 20%
+
+.my-button:hover::before
+  transform: scale(3)
+
+.radio-btn:checked + .my-button
+  color: #333
+  border: 2px solid #333
+
+.radio-btn:checked + .my-button::after
+  transform: scale(3)
+
+@media screen and ( max-width: 767px )
+  h1
+    font-size: 30px
+
+  .title
+    font-size: 20px
+    border-bottom: 1px solid white
+    margin-bottom: 10px
+
+  .data
+    font-size: 15px
+
+  .data-tag
+    font-size: 10px
+
+  .my-card .desc
+    opacity: 1
+    color: white

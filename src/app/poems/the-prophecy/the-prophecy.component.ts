@@ -10,7 +10,7 @@ export class TheProphecyComponent implements OnInit {
   faUser = faChildren;
   faStar = faStar;
 
-  sparkles = new Array<number>(10);
+  sparkles = new Array<number>(20);
 
   constructor() { }
 

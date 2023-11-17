@@ -1,24 +1,55 @@
+$base: #111
+$background: #d4d4d4
+$text-color: #111
+
 .background
-  animation: spook 5s linear infinite
-  background: linear-gradient(90deg,#200101, #000,#200101)
-  color: white
+  color: $text-color
+  height: 100vh
+  overflow-y: scroll
+  overflow-x: hidden
+  position: relative
+  &::before
+    content: ''
+    position: fixed
+    width: 100%
+    height: 100%
+    z-index: -5
+    background: $base
+
+/* width */
+::-webkit-scrollbar
+  width: 15px
+
+/* Track */
+::-webkit-scrollbar-track
+  background: #303030
+
+/* Handle */
+::-webkit-scrollbar-thumb
+  background: #888
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover
+  background: #555
 
 .poem-text
+  position: relative
   font-family: 'Cormorant SC', serif
-  text-shadow: 2px 2px 3px white
-  font-weight: 300
+  height: 1000vh
 
 .important
   font-weight: 600
 
-h2
-  font-family: 'Fredericka the Great', cursive
-  margin-top: 50px
-  margin-bottom: 30px
-  margin-right: auto
-  margin-left: auto
+.title-container
+  position: fixed
+  top: 50px
+  left: 50%
+  transform: translateX(-50%)
   text-decoration: underline
-  text-shadow: 4px 3px 4px #fff
+  text-shadow: 4px 3px 4px $text-color
+
+.title
+  font-family: 'Fredericka the Great', cursive
 
 @media screen and (min-width: 770px)
   .poem-text
@@ -27,8 +58,107 @@ h2
   h2
     font-size: 40px
 
-@keyframes spook
-  0%, 100%
-    filter: grayscale(100%)
-  50%
-    filter: grayscale(0%)
+.horizontal-bars
+  position: fixed
+  background-color: $background
+  border-radius: 10px 0px 0px 0px
+  width: 110vw
+  height: 12.5vh
+  left: 100%
+  z-index: -2
+  @for $i from 0 through 8
+    $hposition: calc((12.5 * $i) - 12.5)
+    &:nth-child(#{$i} of div.horizontal-bars)
+      bottom: $hposition + 0%
+
+.vertical-bars
+  position: fixed
+  background: $background
+  border-radius: 0px 10px 0px 0px
+  width: 12.5vw
+  height: 110vh
+  bottom: 105%
+  left: 10%
+  z-index: -2
+  @for $i from 0 through 9
+    $hposition: calc((12.5 * $i) - 12.5)
+    &:nth-child(#{$i} of div.vertical-bars)
+      left: $hposition + 0%
+
+#title-background
+  position: absolute
+  background: $background
+  border-radius: 0px 0px 15px 15px
+  width: 400px
+  height: 150px
+  left: 50%
+  transform: translateX(-50%)
+  top: 0%
+  z-index: -2
+
+@media screen and ( max-width: 767px )
+  #title-background
+    width: 200px
+
+.screen-space
+  height: 100vh
+
+#stanza1, #stanza3
+  width: 100%
+  height: 100%
+  background: radial-gradient(lighten($background, 10%), $background)
+  text-shadow: 2px 2px 3px $text-color
+  font-weight: 300
+  position: fixed
+  top: 0%
+  left: 0%
+  z-index: -1
+  display: flex
+  align-items: center
+  justify-content: center
+
+#stanza2
+  width: 100%
+  height: 100%
+  color: $background
+  text-shadow: 2px 2px 3px $background
+  font-weight: 300
+  position: fixed
+  top: 0%
+  left: 0%
+  z-index: -2
+  display: flex
+  align-items: center
+  justify-content: center
+
+#stanza4
+  width: 100%
+  height: 100%
+  text-shadow: 2px 2px 3px $text-color
+  font-weight: 300
+  position: fixed
+  top: 0%
+  left: 0%
+  z-index: -1
+  display: flex
+  align-items: center
+  justify-content: center
+
+.hide-background
+  background: radial-gradient(transparent, transparent)!important
+
+.hide
+  opacity: 0
+
+.stanza-2-line-1
+  transform: translateX(-100vw)
+
+.stanza-2-line-2
+  transform: translateX(100vw)
+
+.back-btn
+  position: absolute
+  bottom: 15vh
+  left: 50%
+  width: max-content
+  transform: translateX(-50%)

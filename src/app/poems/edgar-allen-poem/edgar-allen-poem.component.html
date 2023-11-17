@@ -1,11 +1,15 @@
-<div class="background">
+<div class="background" (scroll)="onScroll($event)">
+  <div id="title-background"></div>
+  <div class="horizontal-bars" *ngFor="let item of barsCount" [ngClass]="{'hide': !showHorizontalBars}"></div>
+  <div class="vertical-bars" *ngFor="let item of barsCount" [ngClass]="{'hide': !showVerticalBars}"></div>
   <div class="container text-center">
-    <div class="row">
-      <div class="col" style="position: relative">
-      </div>
-      <div class="col-md-10 col-sm-12 mb-3">
-        <h2>Edgar Allen Poem</h2>
-        <div class="poem-text mb-4">
+    <div class="title-container" *ngIf="scrollAt < 100">
+      <h2 class="title">Edgar Allen Poem</h2>
+      <h5><fa-icon [icon]="faDown"></fa-icon></h5>
+    </div>
+    <div class="poem-text">
+      <div id="stanza1" [ngClass]="{'hide': !showStanza1}">
+        <div class="pe-3">
           <div>On a cold, dark Thursday night</div>
           <div>I go to a friend's with hopes for a fright</div>
           <div>To watch some movies, so scary, so thrilling</div>
@@ -16,9 +20,10 @@
           <div>With a warm drink in my cup</div>
           <div>Eager to begin</div>
           <div>The terror within</div>
-          <br>
-          <div><fa-icon [icon]="faPlaceholder"></fa-icon></div>
-          <br>
+        </div>
+      </div>
+      <div id="stanza2" [ngClass]="{'hide': !showStanza2}">
+        <div class="pe-3">
           <div>Watch them hope naught for death</div>
           <div>Yet escapes them does their final breath</div>
           <div>The long sleep comes for us all</div>
@@ -31,30 +36,32 @@
           <div>"Lets watch something else," Her tone becomes jaded</div>
           <div>"Yes please" I say, the terror etched on my face</div>
           <div>My backseat never felt more like a killers' home base</div>
-          <br>
-          <div><fa-icon [icon]="faPlaceholder"></fa-icon></div>
-          <br>
-          <div>The movie ends, not bad it would seem</div>
-          <div>Less scary right now and more in my dreams</div>
-          <div>Fear has parked in the space on my face</div>
-          <div>Still not as good as <span style="font-style: italic">A Quiet Place</span></div>
-          <div>the goodbyes that I say</div>
-          <div>Prepare my fleeting way</div>
-          <div>With only a car ride ahead</div>
-          <div>Yet afraid I'll end up dead</div>
-          <br>
-          <div><fa-icon [icon]="faPlaceholder"></fa-icon></div>
-          <br>
-          <div>But t'was not the monsters nor the demons</div>
-          <div>From which the movies they had been seen in</div>
-          <div>That attacked my body with their piercing claws</div>
-          <div>But my brain which gave my heart a lethal pause</div>
-          <div>Leaving my body to lay upon the floor</div>
-          <div>Living, laughing, loving nevermore</div>
         </div>
-        <button class="btn btn-primary" routerLinkActive="active" routerLink="/welcome">Back to main page</button>
       </div>
-      <div class="col" style="position: relative">
+      <div id="stanza3" [ngClass]="{'hide': !showStanza3}">
+        <div class="pe-3">
+          <div class="stanza-1-line-1">The movie ends, not bad it would seem</div>
+          <div class="stanza-1-line-2">Less scary right now and more in my dreams</div>
+          <div class="stanza-1-line-1">Fear has parked in the space on my face</div>
+          <div class="stanza-1-line-2">Still not as good as <span style="font-style: italic">A Quiet Place</span></div>
+          <div class="stanza-1-line-1">the goodbyes that I say</div>
+          <div class="stanza-1-line-2">Prepare my fleeting way</div>
+          <div class="stanza-1-line-1">With only a car ride ahead</div>
+          <div class="stanza-1-line-2">Yet afraid I'll end up dead</div>
+        </div>
+      </div>
+      <div id="stanza4" [ngClass]="{'hide': !showStanza4}">
+        <div class="pe-3">
+          <div class="stanza-2-line-2">But t'was not the monsters nor the demons</div>
+          <div class="stanza-2-line-1">From which the movies they had been seen in</div>
+          <div class="stanza-2-line-2">That attacked my body with their piercing claws</div>
+          <div class="stanza-2-line-1">But my brain which gave my heart a lethal pause</div>
+          <div class="stanza-2-line-2">Leaving my body to lay upon the floor</div>
+          <div class="stanza-2-line-1">Living, laughing, loving nevermore</div>
+        </div>
+      </div>
+      <div class="back-btn">
+        <button class="btn btn-primary" routerLink="/welcome">Back to main page</button>
       </div>
     </div>
   </div>

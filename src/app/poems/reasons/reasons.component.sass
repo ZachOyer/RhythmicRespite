@@ -55,132 +55,251 @@
 //     border-radius: 50%
 //     background-image: linear-gradient(30deg, darken($background,5.0%), darken($background, 8.0%))
 
+// svg
+//   width: 256px
+//   height: 256px
 
 
-// .background
-//   z-index: -1000
-//   display: flex
-//   justify-content: center
-//   align-items: center
-//   background-image: linear-gradient(30deg, $background, darken($background, 13%))
-//   overflow: hidden
+// /* SMOKE */
+// #smoke-1
+//   stroke-dasharray: 0, 10
+//   animation: smoke 6s ease infinite
 
 
-// @media (max-width: 768px)
-//   .moon
-//     width: 160px
-//     height: 160px
+// #smoke-2
+//   stroke-dasharray: 0, 10
+//   animation: smoke 6s 0.5s ease infinite
 
-$crystal-color: #c7c7c7
-$stand-color: #6c1283
 
-.background
-  min-height: 100vh
-  background: linear-gradient(45deg, #270d36, #190624)
+// @keyframes smoke
+//   0%
+//     stroke-dasharray: 0, 10
+//   50%
+//     stroke-dasharray: 10, 0
+//   100%
+//     stroke-dasharray: 10, 0
+//     opacity: 0
 
-.ball-container
+// .glass
+//   background: linear-gradient(grey, white)
+//   position: absolute
+//   height: 400px
+//   width: 400px
+
+// .shard-1
+//   top: 0px
+//   left: 0px
+//   clip-path: polygon(40% 0%, 25% 100%, 55% 100%, 78% 68%) // Top left
+
+// .shard-2
+//   top: 0px
+//   left: 110px
+//   clip-path: polygon(16% 0%, 100% 13%, 57% 71%) // Top Right
+
+// .shard-3
+//   top: 30px
+//   left: 100px
+//   clip-path: polygon(89% 100%, 100% 13%, 44% 93%) // Bottom right
+
+@media screen and (max-width: 770px)
+  .poem-text
+    font-size: 18px
+
+@media screen and (min-width: 770px)
+  .poem-text
+    font-size: 25px
+
+@media screen and (max-width: 770px)
+  .title
+    font-size: 23px
+    margin-bottom: 40px
+
+@media screen and (min-width: 770px)
+  .title
+    font-size: 30px
+    margin-top: 30px
+    margin-bottom: 30px
+
+.poem-text
+  font-family: 'Benne', serif
+  font-weight: 500
+  text-shadow: 0 0 10px #e7cccc
+
+.title
+  margin-top: 40px
+  width: max-content
+  position: relative
+  font-family: 'Fredericka the Great', cursive
+  background: linear-gradient(to right, #000000 50%, #00000000 50%)
+  background-size: 200% auto
+  color: #000
+  background-clip: text
+  text-fill-color: transparent
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  animation: appear 4s linear 0.5s 1
+  background-position: 100% center
+  @keyframes appear
+    0%
+      background-position: 100% center
+    25%
+      background-position: 100% center
+    100%
+      background-position: 0% center
+
+#pencil
+  filter: drop-shadow(0px 0px 2px black)
   position: absolute
-  height: 300px
-  width: 300px
-  top: 50%
-  left: 50%
-  transform: translate(-50%, -50%)
-  filter: drop-shadow(5px 5px 20px #00000080)
-
-.orb
-  height: 100%
-  width: 100%
-  border-radius: 50%
-  background-color: darken($crystal-color, 10%)
-  box-shadow: inset 0px -30px 50px 30px darken($crystal-color, 40%), inset 0px 0px 8px 4px darken($crystal-color, 80%)
+  background-color: #e2e249
+  opacity: 0
+  top: 0%
+  left: 0%
+  width: 10px
+  height: 40px
+  animation: draw 5s linear 0.5s 1
   &::before
     content: ''
     position: absolute
-    height: 10%
-    width: 10%
-    right: 25%
-    top: 25%
-    background-color: $crystal-color
-    border-radius: 50%
-    box-shadow: 0px 0px 10px 8px $crystal-color
+    background-color: #b36161
+    width: 100%
+    height: 25%
+    bottom: 100%
+    left: 0%
+    border-radius: 3px 3px 0px 0px
+  &::after
+    content: ''
+    position: absolute
+    background: linear-gradient(#b69b84 50%, #000)
+    width: 100%
+    height: 40%
+    top: 100%
+    left: 0%
+    clip-path: polygon(50% 100%, 0 0, 100% 0)
 
-.stand
-  background-color: $stand-color
-  position: absolute
-  bottom: -5%
-  height: 13%
-  width: 100%
-  border-radius: 50% 50% 10px 10px
-  box-shadow: inset -5px -5px 15px 5px darken($stand-color, 10%)
-
-.sparkles1
-  position: absolute
-  opacity: 0
-
-  @for $i from 0 through 12
-    &:nth-child(#{$i})
-      $delay: $i + 0s
-      top: random(100) + 0%
-      left: random(100) + 0%
-      color: #4fd8cd
-      animation: float-up 8s linear $delay infinite
-      filter: drop-shadow(0px 0px 5px #43caad) drop-shadow(0px 0px 5px #ffffff)
-
-
-@keyframes float-up
+@keyframes draw
   0%
-    transform: translateY(0px)
     opacity: 0
+    transform: translate(20px, -15px) rotate(43deg)
   20%
-    opacity: 0.8
-  80%
-    opacity: 0.8
-  100%
-    transform: translateY(-50px)
-    opacity: 0
-
-svg
-  width: 256px
-  height: 256px
-
-
-/* SMOKE */
-#smoke-1
-  stroke-dasharray: 0, 10
-  animation: smoke 6s ease infinite
-
-
-#smoke-2
-  stroke-dasharray: 0, 10
-  animation: smoke 6s 0.5s ease infinite
-
-
-@keyframes smoke
-  0%
-    stroke-dasharray: 0, 10
+    opacity: 1
+    left: 0%
+    transform: translate(20px, -15px) rotate(43deg)
+  27.5%
+    left: 12.5%
+    transform: translate(30px, -20px) rotate(70deg)
+  35%
+    left: 25%
+    transform: translate(27px, -10px) rotate(57deg)
+  42.5%
+    left: 37.5%
+    transform: translate(30px, -20px) rotate(70deg)
   50%
-    stroke-dasharray: 10, 0
-  100%
-    stroke-dasharray: 10, 0
+    left: 50%
+    transform: translate(27px, -10px) rotate(57deg)
+  57.5%
+    left: 62.5%
+    transform: translate(30px, -20px) rotate(70deg)
+  65%
+    left: 75%
+    transform: translate(27px, -10px) rotate(57deg)
+  72%
+    left: 87.5%
+    transform: translate(30px, -20px) rotate(70deg)
+  80%
+    left: 100%
+    transform: translate(27px, -10px) rotate(57deg)
+    opacity: 1
+  90%
+    left: 120%
+    transform: rotate(90deg)
     opacity: 0
 
-.glass
-  background: linear-gradient(grey, white)
+.container
+  border-right: 10px grey
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px
+  background: repeat url('../../../assets/leather.jfif')
+  border-right: 5px solid #503427
+  border-left: 5px solid #503427
+
+.page
+  background: repeat url('../../../assets/paper.jfif')
+  border-right: 6px ridge #cccccc
+  border-left: 6px ridge #cccccc
+  box-shadow: rgba(0, 0, 0, 0.534) 16px 0px 20px 0px, rgba(0, 0, 0, 0.5) -16px 0px 20px 1px
+  min-height: 100vh
+  transition: all 1s ease-in-out
+
+.bookmark-icon
+  color: #dd3f3f
+  font-size: 100px
+  position: fixed
+  top: 0px
+  right: 10px
+  transition: top 0.2s ease-in-out
+  filter: drop-shadow(10px 5px 8px #00000075)
+
+.bookmark-text
+  color: white
+  position: fixed
+  top: 5px
+  right: 57px
+  transition: top 0.2s ease-in-out
+
+.bookmark
+  cursor: pointer
+  z-index: 2000
+
+.bookmark:hover .bookmark-text
+  top: 15px
+
+.bookmark:hover .bookmark-icon
+  top: 10px
+
+@media screen and (max-width: 770px)
+  .bookmark-icon
+    transform: translate(20px, -35px) scaleY(1.8) scaleX(0.6)
+
+  .bookmark-text
+    transform: translate(55px, 0px)
+    width: 50px
+
+@media screen and (min-width: 770px)
+  .bookmark-icon
+    transform: translate(-45px, -35px) scaleY(1.5)
+    right: 10%
+
+  .bookmark-text
+    width: 70px
+    right: 10%
+    transform: translateX(-47px)
+
+@media screen and (min-width: 1200px)
+  .bookmark-icon
+    transform: translate(-45px, -35px) scaleY(1.5)
+    right: 20%
+
+  .bookmark-text
+    width: 70px
+    right: 20%
+    transform: translateX(-47px)
+
+.important
+  margin-bottom: 5px
+  text-shadow: 0 0 10px #df8888
+
+#page1
   position: absolute
-  height: 400px
-  width: 400px
+  right: 8.333%
+  width: 41.667%
 
-.shard-1
-  top: 0px
-  left: 0px
-  clip-path: polygon(40% 0%, 25% 100%, 55% 100%, 78% 68%) // Top left
+.turned
+  animation: name 1s ease-in-out 1
 
-.shard-2
-  top: 0px
-  left: 110px
-  clip-path: polygon(16% 0%, 100% 13%, 57% 71%) // Top Right
+@keyframes name
+  0%
+    transform: translateX(0%) rotateY(0deg)
+  50%
+    transform: translateX(-50%) rotateY(90deg)
+  100%
+    transform: translateX(-100%) rotateY(180deg)
 
-.shard-3
-  top: 30px
-  left: 100px
-  clip-path: polygon(89% 100%, 100% 13%, 44% 93%) // Bottom right

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faCertificate, faSplotch } from '@fortawesome/free-solid-svg-icons';
+import { faBookmark, faCertificate, faSplotch } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -10,13 +10,21 @@ import { faCertificate, faSplotch } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./reasons.component.sass']
 })
 export class ReasonsComponent implements OnInit {
-  faStar = faSplotch;
-  faAltStar = faCertificate;
-
-  sparkles = new Array<number>(10)
+  bookmark = faBookmark;
+  pageIndex = 0;
 
   constructor() { }
 
   ngOnInit(): void {
+    const test = document.getElementById('animated');
+    if (test) {
+      test.addEventListener('animationend', () => {
+        test.style.backgroundPosition = '0% center';
+      })
+    }
+  }
+
+  turnPage() {
+    this.pageIndex++;
   }
 }

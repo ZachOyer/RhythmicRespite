@@ -1,0 +1,69 @@
+#background
+  background: #312f2f
+  overflow-x: hidden
+
+.title
+  font-family: 'Quicksand', sans-serif
+  font-weight: 700
+  text-align: center
+  background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)
+  background-clip: text
+  color: transparent
+  border-image: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82) 30% / 3px
+  padding: 10px
+  filter: drop-shadow(5px 5px 5px #000000e0)
+
+
+.poem-text
+  text-align: center
+  filter: drop-shadow(10px 10px 40px #0000005d)
+
+.good, .bad
+  border-radius: 10px
+  position: relative
+  display: flex
+  aspect-ratio: 1 / 1
+  width: 50%
+  padding: 20px
+  margin-bottom: 30px
+  font-size: 1.3rem
+  transition: all 0.4s ease-out
+
+.bad
+  font-family: 'Quicksand', sans-serif
+  background: linear-gradient(0deg, #1f52df, #b4166d)
+  margin-left: auto
+  background-attachment: fixed
+  clip-path: polygon(100% 0%, 60% 0%, 0% 50%, 60% 100%, 100% 100%)
+  text-align: right
+
+.good
+  font-family: 'Diphylleia', serif
+  background: linear-gradient(0deg, #6fba82, #5073b8)
+  background-attachment: fixed
+  clip-path: polygon(0% 0%, 40% 0%, 100% 50%, 40% 100%, 0% 100%)
+  text-align: left
+
+.centered-text
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+
+.color-btn
+  background: linear-gradient(60deg, #5073b8, #1098ad, #07b39b, #6fba82)
+  border-radius: 0px 10px 0px 10px
+  border: 0px solid transparent
+  font-family: 'Quicksand', sans-serif
+  font-weight: 700
+
+@media screen and ( max-width: 767px )
+  .good, .bad
+    width: 70%
+    font-size: 1rem
+
+.hide-left
+  margin-left: -100%
+
+.hide-right
+  margin-right: -100%

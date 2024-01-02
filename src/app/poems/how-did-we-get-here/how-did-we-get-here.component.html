@@ -1,0 +1,18 @@
+<div id="background" class="pb-3">
+  <div class="container pt-5">
+    <h4 class="title mb-5">How did we get here</h4>
+    <div class="poem-text pb-5">
+      <div class="good" id="good1"><div class="centered-text">How can that which I deeply desire</div></div>
+      <div class="bad" id="bad1" [ngClass]="{'hide-right': !showBad1}"><div class="centered-text">Burn my mind like raging pyre</div></div>
+      <div class="good" id="good2" [ngClass]="{'hide-left': !showGood2}"><div class="centered-text">The beauty that to my soul once filled</div></div>
+      <div class="bad" id="bad2" [ngClass]="{'hide-right': !showBad2}"><div class="centered-text">Became a predator, whose prey it killed</div></div>
+      <div class="good" id="good3" [ngClass]="{'hide-left': !showGood3}"><div class="centered-text">The laugh that to my ears did sing</div></div>
+      <div class="bad" id="bad3" [ngClass]="{'hide-right': !showBad3}"><div class="centered-text">Became that painful piercing ring</div></div>
+      <div class="good" id="good4" [ngClass]="{'hide-left': !showGood4}"><div class="centered-text">The face that daily I hoped to see</div></div>
+      <div class="bad" id="bad4" [ngClass]="{'hide-right': !showBad4}"><div class="centered-text">Became regret that stuck with me</div></div>
+    </div>
+    <div class="text-center pb-5">
+      <button class="btn color-btn" routerLink="welcome">Back to main menu</button>
+    </div>
+  </div>
+</div>

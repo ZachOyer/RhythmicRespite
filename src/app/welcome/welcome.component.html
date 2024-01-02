@@ -37,8 +37,13 @@
           <div class="title col-12 mt-1">{{poem.title}}</div>
           <div class="row mx-0 card-data">
             <div class="col-auto desc">
-              <div class="data-tag">Length</div>
-              <div class="ps-2 data">{{poem.length}}</div>
+              <div class="data-tag">{{poem.length.length > 1 ? 'Poem ' + (counter % poem.wordCount.length + 1) + ' ' : ''}}Length</div>
+              <div class="ps-2 data-small text-center">{{poem.length[counter % poem.wordCount.length]}}</div>
+              <div class="progress ms-2">
+                <div *ngIf="poem.length[counter % poem.wordCount.length] === 'Short'" class="progress-bar bg-info" role="progressbar" [attr.style]="'width: ' + ((poem.wordCount[counter % poem.wordCount.length] / longestPoem) * 100) + '%'" aria-valuemin="0" aria-valuemax="100"></div>
+                <div *ngIf="poem.length[counter % poem.wordCount.length] === 'Medium'" class="progress-bar bg-success" role="progressbar" [attr.style]="'width: ' + ((poem.wordCount[counter % poem.wordCount.length] / longestPoem) * 100) + '%'" aria-valuemin="0" aria-valuemax="100"></div>
+                <div *ngIf="poem.length[counter % poem.wordCount.length] === 'Long'" class="progress-bar bg-warning" role="progressbar" [attr.style]="'width: ' + ((poem.wordCount[counter % poem.wordCount.length] / longestPoem) * 100) + '%'" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
             </div>
             <div class="col-auto desc">
               <div class="data-tag">Date Written</div>

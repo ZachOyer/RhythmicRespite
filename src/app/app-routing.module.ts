@@ -24,6 +24,8 @@ import { MissedOpportunityComponent } from './poems/missed-opportunity/missed-op
 import { OneTimeComponent } from './poems/one-time/one-time.component';
 import { TheDanceComponent } from './poems/the-dance/the-dance.component';
 import { BiggerHeartsBleedBetterComponent } from './poems/bigger-hearts-bleed-better/bigger-hearts-bleed-better.component';
+import { PerfectionComponent } from './poems/perfection/perfection.component';
+import { HowDidWeGetHereComponent } from './poems/how-did-we-get-here/how-did-we-get-here.component';
 
 const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent, data: { animation: 'Welcome' }},
@@ -50,6 +52,8 @@ const routes: Routes = [
   { path: 'one-time', component: OneTimeComponent, data: { animation: 'Poem' }},
   { path: 'the-dance', component: TheDanceComponent, data: { animation: 'Poem' }},
   { path: 'bigger-hearts-bleed-better', component: BiggerHeartsBleedBetterComponent, data: { animation: 'Poem' }},
+  { path: 'perfection', component: PerfectionComponent, data: { animation: 'Poem' }},
+  { path: 'how-did-we-get-here', component: HowDidWeGetHereComponent, data: { animation: 'Poem' }},
   { path: '', redirectTo: 'welcome', pathMatch: 'full'},
   { path: '**', redirectTo: 'welcome', pathMatch: 'full'},
 ];

@@ -32,6 +32,8 @@ import { MissedOpportunityComponent } from './poems/missed-opportunity/missed-op
 import { OneTimeComponent } from './poems/one-time/one-time.component';
 import { TheDanceComponent } from './poems/the-dance/the-dance.component';
 import { BiggerHeartsBleedBetterComponent } from './poems/bigger-hearts-bleed-better/bigger-hearts-bleed-better.component';
+import { PerfectionComponent } from './poems/perfection/perfection.component';
+import { HowDidWeGetHereComponent } from './poems/how-did-we-get-here/how-did-we-get-here.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,9 @@ import { BiggerHeartsBleedBetterComponent } from './poems/bigger-hearts-bleed-be
     MissedOpportunityComponent,
     OneTimeComponent,
     TheDanceComponent,
-    BiggerHeartsBleedBetterComponent
+    BiggerHeartsBleedBetterComponent,
+    PerfectionComponent,
+    HowDidWeGetHereComponent
   ],
   imports: [
     BrowserModule,

@@ -72,45 +72,8 @@ h1
   transition: all 0.3s ease-in-out
 
 .my-card .desc
-  min-width: 145px
   color: black
   filter: drop-shadow(1px 1px 1px black)
-
-
-@media screen and ( min-width: 768px )
-  .my-card:hover .title
-    color: black
-    padding-left: 24px
-    padding-right: 0px
-
-  .my-card:hover::before
-    left: 0%
-
-  .card-data
-    position: absolute
-    padding: 0px
-    height: 100%
-    width: max-content
-    right: -40%
-    top: 0%
-    border-left: 1px solid black
-    transition: right 0.3s ease-in-out
-
-  .my-card:hover .card-data
-    right: 0%
-
-  .desc
-    padding: 10px
-    &:nth-child(1)
-      background: linear-gradient(90deg, #cacaca, #cacaca 5%, #aaaaaa 8%, #cacaca 11%, #cacaca 16%, #aaaaaa 19%, #cacaca 22%, #cacaca 27%, #aaaaaa 30%, #cacaca 33%, #cacaca 67%, #aaaaaa 70%, #cacaca 73%, #cacaca 78%, #aaaaaa 81%, #cacaca 84%, #cacaca 89%, #aaaaaa 92%, #cacaca 95%, #cacaca 100%)
-      box-shadow: 0px 25px 30px -10px #c7c7c7b4 inset, 0px -25px 30px -10px #000000b4 inset
-    &:nth-child(2)
-      background-color: #c58c7b
-      box-shadow: -10px 25px 30px -25px #000000b4 inset, -10px -25px 30px -15px #000000b4 inset
-      padding-right: 20px
-
-  .data, .data-tag
-    text-shadow: 0px 0px 1px #000000
 
 .data
   font-size: 25px
@@ -212,6 +175,10 @@ h1
   font-weight: 700
   text-shadow: 0px 0px 1px black
 
+.bg-warning
+  background-color: #c942ac!important
+
+
 @media screen and ( max-width: 767px )
   h1
     font-size: 30px
@@ -230,3 +197,40 @@ h1
   .my-card .desc
     opacity: 1
     color: white
+
+
+@media screen and ( min-width: 768px )
+  .my-card:hover .title
+    color: black
+    padding-left: 24px
+    padding-right: 0px
+
+  .my-card:hover::before
+    left: 0%
+
+  .card-data
+    position: absolute
+    padding: 0px
+    height: 100%
+    width: max-content
+    right: -50%
+    top: 0%
+    border-left: 1px solid black
+    transition: right 0.3s ease-in-out
+
+  .my-card:hover .card-data
+    right: 0%
+
+  .desc
+    min-width: 145px
+    padding: 10px
+    &:nth-child(1)
+      background: linear-gradient(90deg, #cacaca, #cacaca 5%, #aaaaaa 8%, #cacaca 11%, #cacaca 16%, #aaaaaa 19%, #cacaca 22%, #cacaca 27%, #aaaaaa 30%, #cacaca 33%, #cacaca 67%, #aaaaaa 70%, #cacaca 73%, #cacaca 78%, #aaaaaa 81%, #cacaca 84%, #cacaca 89%, #aaaaaa 92%, #cacaca 95%, #cacaca 100%)
+      box-shadow: 0px 25px 30px -10px #c7c7c7b4 inset, 0px -25px 30px -10px #000000b4 inset
+    &:nth-child(2)
+      background-color: #c58c7b
+      box-shadow: -10px 25px 30px -25px #000000b4 inset, -10px -25px 30px -15px #000000b4 inset
+      padding-right: 20px
+
+  .data, .data-tag
+    text-shadow: 0px 0px 1px #000000

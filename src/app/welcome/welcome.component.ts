@@ -224,13 +224,12 @@ export class WelcomeComponent implements OnInit {
     this.filterPoems();
   }
 
-  filterPoems(fitlering?: string) {
-    if (fitlering) {
-      this.filterBy = fitlering;
+  filterPoems(filtering?: string) {
+    if (filtering) {
+      this.filterBy = filtering;
     }
     if (this.searchTerm === '') {
       if (this.filterBy !== 'None') {
-        if (this.filterBy === '')
         this.filteredPoems = this.poems.filter((poem) => poem.length.includes(this.filterBy)).sort((a, b) => {
           if (this.sortingDirection !== 0) {
             if (a.date.getTime() > b.date.getTime()) {
